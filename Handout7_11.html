@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>STEMQuest</title> <!--change title later-->
+	<link rel="stylesheet" href="Learn.css" />
+	<link rel="stylesheet" href="UserCompleteTab.css" />
+	<link rel="stylesheet" href="Handouts.css" />
+	<script src="UserCompleteTab.js" defer></script>
+</head>
+
+<body id="ChangeBG3">
+	<script type="module" src="login.js" defer></script>
+	<div id="MainBody">
+		<nav class="navbar">
+			<div class="nav-left">
+				<h1 class="stemquest" onclick="gobacktohome()" style="cursor: pointer;">STEMQUEST</h1>
+				<p onclick="event.stopPropagation(); LearnOpenDrop()" class="nav-link" style="cursor: pointer;">Learn
+				</p>
+				<div class="LearnDropDown" id="LearnDropDownMenu">
+					<div class="LearnDropContent" data-grade="11">
+						<a href="../GR11/01_Handout_2.pdf" download>
+							<p>The Cell Theory and Cell Classification</p>
+						</a>
+						<a href="../GR11/02_Handout_3.pdf" download>
+							<p>Cell Modification and Specialization</p>
+						</a>
+						<a href="../GR11/03_Handout_2.pdf" download>
+							<p>Plasma Membrane and Transport Mechanisms</p>
+						</a>
+						<a href="../GR11/04_Handout_2.pdf" download>
+							<p>Cellular Energy and Metabolism</p>
+						</a>
+						<a href="../GR11/05_Handout_3.pdf" download>
+							<p>The Organizational Chart of Matter</p>
+						</a>
+						<a href="../GR11/05_Handout_4.pdf" download>
+							<p>The Organizational Chart of Matter P2</p>
+						</a>
+						<a href="../GR11/06_Handout_2.pdf" download>
+							<p>The Four (4) Major Biological Molecules</p>
+						</a>
+						<a href="../GR11/07_Handout_23.pdf" download>
+							<p>The Cell Cycle, Mitosis, Meiosis</p>
+						</a>
+						<a href="../GR11/08_Handout_23.pdf" download>
+							<p>Basic Genetics and Mendelian Genetics</p>
+						</a>
+					</div>
+					<div class="LearnDropContent" data-grade="12">
+						<a href="../GR12/01_Handout_110.pdf" download>
+							<p>Introduction To Chemistry</p>
+						</a>
+						<a href="../GR12/02_Handout_1100.pdf" download>
+							<p>Measurements</p>
+						</a>
+						<a href="../GR12/03_Handout_182.pdf" download>
+							<p>Atoms, Molecules, and Ions</p>
+						</a>
+						<a href="../GR12/04_Handout_1113.pdf" download>
+							<p>Stoichiometry</p>
+						</a>
+						<a href="../GR12/05_Handout_15.pdf" download>
+							<p>The Organizational Chart of Matter</p>
+						</a>
+						<a href="../GR12/06_Handout_13-2.pdf" download>
+							<p>Gas Laws</p>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="nav-right">
+				<img class="search-btn" src="search.png" alt="Search" class="search-icon"
+					onclick="event.stopPropagation(); openSearch()">
+
+				<button class="User-Icon" onclick="event.stopPropagation(); openDrop()"></button>
+				<!--to be changed-->
+				<div class="DropDown" id="DropDownMenu">
+					<a href="Collection.html" class="droplink" target="_self" onclick="alertabi()">
+						Profile
+					</a>
+					<p onclick="event.stopPropagation(); SignouT()">
+						Sign Out
+					</p>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!--Class names are to be changed/current placeholders-->
+	<!--Main Content-->
+	<div id="BILATNAMO">
+		<div id="ContentWrapper">
+			<div class="Columnseparator">
+
+				<button id="BackButton" onclick="window.location.href='UserCompleteTab.html'">BACK TO HOME</button>
+				<div class="HandoutContent" data-grade="11" data-button="1">
+					<div class="RowseparatorTop" data-grade="11" data-button="1">
+						<div class="CollectionIMGS"></div>
+						<div class="TextTohMen">
+							<p>HANDOUT 7</p>
+						</div>
+					</div>
+				</div>
+				<div class="Container" data-grade="11">
+					<div class="card">
+						<div class="band">How a Cell Knows What Cell to Become</div>
+						<p>Cells rely on DNA as the blueprint for structure and function. DNA condenses into chromosomes
+							through:</p>
+						<ul>
+							<li>DNA wraps around histones → nucleosomes</li>
+							<li>Nucleosomes coil → chromatin fibers</li>
+							<li>Chromatin condenses → chromatids</li>
+							<li>Two chromatids join at centromere → chromosome</li>
+						</ul>
+					</div>
+
+					<div class="card">
+						<div class="band">The Cell Cycle</div>
+						<p>The cell cycle is an ordered sequence of growth and division consisting of:</p>
+						<ul>
+							<li><strong>Interphase</strong> — G0, G1, S, G2</li>
+							<li><strong>Mitotic Phase</strong> — Prophase, Metaphase, Anaphase, Telophase, Cytokinesis
+							</li>
+						</ul>
+					</div>
+
+					<div class="card">
+						<div class="band">Interphase</div>
+						<p>The longest and most active part of the cell cycle.</p>
+						<ul>
+							<li><strong>G0</strong> — cell rests; normal metabolic activity</li>
+							<li><strong>G1</strong> — cell grows and synthesizes materials</li>
+							<li><strong>S Phase</strong> — DNA replication; centrosomes duplicate</li>
+							<li><strong>G2</strong> — organelles reproduce; preparation for mitosis</li>
+						</ul>
+					</div>
+
+					<div class="card">
+						<div class="band">Mitotic Phase</div>
+						<p>Cell divides its nucleus and cytoplasm to form two daughter cells.</p>
+						<ul>
+							<li><strong>Prophase</strong> — chromosomes condense; spindle forms</li>
+							<li><strong>Metaphase</strong> — chromosomes line up at the equator</li>
+							<li><strong>Anaphase</strong> — sister chromatids separate</li>
+							<li><strong>Telophase</strong> — nuclear membranes reform</li>
+							<li><strong>Cytokinesis</strong> — cytoplasm divides</li>
+						</ul>
+					</div>
+
+					<div class="card">
+						<div class="band">Cell Cycle Checkpoints</div>
+						<ul>
+							<li><strong>G1 Checkpoint</strong> — cell size, nutrients, growth factors</li>
+							<li><strong>G2 Checkpoint</strong> — DNA replication accuracy</li>
+							<li><strong>M Checkpoint</strong> — spindle attachment</li>
+						</ul>
+					</div>
+
+					<div class="card">
+						<div class="band">Diversity in Individuals</div>
+						<p>Organisms contain two major cell types:</p>
+						<ul>
+							<li><strong>Somatic cells</strong> — diploid (2n)</li>
+							<li><strong>Gametes</strong> — haploid (n)</li>
+						</ul>
+						<p>Diversity increases through the combination of gametes from two parents.</p>
+					</div>
+
+					<div class="card">
+						<div class="band">Meiosis Overview</div>
+						<p>Meiosis reduces chromosome number from diploid to haploid and produces gametes.</p>
+						<p>It consists of <strong>Meiosis I</strong> and <strong>Meiosis II</strong>.</p>
+					</div>
+
+					<div class="card">
+						<div class="band">Meiosis I — Unique Processes</div>
+						<ul>
+							<li><strong>Synapsis</strong> — homologous chromosomes pair</li>
+							<li><strong>Crossing-over</strong> — exchange of genetic material</li>
+							<li><strong>Tetrad formation</strong> — homologs connect at chiasmata</li>
+							<li><strong>Independent assortment</strong> — random orientation</li>
+							<li>Produces two haploid daughter cells</li>
+						</ul>
+					</div>
+
+					<div class="card">
+						<div class="band">Meiosis II</div>
+						<ul>
+							<li>Chromosomes re-condense</li>
+							<li>Sister chromatids separate</li>
+							<li>Results in four genetically unique haploid cells</li>
+						</ul>
+					</div>
+
+					<div class="quote-row">
+							<div class="avatar-box"></div>
+							<div class="quote-bubble">
+								“Study on, for each page thou read’st brings thee nigher to thy destiny.”
+							</div>
+						</div>
+
+						<div class="quote-row">
+							<div class="avatar-box"></div>
+							<div class="quote-bubble">
+								“Before thou takest the quiz, be sure to read well thy handouts.”
+							</div>
+						</div>
+
+					<!--Dapat sa end to-->
+					<button class="QuizButton" data-grade="11" data-index="8" data-file="QuizTime.html">Proceed to
+						Quiz</button>
+				</div>
+				<div class="HandoutContent" data-grade="12" data-button="1">
+					<div class="RowseparatorTop" data-grade="12" data-button="1">
+						<div class="CollectionIMGS"></div>
+						<div class="TextTohMen">
+							<p>HANDOUT 7</p>
+						</div>
+					</div>
+				</div>
+				<div class="Container" data-grade="12">
+
+
+					<!--Dapat sa end to-->
+					<button class="QuizButton" data-grade="12" data-index="8" data-file="QuizTime.html">Proceed to
+						Quiz</button>
+				</div>
+
+
+			</div>
+		</div> <!--End of ContentWrapper-->
+
+		<div class="YAWASideBar">
+			<div id="TopSection">
+				<div class="GreenSquare2">
+					<div class="ContentWrap">
+						<div class="WhiteSquare"></div>
+						<p class="greenUserName">username</p>
+						<textarea id="GreenNameInput" style="display:none;"></textarea>
+					</div>
+					<div class="StarContainer" data-grade="11">
+						<div class="RowseparatorTop">
+							<div class="Star" data-quiz-index="4"></div>
+							<div class="Star" data-quiz-index="8"></div>
+							<div class="Star" data-quiz-index="11"></div>
+						</div>
+					</div>
+					<div class="StarContainer" data-grade="12">
+						<div class="RowseparatorTop">
+							<div class="Star" data-quiz-index="4"></div>
+							<div class="Star" data-quiz-index="8"></div>
+						</div>
+					</div>
+					<div class="RowseparatorTop">
+						<p class="GSTEXT">Areas Explored:</p>
+						<p id="NumAreas"></p>
+					</div>
+					<div class="RowseparatorTop">
+						<p class="GSTEXT">Total Exp:</p>
+						<p id="NumEXP"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--End of Mainbody-->
+
+	<!-- Panel Popup -->
+	<div class="form-popup" id="myForm"></div>
+
+	<div class="search-popup" id="mysearch">
+		<div class="search-outline">
+			<form action="#" class="search-container">
+				<input type="text" placeholder="Search" name="search" id="searchtab" oninput="searchitems()">
+
+				<button type="button" id="btnsearchcancel" class="btn cancel" onclick="closeSearch()">Close</button>
+				<!--change into X in future-->
+			</form>
+		</div>
+		<div id="results"></div>
+	</div>
+
+	<script>
+		function searchitems() {
+			const searchValue = document.getElementById("searchtab").value.toLowerCase().trim();
+			const results = document.getElementById("results");
+			const items = document.querySelectorAll(".Container");
+
+			results.innerHTML = ""; // clear previous results
+
+			if (searchValue === "") return;
+			const regex = new RegExp(`\\b${searchValue}\\b`, "i");
+
+			items.forEach(item => {
+				const text = item.textContent.toLowerCase();
+				if (regex.test(text)) {
+					const clone = item.cloneNode(true);
+					results.appendChild(clone);
+				}
+			});
+		}
+	</script>
+	<script type="module" defer>
+		// =================== Main Page User Display Handler ===================
+
+		import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+		import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+		import { getStorage, ref as storageRef, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-storage.js";
+
+		const auth = getAuth();
+		const db = getFirestore();
+		const storage = getStorage();
+
+
+		window.addEventListener('DOMContentLoaded', () => {
+
+			// Elements on the main page
+			const MainPageName = document.querySelector('.greenUserName');
+			const MainPageIcon = document.querySelector('.WhiteSquare');
+			const MaisotIcon = document.querySelector('.User-Icon');
+
+			// Get current UID from localStorage (saved by profile page after login)
+			const uid = localStorage.getItem('currentUID');
+			if (!uid) return; // user not logged in
+
+			//Try localStorage first for instant display
+			const savedName = localStorage.getItem(`userName_${uid}`);
+			const savedIcon = localStorage.getItem(`UIuserBG_${uid}`);
+
+			if (MainPageName && savedName) MainPageName.textContent = savedName;
+			if (MainPageIcon && savedIcon) {
+				MainPageIcon.style.backgroundImage = `url(${savedIcon})`;
+				MainPageIcon.style.backgroundSize = 'cover';
+				MainPageIcon.style.backgroundPosition = 'center';
+			}
+
+			if (MaisotIcon && savedIcon) {
+				MaisotIcon.style.backgroundImage = `url(${savedIcon})`;
+				MaisotIcon.style.backgroundSize = 'cover';
+				MaisotIcon.style.backgroundPosition = 'center';
+			}
+
+			//Fetch from Firestore to make sure it's up to date
+			onAuthStateChanged(auth, async (user) => {
+				if (!user) return;
+
+				const userDocRef = doc(db, 'users', uid);
+				const docSnap = await getDoc(userDocRef);
+
+				if (docSnap.exists()) {
+					const data = docSnap.data();
+
+					// Update username
+					if (data.userName) {
+						if (MainPageName) MainPageName.textContent = data.userName;
+						localStorage.setItem(`userName_${uid}`, data.userName);
+					}
+
+					// Update icon
+					if (data.UIuserBG) {
+						if (MainPageIcon) {
+							MainPageIcon.style.backgroundImage = `url(${data.UIuserBG})`;
+							MainPageIcon.style.backgroundSize = 'cover';
+							MainPageIcon.style.backgroundPosition = 'center';
+						}
+						localStorage.setItem(`UIuserBG_${uid}`, data.UIuserBG);
+					}
+
+					if (data.UIuserBG) {
+						if (MaisotIcon) {
+							MaisotIcon.style.backgroundImage = `url(${data.UIuserBG})`;
+							MaisotIcon.style.backgroundSize = 'cover';
+							MaisotIcon.style.backgroundPosition = 'center';
+						}
+						localStorage.setItem(`UIuserBG_${uid}`, data.UIuserBG);
+					}
+				}
+				showGradeContent(uid);
+
+			});
+		});
+
+		async function showGradeContent(userId) {
+			const userRef = doc(db, "users", userId);
+
+			try {
+				const userSnap = await getDoc(userRef);
+
+				if (userSnap.exists()) {
+					const userData = userSnap.data();
+					const grade = userData.grade;
+
+					console.log("User grade from Firestore:", grade);
+
+					const items = document.querySelectorAll(".grayitem");
+					items.forEach((item, index) => {
+						const itemGrade = item.getAttribute("data-grade");
+						if ((grade === "STEM 11" && itemGrade === "11") || (grade === "STEM 12" && itemGrade === "12")) {
+							item.style.display = "block"; // show first
+							setTimeout(() => {
+								item.classList.add("active"); // then animate
+							}, index * 25); // 100ms stagger per item
+						} else {
+							item.classList.remove("active");
+							item.style.display = "none";
+						}
+					});
+
+				} else {
+					console.log("No such user!");
+				}
+			} catch (error) {
+				console.error("Error fetching user grade:", error);
+			} finally {
+				overlay.classList.remove("active"); // hide loader
+			}
+		}
+
+		//handle quiz iya ah hahahha
+		// Select all grayitem elements
+		const graydivs = document.querySelectorAll('.grayitem');
+
+		// Get current UID
+		const uid = localStorage.getItem('currentUID');
+		if (!uid) {
+			console.log("No user logged in");
+		}
+
+		graydivs.forEach((div, index) => {
+			div.addEventListener('click', async () => {
+				const clickedData = {
+					text: div.textContent,
+					index: index,
+					grade: div.dataset.grade,
+					timestamp: new Date().toISOString()
+				};
+
+				try {
+					// Save under the current user's document
+					await setDoc(doc(db, "quizSelections", uid), clickedData);
+					console.log("Saved to Firebase:", clickedData);
+					window.location.href = "QuizTime.html";
+				} catch (error) {
+					console.error("Error saving selection:", error);
+				}
+			});
+		});
+
+	</script>
+	<script type="module" src="UserCompleteExtended.js" defer></script>
+	<script type="module" src="GHANDOUTS.js" defer></script>
+
+	<div id="dimOverlay">
+		<div class="loader"></div>
+	</div>
+</body>
+
+</html>

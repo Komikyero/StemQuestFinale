@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>STEMQuest</title> <!--change title later-->
+	<link rel="stylesheet" href="Learn.css" />
+	<link rel="stylesheet" href="Handouts.css" />
+	<link rel="stylesheet" href="UserCompleteTab.css" />
+	<script src="UserCompleteTab.js" defer></script>
+</head>
+
+<body id="ChangeBG">
+	<script type="module" src="login.js" defer></script>
+	<div id="MainBody">
+		<nav class="navbar">
+			<div class="nav-left">
+				<h1 class="stemquest" onclick="gobacktohome()" style="cursor: pointer;">STEMQUEST</h1>
+				<p onclick="event.stopPropagation(); LearnOpenDrop()" class="nav-link" style="cursor: pointer;">Learn
+				</p>
+				<div class="LearnDropDown" id="LearnDropDownMenu">
+					<div class="LearnDropContent" data-grade="11">
+						<a href="../GR11/01_Handout_2.pdf" download>
+							<p>The Cell Theory and Cell Classification</p>
+						</a>
+						<a href="../GR11/02_Handout_3.pdf" download>
+							<p>Cell Modification and Specialization</p>
+						</a>
+						<a href="../GR11/03_Handout_2.pdf" download>
+							<p>Plasma Membrane and Transport Mechanisms</p>
+						</a>
+						<a href="../GR11/04_Handout_2.pdf" download>
+							<p>Cellular Energy and Metabolism</p>
+						</a>
+						<a href="../GR11/05_Handout_3.pdf" download>
+							<p>The Organizational Chart of Matter</p>
+						</a>
+						<a href="../GR11/05_Handout_4.pdf" download>
+							<p>The Organizational Chart of Matter P2</p>
+						</a>
+						<a href="../GR11/06_Handout_2.pdf" download>
+							<p>The Four (4) Major Biological Molecules</p>
+						</a>
+						<a href="../GR11/07_Handout_23.pdf" download>
+							<p>The Cell Cycle, Mitosis, Meiosis</p>
+						</a>
+						<a href="../GR11/08_Handout_23.pdf" download>
+							<p>Basic Genetics and Mendelian Genetics</p>
+						</a>
+					</div>
+					<div class="LearnDropContent" data-grade="12">
+						<a href="../GR12/01_Handout_110.pdf" download>
+							<p>Introduction To Chemistry</p>
+						</a>
+						<a href="../GR12/02_Handout_1100.pdf" download>
+							<p>Measurements</p>
+						</a>
+						<a href="../GR12/03_Handout_182.pdf" download>
+							<p>Atoms, Molecules, and Ions</p>
+						</a>
+						<a href="../GR12/04_Handout_1113.pdf" download>
+							<p>Stoichiometry</p>
+						</a>
+						<a href="../GR12/05_Handout_15.pdf" download>
+							<p>The Organizational Chart of Matter</p>
+						</a>
+						<a href="../GR12/06_Handout_13-2.pdf" download>
+							<p>Gas Laws</p>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="nav-right">
+				<img class="search-btn" src="search.png" alt="Search" class="search-icon"
+					onclick="event.stopPropagation(); openSearch()">
+
+				<button class="User-Icon" onclick="event.stopPropagation(); openDrop()"></button>
+				<!--to be changed-->
+				<div class="DropDown" id="DropDownMenu">
+					<a href="Collection.html" class="droplink" target="_self" onclick="alertabi()">
+						Profile
+					</a>
+					<p onclick="event.stopPropagation(); SignouT()">
+						Sign Out
+					</p>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!--Class names are to be changed/current placeholders-->
+	<!--Main Content-->
+	<div id="BILATNAMO">
+		<div id="ContentWrapper">
+			<div class="Columnseparator">
+				<button id="BackButton" onclick="window.location.href='UserCompleteTab.html'">BACK TO HOME</button>
+
+				<div class="HandoutContent" data-grade="11" data-button="1">
+					<div class="RowseparatorTop" data-grade="11" data-button="1">
+						<div class="CollectionIMGS"></div>
+						<div class="TextTohMen">
+							<p>HANDOUT 2</p>
+						</div>
+					</div>
+				</div>
+				<div class="Container" data-grade="11">
+					<!-- Top Banner -->
+					<div class="banner">
+						Before you start your journey, Do you want to download your handout?
+						<a href="../GR11/02_Handout_3.pdf">Download Here.</a>
+					</div>
+
+					<!-- Section: What are Plant Tissues -->
+					<div class="section">
+						<h2>What are Plant Tissues?</h2>
+						<p>Plant tissues are groups of cells that work together to perform specific functions in plants.
+						</p>
+					</div>
+
+					<!-- Section: Kinds of Plant Tissues -->
+					<div class="section">
+						<h2>Kinds of Plant Tissues:</h2>
+
+						<p><strong>1. Meristematic Tissues</strong></p>
+						<p>These are actively dividing cells that allow the plant to grow. They are usually small, have
+							thin walls, and contain dense cytoplasm with a large nucleus.</p>
+
+						<p><strong>2. Permanent Tissues</strong></p>
+						<p>These are mature tissues whose cells have stopped dividing and now perform specific
+							functions. Permanent tissues are further divided into simple and complex tissues.</p>
+
+						<ul>
+							<li>Simple tissues: made of one type of cell.</li>
+							<li>Complex tissues: made of multiple cell types.</li>
+						</ul>
+
+						<a class="link" href="https://www.biologyonline.com/dictionary/plant-tissue">Click this link for
+							more info</a>
+					</div>
+
+					<!-- Section: Animal Cells and Tissues -->
+					<div class="section">
+						<h2>Animal Cells and Tissues</h2>
+
+						<p><span class="highlight">Epithelial tissue</span> - covers surfaces and lines organs.</p>
+						<p><span class="highlight">Connective tissue</span> - supports and connects body parts.</p>
+						<p><span class="highlight">Muscle tissue</span> - allows movement (skeletal, cardiac, smooth).
+						</p>
+						<p><span class="highlight">Nervous tissue</span> - transmits signals and controls body
+							functions.</p>
+
+						<a class="link" href="https://www.biologyonline.com/dictionary/animal-tissue">Click this link
+							for more info</a>
+					</div>
+
+					<!-- Section: What is a Muscle Tissue -->
+					<div class="section">
+						<h2>What is a Muscle Tissue?</h2>
+						<p>It is a type of animal tissue that allows movement. It's made of cells called muscle fibers
+							that can contract and relax.</p>
+					</div>
+
+
+					<div class="section">
+						<div class="title1">What is a Muscle Tissue?</div>
+						<p class="text">
+							It is a type of animal tissue that allows movement. It’s made<br>
+							of cells called muscle fibers that can contract and relax.
+						</p>
+					</div>
+
+					<div class="section highlight-box">
+						<div class="title1">Three types of Muscle Tissue:</div>
+						<p class="text">
+							<span class="yellow">Skeletal muscle</span> - attached to bones, voluntary movement,<br>
+							striated.<br><br>
+
+							<span class="yellow">Cardiac muscle</span> - heart muscles, involuntary, striated, pumps<br>
+							blood.<br><br>
+
+							<span class="yellow">Smooth muscle</span> - walls of organs (like the stomach and<br>
+							intestines), involuntary, not striated.
+						</p>
+					</div>
+
+					<div class="section">
+						<div class="title1">What is the Nervous Tissue?</div>
+						<p class="text">
+							It is the tissue in animals that senses stimuli and transmits<br>
+							signals throughout the body. It’s made of neurons and<br>
+							supporting neuroglial cells.
+						</p>
+					</div>
+
+					<div class="section">
+						<div class="title1">Two main cell types of the Nervous Tissue:</div>
+						<p class="text">
+							<span class="yellow">Neurons</span> - the functional units that carry electrical
+							signals.<br>
+							Each neuron has:<br>
+							• Cell body (soma): contains the nucleus and organelles.<br>
+							• Dendrites: short branches that receive signals from other<br>
+							&nbsp;&nbsp;neurons.<br>
+							• Axon: long fiber that transmits impulses to other neurons,<br>
+							&nbsp;&nbsp;muscles, or glands.<br><br>
+
+							<span class="yellow">Neuroglia</span> - support cells that protect, nourish, and
+							maintain<br>
+							neurons. They also help in repairing nervous tissue and<br>
+							maintaining the environment around neurons.
+						</p>
+					</div>
+
+					
+
+					<div class="row">
+						<div class="white-square"></div>
+						<div class="quote">“Heed nature’s lessons, and thy wit shall<br>grow like a sturdy oak.”</div>
+					</div>
+
+					<div class="row">
+						<div class="white-square"></div>
+						<div class="quote">“Before thou takest the quiz, be sure to<br>read well thy handouts.”</div>
+					</div>
+
+					<!--Dapat sa end to-->
+					<button class="QuizButton" data-grade="11" data-index="1" data-file="QuizTime.html">Proceed to
+						Quiz</button>
+				</div>
+				<div class="HandoutContent" data-grade="12" data-button="1">
+					<div class="RowseparatorTop" data-grade="12" data-button="1">
+						<div class="CollectionIMGS"></div>
+						<div class="TextTohMen">
+							<p>HANDOUT 2</p>
+						</div>
+					</div>
+				</div>
+				<div class="Container" data-grade="12">
+					<div class="banner">
+						Before you start your journey, Do you want to download your handout?
+						<a href="../GR12/02_Handout_1100.pdf">Download Here.</a>
+					</div>
+
+					<!-- Section: What are Measurements -->
+					<div class="section">
+						<h2>What are Measurements?</h2>
+						<p>
+							The determination of the size or quantity of something. Every measurement consists of a
+							<strong>number</strong> and a <strong>unit</strong>. They are essential in science and daily
+							life
+							(cooking, commerce, clothing). Measurement standards and systems vary by region and context.
+						</p>
+					</div>
+
+					<!-- Section: Accuracy and Precision -->
+					<div class="section">
+						<h2>Accuracy and Precision</h2>
+
+						<p><strong>Accuracy</strong> – how close a measurement is to the true value.</p>
+						<p><strong>Precision</strong> – how close repeated measurements are to each other.</p>
+
+						<ul>
+							<li><strong>Accurate but not precise:</strong> values centered on true value but scattered.
+							</li>
+							<li><strong>Precise but not accurate:</strong> values tightly clustered but offset
+								(systematic error).</li>
+							<li><strong>Accurate and precise:</strong> correct and consistent measurements.</li>
+							<li><strong>Neither:</strong> scattered and incorrect values.</li>
+						</ul>
+
+						<a class="link"
+							href="https://sciencenotes.org/what-is-the-difference-between-accuracy-and-precision/">Click
+							this link for more info</a>
+					</div>
+
+					<!-- Section: Systems of Measurement -->
+					<div class="section">
+						<h2>Systems of Measurement</h2>
+
+						<p><span class="highlight">English System</span> – uses unrelated conversion factors (e.g., 12
+							in = 1 ft).</p>
+						<p><span class="highlight">Metric System</span> – uses base-ten units; easier conversions.</p>
+						<p><span class="highlight">SI System</span> – modern metric system used in science.</p>
+
+						<ul>
+							<li>Base units: meter (m), kilogram (kg), second (s), etc.</li>
+							<li>Derived units: m³ (volume), m/s (speed), etc.</li>
+						</ul>
+
+						<a class="link" href="https://www.cuemath.com/measurement/system-of-measurement/">Click this
+							link for more info</a>
+					</div>
+
+					<!-- Section: Metric Prefixes -->
+					<div class="section">
+						<h2>Metric Prefixes</h2>
+						<p>
+							Prefixes indicate large or small multiples of a unit.
+						</p>
+						<p>
+							<span class="yellow">Kilo (k)</span> – 10³<br>
+							<span class="yellow">Centi (c)</span> – 10⁻²<br>
+							<span class="yellow">Milli (m)</span> – 10⁻³<br>
+							<span class="yellow">Micro (µ)</span> – 10⁻⁶
+						</p>
+					</div>
+
+					<!-- Section: Unit Conversion -->
+					<div class="section">
+						<div class="title1">Unit Conversion (Dimensional Analysis)</div>
+						<p class="text">
+							Multiply by conversion factors (fractions equal to 1) to cancel units and obtain the desired
+							unit.<br><br>
+							For derived units like area or volume, remember:<br>
+							• Area conversions are squared.<br>
+							• Volume conversions are cubed.<br><br>
+							Example: 1 m³ = (100 cm)³ = 1,000,000 cm³
+						</p>
+					</div>
+
+					<!-- Section: Significant Figures -->
+					<div class="section highlight-box">
+						<div class="title1">Significant Figures</div>
+						<p class="text">
+							<span class="yellow">Exact numbers</span> – infinite sig figs (definitions,
+							counting).<br><br>
+
+							<span class="yellow">Inexact numbers</span> – limited sig figs (measurements).<br><br>
+
+							Rules:<br>
+							• Non-zero digits are significant.<br>
+							• Leading zeros are NOT significant.<br>
+							• Captive zeros are significant.<br>
+							• Trailing zeros are significant only if a decimal is present.<br>
+							• Use scientific notation to remove ambiguity.
+						</p>
+					</div>
+
+					<!-- Section: Density -->
+					<div class="section">
+						<div class="title1">Density</div>
+						<p class="text">
+							Density = mass ÷ volume.<br><br>
+							An object floats if its density is less than the fluid; sinks if greater.<br><br>
+							Water density ≈ 1 g/cm³ or 1000 kg/m³.
+						</p>
+					</div>
+					<div class="row">
+						<div class="white-square"></div>
+						<div class="quote">“Measure well, and the truth of matter reveals itself.”</div>
+					</div>
+
+					<div class="row">
+						<div class="white-square"></div>
+						<div class="quote">“Before thou takest the quiz, be sure to<br>read well thy handouts.”</div>
+					</div>
+
+
+
+
+					<!--Dapat sa end to-->
+					<button class="QuizButton" data-grade="12" data-index="1" data-file="QuizTime.html">Proceed to
+						Quiz</button>
+				</div>
+
+			</div>
+		</div> <!--End of ContentWrapper-->
+
+		<div class="YAWASideBar">
+			<div id="TopSection">
+				<div class="GreenSquare2">
+					<div class="ContentWrap">
+						<div class="WhiteSquare"></div>
+						<p class="greenUserName">username</p>
+						<textarea id="GreenNameInput" style="display:none;"></textarea>
+					</div>
+					<div class="StarContainer" data-grade="11">
+						<div class="RowseparatorTop">
+							<div class="Star" data-quiz-index="4"></div>
+							<div class="Star" data-quiz-index="8"></div>
+							<div class="Star" data-quiz-index="11"></div>
+						</div>
+					</div>
+					<div class="StarContainer" data-grade="12">
+						<div class="RowseparatorTop">
+							<div class="Star" data-quiz-index="4"></div>
+							<div class="Star" data-quiz-index="8"></div>
+						</div>
+					</div>
+					<div class="RowseparatorTop">
+						<p class="GSTEXT">Areas Explored:</p>
+						<p id="NumAreas"></p>
+					</div>
+					<div class="RowseparatorTop">
+						<p class="GSTEXT">Total Exp:</p>
+						<p id="NumEXP"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--End of Mainbody-->
+
+	<!-- Panel Popup -->
+	<div class="form-popup" id="myForm"></div>
+
+	<div class="search-popup" id="mysearch">
+		<div class="search-outline">
+			<form action="#" class="search-container">
+				<input type="text" placeholder="Search" name="search" id="searchtab" oninput="searchitems()">
+
+				<button type="button" id="btnsearchcancel" class="btn cancel" onclick="closeSearch()">Close</button>
+				<!--change into X in future-->
+			</form>
+		</div>
+		<div id="results"></div>
+	</div>
+
+	<script>
+		function searchitems() {
+			const searchValue = document.getElementById("searchtab").value.toLowerCase().trim();
+			const results = document.getElementById("results");
+			const items = document.querySelectorAll(".Container");
+
+			results.innerHTML = ""; // clear previous results
+
+			if (searchValue === "") return;
+			const regex = new RegExp(`\\b${searchValue}\\b`, "i");
+
+			items.forEach(item => {
+				const text = item.textContent.toLowerCase();
+				if (regex.test(text)) {
+					const clone = item.cloneNode(true);
+					results.appendChild(clone);
+				}
+			});
+		}
+	</script>
+	<script type="module" defer>
+		// =================== Main Page User Display Handler ===================
+
+		import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+		import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+		import { getStorage, ref as storageRef, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-storage.js";
+
+		const auth = getAuth();
+		const db = getFirestore();
+		const storage = getStorage();
+
+
+		window.addEventListener('DOMContentLoaded', () => {
+
+			// Elements on the main page
+			const MainPageName = document.querySelector('.greenUserName');
+			const MainPageIcon = document.querySelector('.WhiteSquare');
+			const MaisotIcon = document.querySelector('.User-Icon');
+
+			// Get current UID from localStorage (saved by profile page after login)
+			const uid = localStorage.getItem('currentUID');
+			if (!uid) return; // user not logged in
+
+			//Try localStorage first for instant display
+			const savedName = localStorage.getItem(`userName_${uid}`);
+			const savedIcon = localStorage.getItem(`UIuserBG_${uid}`);
+
+			if (MainPageName && savedName) MainPageName.textContent = savedName;
+			if (MainPageIcon && savedIcon) {
+				MainPageIcon.style.backgroundImage = `url(${savedIcon})`;
+				MainPageIcon.style.backgroundSize = 'cover';
+				MainPageIcon.style.backgroundPosition = 'center';
+			}
+
+			if (MaisotIcon && savedIcon) {
+				MaisotIcon.style.backgroundImage = `url(${savedIcon})`;
+				MaisotIcon.style.backgroundSize = 'cover';
+				MaisotIcon.style.backgroundPosition = 'center';
+			}
+
+			//Fetch from Firestore to make sure it's up to date
+			onAuthStateChanged(auth, async (user) => {
+				if (!user) return;
+
+				const userDocRef = doc(db, 'users', uid);
+				const docSnap = await getDoc(userDocRef);
+
+				if (docSnap.exists()) {
+					const data = docSnap.data();
+
+					// Update username
+					if (data.userName) {
+						if (MainPageName) MainPageName.textContent = data.userName;
+						localStorage.setItem(`userName_${uid}`, data.userName);
+					}
+
+					// Update icon
+					if (data.UIuserBG) {
+						if (MainPageIcon) {
+							MainPageIcon.style.backgroundImage = `url(${data.UIuserBG})`;
+							MainPageIcon.style.backgroundSize = 'cover';
+							MainPageIcon.style.backgroundPosition = 'center';
+						}
+						localStorage.setItem(`UIuserBG_${uid}`, data.UIuserBG);
+					}
+
+					if (data.UIuserBG) {
+						if (MaisotIcon) {
+							MaisotIcon.style.backgroundImage = `url(${data.UIuserBG})`;
+							MaisotIcon.style.backgroundSize = 'cover';
+							MaisotIcon.style.backgroundPosition = 'center';
+						}
+						localStorage.setItem(`UIuserBG_${uid}`, data.UIuserBG);
+					}
+				}
+				showGradeContent(uid);
+
+			});
+		});
+
+		async function showGradeContent(userId) {
+			const userRef = doc(db, "users", userId);
+
+			try {
+				const userSnap = await getDoc(userRef);
+
+				if (userSnap.exists()) {
+					const userData = userSnap.data();
+					const grade = userData.grade;
+
+					console.log("User grade from Firestore:", grade);
+
+					const items = document.querySelectorAll(".grayitem");
+					items.forEach((item, index) => {
+						const itemGrade = item.getAttribute("data-grade");
+						if ((grade === "STEM 11" && itemGrade === "11") || (grade === "STEM 12" && itemGrade === "12")) {
+							item.style.display = "block"; // show first
+							setTimeout(() => {
+								item.classList.add("active"); // then animate
+							}, index * 25); // 100ms stagger per item
+						} else {
+							item.classList.remove("active");
+							item.style.display = "none";
+						}
+					});
+
+				} else {
+					console.log("No such user!");
+				}
+			} catch (error) {
+				console.error("Error fetching user grade:", error);
+			} finally {
+				overlay.classList.remove("active"); // hide loader
+			}
+		}
+
+		//handle quiz iya ah hahahha
+		// Select all grayitem elements
+		const graydivs = document.querySelectorAll('.grayitem');
+
+		// Get current UID
+		const uid = localStorage.getItem('currentUID');
+		if (!uid) {
+			console.log("No user logged in");
+		}
+
+		graydivs.forEach((div, index) => {
+			div.addEventListener('click', async () => {
+				const clickedData = {
+					text: div.textContent,
+					index: index,
+					grade: div.dataset.grade,
+					timestamp: new Date().toISOString()
+				};
+
+				try {
+					// Save under the current user's document
+					await setDoc(doc(db, "quizSelections", uid), clickedData);
+					console.log("Saved to Firebase:", clickedData);
+					window.location.href = "QuizTime.html";
+				} catch (error) {
+					console.error("Error saving selection:", error);
+				}
+			});
+		});
+
+	</script>
+	<script type="module" src="UserCompleteExtended.js" defer></script>
+	<script type="module" src="GHANDOUTS.js" defer>
+	</script>
+	<div id="dimOverlay">
+		<div class="loader"></div>
+	</div>
+
+</body>
+
+</html>

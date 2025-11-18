@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>STEMQuest</title> <!--change title later-->
+	<link rel="stylesheet" href="Learn.css" />
+	<link rel="stylesheet" href="UserCompleteTab.css" />
+
+	<link rel="stylesheet" href="Handouts.css" />
+	<script src="UserCompleteTab.js" defer></script>
+</head>
+
+<body id="ChangeBG">
+	<script type="module" src="login.js" defer></script>
+	<div id="MainBody">
+		<nav class="navbar">
+			<div class="nav-left">
+				<h1 class="stemquest" onclick="gobacktohome()" style="cursor: pointer;">STEMQUEST</h1>
+				<p onclick="event.stopPropagation(); LearnOpenDrop()" class="nav-link" style="cursor: pointer;">Learn
+				</p>
+				<div class="LearnDropDown" id="LearnDropDownMenu">
+					<div class="LearnDropContent" data-grade="11">
+						<a href="../GR11/01_Handout_2.pdf" download>
+							<p>The Cell Theory and Cell Classification</p>
+						</a>
+						<a href="../GR11/02_Handout_3.pdf" download>
+							<p>Cell Modification and Specialization</p>
+						</a>
+						<a href="../GR11/03_Handout_2.pdf" download>
+							<p>Plasma Membrane and Transport Mechanisms</p>
+						</a>
+						<a href="../GR11/04_Handout_2.pdf" download>
+							<p>Cellular Energy and Metabolism</p>
+						</a>
+						<a href="../GR11/05_Handout_3.pdf" download>
+							<p>The Organizational Chart of Matter</p>
+						</a>
+						<a href="../GR11/05_Handout_4.pdf" download>
+							<p>The Organizational Chart of Matter P2</p>
+						</a>
+						<a href="../GR11/06_Handout_2.pdf" download>
+							<p>The Four (4) Major Biological Molecules</p>
+						</a>
+						<a href="../GR11/07_Handout_23.pdf" download>
+							<p>The Cell Cycle, Mitosis, Meiosis</p>
+						</a>
+						<a href="../GR11/08_Handout_23.pdf" download>
+							<p>Basic Genetics and Mendelian Genetics</p>
+						</a>
+					</div>
+					<div class="LearnDropContent" data-grade="12">
+						<a href="../GR12/01_Handout_110.pdf" download>
+							<p>Introduction To Chemistry</p>
+						</a>
+						<a href="../GR12/02_Handout_1100.pdf" download>
+							<p>Measurements</p>
+						</a>
+						<a href="../GR12/03_Handout_182.pdf" download>
+							<p>Atoms, Molecules, and Ions</p>
+						</a>
+						<a href="../GR12/04_Handout_1113.pdf" download>
+							<p>Stoichiometry</p>
+						</a>
+						<a href="../GR12/05_Handout_15.pdf" download>
+							<p>The Organizational Chart of Matter</p>
+						</a>
+						<a href="../GR12/06_Handout_13-2.pdf" download>
+							<p>Gas Laws</p>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="nav-right">
+				<img class="search-btn" src="search.png" alt="Search" class="search-icon"
+					onclick="event.stopPropagation(); openSearch()">
+
+				<button class="User-Icon" onclick="event.stopPropagation(); openDrop()"></button>
+				<!--to be changed-->
+				<div class="DropDown" id="DropDownMenu">
+					<a href="Collection.html" class="droplink" target="_self" onclick="alertabi()">
+						Profile
+					</a>
+					<p onclick="event.stopPropagation(); SignouT()">
+						Sign Out
+					</p>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!--Class names are to be changed/current placeholders-->
+	<!--Main Content-->
+	<div id="BILATNAMO">
+
+		<div id="ContentWrapper">
+
+			<div class="Columnseparator">
+				<button id="BackButton" onclick="window.location.href='UserCompleteTab.html'">BACK TO HOME</button>
+				<div class="HandoutContent" data-grade="11">
+					<div class="RowseparatorTop" data-grade="11" data-button="1">
+						<div class="CollectionIMGS"></div>
+						<div class="TextTohMen">
+							<p>HANDOUT 1</p>
+						</div>
+					</div>
+
+
+				</div>
+				<div class="Container" data-grade="11">
+					<div class="download-box">
+						<p>
+							Before you start your journey, Do you want to download your handout?
+							<a href="../GR11/01_Handout_2.pdf">Download Here.</a>
+						</p>
+					</div>
+
+					<!-- Section Box -->
+					<div class="section">
+						<div class="section-header">
+							What is the Cell Theory?
+						</div>
+						<div class="section-content">
+							<p>It is postulated by Schleiden, Schwann, and Virchow</p>
+							<p>It is composed by (3) tenets:</p>
+
+							<ol>
+								<li>All organisms are made of cells.</li>
+								<li>Cells are the basic unit of structure and function.</li>
+								<li>Cells come from pre-existing cells.</li>
+							</ol>
+						</div>
+
+						<div class="speech-container">
+
+							<div class="speech-bubble">
+								<p>Schleiden, Schwann, and Virchow are the three<br>
+									scientists who developed the Cell Theory.</p>
+
+								<p>
+									Matthias Schleiden → <a
+										href="https://www.britannica.com/biography/Matthias-Schleiden">more info</a><br>
+									Theodor Schwann → <a
+										href="https://www.britannica.com/biography/Theodor-Schwann">more info</a><br>
+									Rudolf Virchow → <a href="https://www.britannica.com/biography/Rudolf-Virchow">more
+										info</a>
+								</p>
+							</div>
+
+							<div class="speech-avatar"></div>
+						</div>
+
+						<!-- NEXT CONTENT SECTION -->
+						<div class="section">
+							<div class="section-header">
+								All Cells Share 4 Essential Structures
+							</div>
+
+							<div class="section-content">
+								<ol>
+									<li>Cell Membrane (Plasma Membrane)</li>
+									<li>Cytoplasm</li>
+									<li>DNA (Genetic Material)</li>
+									<li>Ribosomes</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div class="container">
+
+						<!--Card 2-->
+						<div class="info-card">
+							<div class="left-block">
+								<div class="placeholder"></div>
+								<h3>What is a Cell Membrane?</h3>
+
+								<ul>
+									<li>It is a thin, flexible boundary that surrounds the cell.</li>
+									<li>Helps maintain homeostasis (stable conditions inside the cell).</li>
+								</ul>
+
+								<a
+									href="https://www.khanacademy.org/science/biology/membranes-and-transport/cell-membrane/a/cell-membrane-article">Click
+									this link for more info</a>
+							</div>
+
+							<img src="1.png" class="right-img">
+						</div>
+
+
+
+						<!--Card 2-->
+
+						<div class="info-card">
+							<div class="left-block">
+								<div class="placeholder"></div>
+								<h3>What is a Cytoplasm?</h3>
+
+								<ul>
+									<li>A gel-like fluid inside the cell.</li>
+									<li>Allows transport of materials within the cell.</li>
+								</ul>
+
+								<a href="https://www.britannica.com/science/cytoplasm">Click this link for more info</a>
+							</div>
+
+							<img src="2.png" class="right-img">
+						</div>
+
+
+						<!--Card 3-->
+
+						<div class="info-card">
+							<div class="left-block">
+								<div class="placeholder"></div>
+
+								<h3>What is a DNA ?</h3>
+
+								<ul>
+									<li>A long molecule that contains all the instructions for cell Function.</li>
+								</ul>
+
+								<p>DNA acts as the "manual" for building and running the cell. Without DNA, a cell would
+									have no
+									blueprint for survival.</p>
+
+								<a href="https://www.genome.gov/genetics-glossary/Deoxyribonucleic-Acid">Click this link
+									for more info</a>
+							</div>
+
+							<img src="3.png" class="right-img">
+						</div>
+
+
+
+
+
+
+						<!-- Ribosomes Card -->
+						<div class="info-card">
+							<div class="left">
+								<div class="placeholder"></div>
+
+								<div class="text">
+									<h3>What are Ribosomes ?</h3>
+
+									<ul>
+										<li>Build proteins from amino acids and read genetic instructions from DNA.</li>
+									</ul>
+
+									<p>Without ribosomes, the cell cannot grow, repair, or Function.</p>
+
+									<a
+										href="https://www.khanacademy.org/science/biology/structure-of-a-cell/cell-organelles/a/ribosomes">Click
+										this link for more info</a>
+								</div>
+							</div>
+
+							<img src="4.png" class="right-img">
+						</div>
+
+
+						<!-- Prokaryotic Cells Card (NO right image, has title bar) -->
+						<div class="big-card">
+							<div class="title-bar">
+								What are Prokaryotic Cells ?
+							</div>
+
+							<div class="inner-text">
+								<ul>
+									<li>It doesn’t have a nucleus.</li>
+									<li>Found in Bacteria and Archaea.</li>
+									<li>Earliest and most primitive cells</li>
+									<li>Size varies from 0.1–5 μm (with few exceptions)</li>
+								</ul>
+
+								<a
+									href="https://www.khanacademy.org/science/biology/structure-of-a-cell/prokaryotic-cells/a/prokaryotic-cells">Click
+									this link for more info</a>
+							</div>
+						</div>
+
+
+						<!-- Video Bubble -->
+						<div class="video-bubble">
+							<div class="triangle"></div>
+							<p>Watch the video to learn about Eukaryotic Cells</p>
+							<a
+								href="https://www.khanacademy.org/science/biology/structure-of-a-cell/eukaryotic-cells/v/eukaryotic-cells">Click
+								this link to watch</a>
+						</div>
+
+
+						<!-- Ending Placeholder Box -->
+						<div class="ending-placeholder">
+							<div class="placeholder"></div>
+						</div>
+						<div class="membrane-container">
+							<div class="membrane-title">Structures Embedded in Cell Membrane</div>
+
+							<ul class="membrane-list">
+								<li><span>Transport Proteins</span> - Create passageways for ions and non-polar
+									molecules to
+									pass freely through the cell membrane.</li>
+
+								<li><span>Channel Proteins</span> - Form tunnels for the import and export of materials
+									and
+									wastes.</li>
+
+								<li><span>Cell Recognition Proteins</span> - Enable cells to distinguish own cells from
+									that
+									of other organisms.</li>
+
+								<li><span>Junction Proteins</span> - Assist in cell-to-cell adhesion and communication
+									between cells.</li>
+
+								<li><span>Receptor Proteins</span> - Facilitate exchange of signals between cells by
+									changing its shape to allow specific molecules (ligands) to bind to it.</li>
+
+								<li><span>Enzymatic Proteins</span> - Participate in metabolic reactions such as
+									degradations and synthesis to sustain life in the cell.</li>
+
+								<li><span>Carbohydrate Chains</span> - Serve as identification tags for the cell
+									recognition
+									proteins.</li>
+
+								<li><span>Cholesterol</span> - Strengthens the cell membrane by making it more flexible
+									but
+									less fluid. It also makes the membrane less permeable to water-soluble substances.
+								</li>
+							</ul>
+						</div>
+
+						<div class="section-container">
+
+							<!-- Title Bar -->
+							<div class="section-title">
+								Manufacturing, Storing, Distributing, and Breakdown Organelles
+							</div>
+
+							<div class="section-content">
+
+								<p><strong>Endoplasmic Reticulum (ER)</strong></p>
+
+								<ul>
+									<li>An extensive folded membrane that occupies a large space in the cytoplasm.</li>
+								</ul>
+
+								<a href="https://www.britannica.com/science/endoplasmic-reticulum"
+									class="info-link">Click this link for more info</a>
+
+								<p><strong>Rough ER (RER)</strong></p>
+
+								<p>The region closest to the nucleus where cisternae are flattened sacs and are studded
+									with
+									ribosomes, giving it a rough appearance when viewed from the microscope.</p>
+
+								<a href="https://www.britannica.com/science/rough-endoplasmic-reticulum"
+									class="info-link">Click this link for more info</a>
+
+								<p><strong>Smooth ER (SER)</strong></p>
+
+								<p>The smooth ER is crucial for making lipids, phospholipids for cell membranes, and
+									steroid
+									hormones.</p>
+
+								<a href="https://www.britannica.com/science/smooth-endoplasmic-reticulum"
+									class="info-link">Click this link for more info</a>
+
+							</div>
+
+						</div>
+
+
+						<!-- Second block -->
+						<div class="section-container">
+
+							<div class="section-title">What are Plastids?</div>
+
+							<div class="section-content">
+
+								<img src="5.png" class="section-image">
+
+								<p>Plastids are tiny structures in plant cells that each have a job.</p>
+
+								<p><span class="highlight">Chloroplasts</span> – the green ones that make food using
+									sunlight.</p>
+
+								<p><span class="highlight">Chromoplasts</span> – the colorful ones that give fruits and
+									flowers their red, yellow, or orange pigments.</p>
+
+								<p><span class="highlight">Leucoplasts</span> – the plain ones that store things like
+									starch, oils, or proteins.</p>
+
+								<a href="https://www.britannica.com/science/plastid" class="info-link">Click this link
+									for more info</a>
+
+							</div>
+						</div>
+
+
+						<!-- Third block -->
+						<div class="section-container">
+
+							<div class="section-title">Cell Surface and Junctions</div>
+
+							<div class="section-content">
+
+								<img src="6.png" class="section-image">
+
+								<ul>
+									<li><strong>Tight Junctions:</strong> Seal cells together into leak-proof sheets,
+										preventing unwanted fluid movement.</li>
+
+									<li><strong>Adhesion Junctions:</strong> Anchor neighboring cells (or cells to the
+										matrix) with strong cytoskeletal “screws,” allowing sturdy but slightly spaced
+										connections.</li>
+
+									<li><strong>Gap Junctions:</strong> Create protein channels between cells so they
+										can
+										directly share ions and nutrients.</li>
+								</ul>
+
+								<a href="https://www.khanacademy.org/science/biology/cellular-molecular-biology/cell-junctions/a/cell-junctions"
+									class="info-link">Click this link for more info</a>
+
+							</div>
+						</div>
+
+						<div class="quote-row">
+							<div class="avatar-box"></div>
+							<div class="quote-bubble">
+								“Study on, for each page thou read’st brings thee nigher to thy destiny.”
+							</div>
+						</div>
+
+						<div class="quote-row">
+							<div class="avatar-box"></div>
+							<div class="quote-bubble">
+								“Before thou takest the quiz, be sure to read well thy handouts.”
+							</div>
+						</div>
+
+						<!--Dapat sa end to-->
+						<button class="QuizButton" data-grade="11" data-index="0" data-file="QuizTime.html">Proceed to
+							Quiz</button>
+					</div>
+
+				</div>
+				<div class="HandoutContent" data-grade="12" data-button="1">
+					<div class="RowseparatorTop" data-grade="12" data-button="1">
+						<div class="CollectionIMGS"></div>
+						<div class="TextTohMen">
+							<p>HANDOUT 1</p>
+						</div>
+					</div>
+				</div>
+				<div class="Container" data-grade="12">
+					<div class="download-box">
+						<p>
+							Before you start your journey, Do you want to download your handout?
+							<a href="../GR12/01_Handout_110.pdf">Download Here.</a>
+						</p>
+					</div>
+
+					<!-- Section Box -->
+					<div class="section">
+						<div class="section-header">
+							What is Matter?
+						</div>
+						<div class="section-content">
+							<p>Matter is defined as anything that has mass and occupies space.</p>
+							<p>The particulate nature of matter is summarized by four points:</p>
+
+							<ol>
+								<li>Matter is made of tiny particles.</li>
+								<li>There is empty space between the particles.</li>
+								<li>Some forces act between the particles.</li>
+								<li>The particles are in constant motion.</li>
+							</ol>
+						</div>
+
+						<div class="speech-container">
+
+							<div class="speech-bubble">
+								<p>Chemistry is often called the "central science" because its principles are
+									integral to a wide range of STEM fields.</p>
+
+								<p>
+									Antoine Lavoisier → <a href="https://en.wikipedia.org/wiki/Antoine_Lavoisier">more
+										info</a><br>
+									Dmitri Mendeleev → <a href="https://en.wikipedia.org/wiki/Dmitri_Mendeleev">more
+										info</a><br>
+									John Dalton → <a href="https://en.wikipedia.org/wiki/John_Dalton">more info</a>
+								</p>
+							</div>
+
+							<div class="speech-avatar"></div>
+						</div>
+
+						<!-- NEXT CONTENT SECTION -->
+						<div class="section">
+							<div class="section-header">
+								Four Common States of Matter
+							</div>
+
+							<div class="section-content">
+								<ol>
+									<li>Solid.</li>
+									<li>Liquid.</li>
+									<li>Gas.</li>
+									<li>Plasma.</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div class="container">
+
+						<!--Card 2-->
+						<div class="info-card">
+							<div class="left-block">
+								<div class="placeholder"></div>
+								<h3>What is a Solid?</h3>
+
+								<ul>
+									<li>Relatively rigid.</li>
+									<li>Has definite volume and shape.</li>
+									<li>Atoms are attached to each other.</li>
+								</ul>
+
+								<a href="https://www.chemistrylearner.com/solid.html">Click this link for more info</a>
+							</div>
+
+						</div>
+
+
+
+						<!--Card 2-->
+
+						<div class="info-card">
+							<div class="left-block">
+								<div class="placeholder"></div>
+								<h3>What is a Liquid?</h3>
+
+								<ul>
+									<li>Fluid flows freely.</li>
+									<li>Takes the shape of the container.</li>
+									<li>Has fixed volume.</li>
+								</ul>
+
+								<a href="https://www.chemistrylearner.com/liquid.html">Click this link for more info</a>
+							</div>
+
+						</div>
+
+
+						<!--Card 3-->
+
+						<div class="info-card">
+							<div class="left-block">
+								<div class="placeholder"></div>
+
+								<h3>What is a Gas?</h3>
+
+								<ul>
+									<li>Gases are a form of matter, demonstrated by how a balloon expands when filled
+										with gas.</li>
+								</ul>
+
+								<a href="https://www.chemistrylearner.com/gas.html">Click this link for more info</a>
+							</div>
+
+						</div>
+
+						<!--Next Section-->
+						<div class="info-card">
+							<div class="left">
+								<div class="placeholder"></div>
+
+								<div class="text">
+									<h3>What is Plasma?</h3>
+
+									<ul>
+										<li>It is an ionized gas.</li>
+										<li>It has free electrons, allowing it to conduct electricity and respond to
+											magnetic fields.</li>
+									</ul>
+
+									<p>Plasma can be found in stars, lightning, neon lights, and plasma TVs.</p>
+
+									<a href="https://www.thoughtco.com/definition-of-plasma-605524">Click this link for more info</a>
+								</div>
+							</div>
+
+						</div>
+
+
+						<!-- Prokaryotic Cells Card (NO right image, has title bar) -->
+						<div class="big-card">
+							<div class="title-bar">
+								Extensive vs. Intensive Properties
+							</div>
+
+							<div class="inner-text">
+								<ul>
+									<li>Extensive Properties: Rely on the quantity of matter in a sample (e.g.,
+										Mass, Volume, Length).</li>
+									<li>Intensive Properties: Do not depend on the system's size or the amount of
+										material present (e.g., Density, Boiling Point, Temperature).</li>
+								</ul>
+
+								<a href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Properties_of_Matter/Intensive_and_Extensive_Properties">Click this link for more info</a>
+							</div>
+						</div>
+
+
+						<!-- Video Bubble -->
+						<div class="video-bubble">
+							<div class="triangle"></div>
+							<p>Watch the video to learn about the difference between Elements and Compounds </p>
+							<a href="https://www.khanacademy.org/science/chemistry/atomic-structure-and-properties">Click this link to watch</a>
+						</div>
+
+
+						<!-- Ending Placeholder Box -->
+						<div class="ending-placeholder">
+							<div class="placeholder"></div>
+						</div>
+						<div class="membrane-container">
+							<div class="membrane-title">Chemical Properties of Matter</div>
+
+							<ul class="membrane-list">
+								<li><span>Reactivity</span> - The capacity of matter to interact with other substances
+									chemically.</li>
+								<li><span>Flammability</span> - The tendency of matter to ignite or burn.</li>
+								<li><span>Toxicity</span> - The measure of potential harm a chemical substance can cause
+									to a living organism.</li>
+								<li><span>Acidity</span> - The capacity of a substance to interact with an acid.</li>
+							</ul>
+						</div>
+
+						<div class="section-container">
+
+							<!-- Title Bar -->
+							<div class="section-title">
+								Classification of Matter
+							</div>
+
+							<div class="section-content">
+
+								<p>Matter can be categorized based on its chemical composition.</p>
+
+								<p><strong>Pure Substance</strong></p>
+
+								<ul>
+									<li>Made up of only one kind of particle and has a fixed structure.</li>
+								</ul>
+
+								<a href="https://chem.libretexts.org/Bookshelves/General_Chemistry/Book%3A_Chem1_(Lower)/03%3A_Chemical_Foundations/3.06%3A_Pure_Substances_and_Mixtures" class="info-link">Click this link for more info</a>
+
+								<p><strong>Element</strong></p>
+
+								<p>Pure substances that consist of only one type of atom. They cannot be
+									broken down into simpler substances by ordinary chemical processes.</p>
+
+								<a href="https://www.chemicool.com/elements/" class="info-link">Click this link for more info</a>
+
+								<p><strong>Compound</strong></p>
+
+								<p>Pure substances of several different atoms in a fixed composition ratio.
+									Can be separated into definite proportions through a chemical process.
+								</p>
+
+								<a href="https://chem.libretexts.org/Bookshelves/General_Chemistry/Book%3A_Chem1_(Lower)/03%3A_Chemical_Foundations/3.05%3A_Compounds" class="info-link">Click this link for more info</a>
+
+							</div>
+
+						</div>
+
+
+						<!-- Second block -->
+						<div class="section-container">
+
+							<div class="section-title">Mixtures</div>
+
+							<div class="section-content">
+
+								<p>Mixtures can be separated into two or more substances by physical means.
+								</p>
+
+								<p><span class="highlight">Homogeneous Mixture (Solution)</span> – has only one phase,
+									and components are undistinguishable by sight or texture (e.g., coffee drink).</p>
+
+								<p><span class="highlight">Heterogeneous Mixture</span> – has physically separate parts
+									that can be distinguished easily (e.g., fruit salad, salt and pepper).</p>
+
+								<a href="https://www.chemistryexplained.com/elements/C-K/Mixtures.html" class="info-link">Click this link for more info</a>
+
+							</div>
+						</div>
+
+
+						<!-- Third block -->
+						<div class="section-container">
+
+							<div class="section-title">Common Separation Methods</div>
+
+							<div class="section-content">
+
+
+								<ul>
+									<li>Evaporation: Heats a solution to vaporize the solvent, leaving the solid
+										residue.</li>
+									<li>Distillation: Vaporizes, condenses, and separates mixtures with two or more
+										liquid components based on volatility.</li>
+									<li>Filtration: Extracts solid particles from a liquid using a filtering
+										medium.</li>
+									<li>Magnetic Separation: Powerful magnets isolate magnetic components in a
+										mixture.</li>
+								</ul>
+
+								<a href="https://www.chemistryexplained.com/elements/C-K/Separation-Techniques.html" class="info-link">Click this link for more info</a>
+
+							</div>
+						</div>
+
+						<div class="quote-row">
+							<div class="avatar-box"></div>
+							<div class="quote-bubble">
+								“Study on, for each page thou read’st brings thee nigher to thy destiny.”
+							</div>
+						</div>
+
+						<div class="quote-row">
+							<div class="avatar-box"></div>
+							<div class="quote-bubble">
+								“Before thou takest the quiz, be sure to read well thy handouts.”
+							</div>
+						</div>
+
+						<!--Dapat sa end to-->
+						<button class="QuizButton" data-grade="12" data-index="0" data-file="QuizTime.html">Proceed to
+							Quiz</button>
+					</div>
+
+				</div>
+
+
+			</div>
+		</div> <!--End of ContentWrapper-->
+
+		<div class="YAWASideBar">
+			<div id="TopSection">
+				<div class="GreenSquare2">
+					<div class="ContentWrap">
+						<div class="WhiteSquare"></div>
+						<p class="greenUserName">username</p>
+						<textarea id="GreenNameInput" style="display:none;"></textarea>
+					</div>
+					<div class="StarContainer" data-grade="11">
+						<div class="RowseparatorTop">
+							<div class="Star" data-quiz-index="4"></div>
+							<div class="Star" data-quiz-index="8"></div>
+							<div class="Star" data-quiz-index="11"></div>
+						</div>
+					</div>
+					<div class="StarContainer" data-grade="12">
+						<div class="RowseparatorTop">
+							<div class="Star" data-quiz-index="4"></div>
+							<div class="Star" data-quiz-index="8"></div>
+						</div>
+					</div>
+					<div class="RowseparatorTop">
+						<p class="GSTEXT">Areas Explored:</p>
+						<p id="NumAreas"></p>
+					</div>
+					<div class="RowseparatorTop">
+						<p class="GSTEXT">Total Exp:</p>
+						<p id="NumEXP"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--End of Mainbody-->
+
+	<!-- Panel Popup -->
+	<div class="form-popup" id="myForm"></div>
+
+	<div class="search-popup" id="mysearch">
+		<div class="search-outline">
+			<form action="#" class="search-container">
+				<input type="text" placeholder="Search" name="search" id="searchtab" oninput="searchitems()">
+
+				<button type="button" id="btnsearchcancel" class="btn cancel" onclick="closeSearch()">Close</button>
+				<!--change into X in future-->
+			</form>
+		</div>
+		<div id="results"></div>
+	</div>
+
+	<script>
+		function searchitems() {
+			const searchValue = document.getElementById("searchtab").value.toLowerCase().trim();
+			const results = document.getElementById("results");
+			const items = document.querySelectorAll(".Container");
+
+			results.innerHTML = ""; // clear previous results
+
+			if (searchValue === "") return;
+			const regex = new RegExp(`\\b${searchValue}\\b`, "i");
+
+			items.forEach(item => {
+				const text = item.textContent.toLowerCase();
+				if (regex.test(text)) {
+					const clone = item.cloneNode(true);
+					results.appendChild(clone);
+				}
+			});
+		}
+	</script>
+	<script type="module" defer>
+		// =================== Main Page User Display Handler ===================
+
+		import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+		import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+		import { getStorage, ref as storageRef, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-storage.js";
+
+		const auth = getAuth();
+		const db = getFirestore();
+		const storage = getStorage();
+
+
+		window.addEventListener('DOMContentLoaded', () => {
+
+			// Elements on the main page
+			const MainPageName = document.querySelector('.greenUserName');
+			const MainPageIcon = document.querySelector('.WhiteSquare');
+			const MaisotIcon = document.querySelector('.User-Icon');
+
+			// Get current UID from localStorage (saved by profile page after login)
+			const uid = localStorage.getItem('currentUID');
+			if (!uid) return; // user not logged in
+
+			//Try localStorage first for instant display
+			const savedName = localStorage.getItem(`userName_${uid}`);
+			const savedIcon = localStorage.getItem(`UIuserBG_${uid}`);
+
+			if (MainPageName && savedName) MainPageName.textContent = savedName;
+			if (MainPageIcon && savedIcon) {
+				MainPageIcon.style.backgroundImage = `url(${savedIcon})`;
+				MainPageIcon.style.backgroundSize = 'cover';
+				MainPageIcon.style.backgroundPosition = 'center';
+			}
+
+			if (MaisotIcon && savedIcon) {
+				MaisotIcon.style.backgroundImage = `url(${savedIcon})`;
+				MaisotIcon.style.backgroundSize = 'cover';
+				MaisotIcon.style.backgroundPosition = 'center';
+			}
+
+			//Fetch from Firestore to make sure it's up to date
+			onAuthStateChanged(auth, async (user) => {
+				if (!user) return;
+
+				const userDocRef = doc(db, 'users', uid);
+				const docSnap = await getDoc(userDocRef);
+
+				if (docSnap.exists()) {
+					const data = docSnap.data();
+
+					// Update username
+					if (data.userName) {
+						if (MainPageName) MainPageName.textContent = data.userName;
+						localStorage.setItem(`userName_${uid}`, data.userName);
+					}
+
+					// Update icon
+					if (data.UIuserBG) {
+						if (MainPageIcon) {
+							MainPageIcon.style.backgroundImage = `url(${data.UIuserBG})`;
+							MainPageIcon.style.backgroundSize = 'cover';
+							MainPageIcon.style.backgroundPosition = 'center';
+						}
+						localStorage.setItem(`UIuserBG_${uid}`, data.UIuserBG);
+					}
+
+					if (data.UIuserBG) {
+						if (MaisotIcon) {
+							MaisotIcon.style.backgroundImage = `url(${data.UIuserBG})`;
+							MaisotIcon.style.backgroundSize = 'cover';
+							MaisotIcon.style.backgroundPosition = 'center';
+						}
+						localStorage.setItem(`UIuserBG_${uid}`, data.UIuserBG);
+					}
+				}
+				showGradeContent(uid);
+
+			});
+		});
+
+		async function showGradeContent(userId) {
+			const userRef = doc(db, "users", userId);
+
+			try {
+				const userSnap = await getDoc(userRef);
+
+				if (userSnap.exists()) {
+					const userData = userSnap.data();
+					const grade = userData.grade;
+
+					console.log("User grade from Firestore:", grade);
+
+					const items = document.querySelectorAll(".grayitem");
+					items.forEach((item, index) => {
+						const itemGrade = item.getAttribute("data-grade");
+						if ((grade === "STEM 11" && itemGrade === "11") || (grade === "STEM 12" && itemGrade === "12")) {
+							item.style.display = "block"; // show first
+							setTimeout(() => {
+								item.classList.add("active"); // then animate
+							}, index * 25); // 100ms stagger per item
+						} else {
+							item.classList.remove("active");
+							item.style.display = "none";
+						}
+					});
+
+				} else {
+					console.log("No such user!");
+				}
+			} catch (error) {
+				console.error("Error fetching user grade:", error);
+			} finally {
+				overlay.classList.remove("active"); // hide loader
+			}
+		}
+
+		//handle quiz iya ah hahahha
+		// Select all grayitem elements
+		const graydivs = document.querySelectorAll('.grayitem');
+
+		// Get current UID
+		const uid = localStorage.getItem('currentUID');
+		if (!uid) {
+			console.log("No user logged in");
+		}
+
+		graydivs.forEach((div, index) => {
+			div.addEventListener('click', async () => {
+				const clickedData = {
+					text: div.textContent,
+					index: index,
+					grade: div.dataset.grade,
+					timestamp: new Date().toISOString()
+				};
+
+				try {
+					// Save under the current user's document
+					await setDoc(doc(db, "quizSelections", uid), clickedData);
+					console.log("Saved to Firebase:", clickedData);
+					window.location.href = "QuizTime.html";
+				} catch (error) {
+					console.error("Error saving selection:", error);
+				}
+			});
+		});
+
+	</script>
+	<script type="module" src="UserCompleteExtended.js" defer></script>
+	<div id="dimOverlay">
+		<div class="loader"></div>
+	</div>
+
+	<script type="module" src="GHANDOUTS.js" defer>
+
+	</script>
+</body>
+
+</html>

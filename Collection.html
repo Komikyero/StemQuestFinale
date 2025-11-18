@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>STEMQuest</title> <!--change title later-->
+	<link rel="stylesheet" href="Collection.css" />
+	<script src="UserCompleteTab.js" defer></script>
+</head>
+
+<body>
+	<script type="module" src="login.js" defer></script>
+	<div id="MainBody">
+		<nav class="navbar">
+			<div class="nav-left">
+				<h1 class="stemquest" onclick="gobacktohome()" style="cursor: pointer;">STEMQUEST</h1>
+				<p onclick="window.location.href='UserCompleteTab.html'" class="nav-link" style="cursor: pointer;">Home
+				</p>
+			</div>
+
+			<div class="nav-right">
+				<p class="search-btn" src="#" class="search-icon"
+					onclick="event.stopPropagation(); openSearch()"></p>
+
+				<button class="User-Icon" onclick="event.stopPropagation(); openDrop()"></button>
+				<!--to be changed-->
+			</div>
+		</nav>
+	</div>
+	<!--Class names are to be changed/current placeholders-->
+	<!--Main Content-->
+
+	<div id="ContentWrapper">
+		<div class="GreenSquareBG">
+			<div class="GreenSquare1">
+
+				<div class="collection-layout">
+
+					<!-- LEFT SIDE: Character Preview + Info -->
+					<div class="character-left">
+						<div class="character-preview"></div>
+
+						<p class="character-info-title" id="charName">Character Information:</p>
+						<div class="character-info-box">
+							<p id="charDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+								ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+								reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+								sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+								est laborum.</p>
+						</div>
+					</div>
+
+					<!-- RIGHT SIDE: Character Grid -->
+					<div class="character-grid">
+						<div class="char-card"></div>
+						<div class="char-card"></div>
+						<div class="char-card"></div>
+						<div class="char-card"></div>
+						<div class="char-card"></div>
+						<div class="char-card"></div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div> <!--End of ContentWrapper-->
+
+	<div id="ContentWrapper">
+		<div id="ContentWrapper2">
+
+
+		</div>
+	</div> <!--End of ContentWrapper-->
+	<div class="UserGeneratedSquares"></div>
+
+	<div class="grayitem">Aeon</div>
+	<div class="grayitem">Manuel</div>
+	<div class="grayitem">Kristina</div> <!--place holder divs-->
+
+	<!--End of Mainbody-->
+
+	<!-- Panel Popup -->
+	<div class="form-popup" id="myForm"></div>
+
+	<div class="search-popup" id="mysearch">
+		<div class="search-outline">
+			<form action="#" class="search-container">
+				<input type="text" placeholder="Search" name="search" id="searchtab" oninput="searchitems()">
+
+				<button type="button" id="btnsearchcancel" class="btn cancel" onclick="closeSearch()">Close</button>
+				<!--change into X in future-->
+			</form>
+		</div>
+		<div id="results"></div>
+	</div>
+	<div class="LearnDropDown" id="LearnDropDownMenu">
+						<p>The Cell Theory</p>
+						<p>Cell Modification and Specialization</p>
+						<p>Phasma Membrane and Transport Mechanisms</p>
+						<p>Cellular Energy and Metabolism</p>
+						<p>The Organizational Chart of Matter</p>
+						<p>The Four (4) Major Biological Molecules</p>
+						<p>The Cell Cycle</p>
+						<p>Basic Genetics</p>
+				</div>
+	<div class="DropDown" id="DropDownMenu">
+		<a href="Collection.html" class="droplink" target="_self" onclick="alertabi()">
+			Profile
+		</a>
+		<p onclick="event.stopPropagation(); SignouT()">
+			Sign Out
+		</p>
+	</div>
+
+	<script type="module" src="profile.js" defer></script>
+	<script>
+		function searchitems() {
+			const searchValue = document.getElementById("searchtab").value.toLowerCase().trim();
+			const results = document.getElementById("results");
+			const items = document.querySelectorAll("#Content-Body .grayitem");
+
+			results.innerHTML = ""; // clear previous results
+
+			items.forEach(item => {
+				const text = item.textContent.toLowerCase();
+				if (text.includes(searchValue) && searchValue !== "") {
+					const clone = item.cloneNode(true);
+					results.appendChild(clone);
+				}
+			});
+		}
+
+		function Editpopup() {
+			document.getElementById("Editform").style.display = "block";
+			document.getElementById("Editform").style.opacity = "1";
+			showOverlay();
+		}
+
+		function SaveThisShit() {
+			document.getElementById("Editform").style.display = "none";
+			document.getElementById("Editform").style.opacity = "0";
+			hideOverlay();
+
+			const savedBG = localStorage.getItem('userBG');
+			if (savedBG) {
+				document.querySelector('.GreenSquare1 .userbackground').style.backgroundImage = `url(${savedBG})`;
+			}
+			const UIsavedBG = localStorage.getItem('UIuserBG');
+			if (UIsavedBG) {
+				document.querySelector('.GreenSquare1 .UIcircle').style.backgroundImage = `url(${UIsavedBG})`;
+			}
+		}
+
+		//kat para sa character icons meigg
+
+		// --- SELECT ELEMENTS ---
+const MgaTawo = document.querySelectorAll(".char-card");
+const preview = document.querySelector(".character-preview");
+
+// elements for name + description
+const nameBox = document.getElementById("charName");
+const descBox = document.getElementById("charDescription");
+
+const characters = [
+    {
+        img: "catver2jpg.jpg",
+        name: "Kai Ballon ",
+        desc: "A once peaceful kitten who was under the care of a once humble farmer, now roams the vast lands in pursuit for power and knowledge. Wielding nunchucks that was gifted by his master to fend off pests are now used to cause chaos and destruction wherever it sees fit and punishes those who deserve it. Kai's Master also taught him how to use magic to enchant his nunchucks and was only taught fireball because the Master foresaw that magic will be dangerous in Kai's hands. Kai, despite limited to nunchucks and a fireball spell, honed it to perfection.<br><br>Kai Ballon roams not only for power and knowledge but also to look for his long standing rival, The Witch. On par with Kai's magic, it is also knowledgeable and full of wisdom.",
+    }, 
+    {
+        img: "elfver2.jpg",
+        name: "Frans the Summoner",
+        desc: "Frans was born with immense Mana. In fact, Frans wasn’t even expected to be a summoner. Their magical journey began one fateful night after accidentally reading a Summoning Tome instead of “Soup Recipes” Too broke to return it and too curious to ignore it, Frans gave it a go and accidentally summoned a huge pink Snake with wings which damaged the village's crops and caused quite a rampage. Thus the reason why she got kicked out from the village and 3 Kingdoms, Then she began a career in summoning and travelled… mostly things that didn’t listen, didn’t help, and occasionally exploded.<br><br>Now, Frans joined alongside Kai the magic cat, Raul the Farmer and Trisha the Witch. Finally, after some travelling and chaos along her way she finally gets to be in a party that doesn't find her summoning a curse but rather a blessing in disguise."
+    },
+    {
+        img: "faever2.jpg",
+        name: "Ianah",
+        desc: "Ianah was born from the soft shimmer of dawnlight on dew—one of the rare fae whose spirit was tied not to a single grove, but to the wandering paths between realms. Raised among the Briar-Glow Court, a secret faerie enclave hidden beneath thorned vines that bloomed with their own inner light, Ianah always felt a pull beyond its borders. While other fae honed their tricks or tended the ancient magic of the court, she spent her time listening to the whispers of the wind, which carried stories from far beyond the brambles.<br><br> Gifted with an affinity for guiding lost travelers—whether spirit, creature, or mortal—Ianah became known as a gentle but unpredictable presence along forgotten forest paths."
+    },
+    {
+        img: "farmerver2.jpg",
+        name: "Raul the Farmer",
+        desc: "Before he became a “farmer,” Raul was actually banned from five different villages for “agricultural misconduct.” What does that mean? He once replaced a witch’s potion ingredients with chili powder (the explosion could be seen from space), and he taught a stray cat how to use nunchucks “for pest control.” That same cat now causes chaos and is seeking revenge for that witch. <br><br>After all the chaos, Raul tried to “live a peaceful life” in the countryside… which lasted about three hours before he accidentally grew a talking potato that insults everyone it meets."
+	},
+	{
+        img: "villagerboyver2.jpg",
+        name: "JeVie'ry (JV)",
+        desc: "Once an ordinary schoolgirl, she walked a rain-soaked hallway, the lights stuttered, the wall rippled like oil—then hay, dust, and a rooster’s scream. She can’t explain the storm that tore her across worlds, only why she stays: the honesty of woodsmoke and iron, dawn bells over a river, and a town where people learn your name because you keep your word. Her phone glowed for two nights and died; she keeps it as a smooth, black talisman from a life she’s not running back to. <br><br>Here, she’s a quick-footed runner and sharp-eyed helper, turning modern instincts into an edge—counting fair, mapping by landmarks, boiling what others wouldn’t, catching lies in the numbers and trouble in the weather. No prophecy, no chosen one—just grit, kindness, and speed. When asked if she’ll ever go home, she tightens her laces, tucks the dead phone in her pocket, and smiles. In a world of iron and oaths, she’s already chosen hers."
+    },
+    {
+        img: "witchver2.jpg",
+        name: "Trisha",
+        desc: "Trisha was born under a blood moon, a sign of powerful magic. In her village, she was outcasted for being different—for even as a child, she could make flowers bloom with a touch and control weather with a whisper. Some admired her gift, but most feared it. Their fear turned to hate,<br> and soon, they cast her out. Alone and lost, Trisha wandered without knowing where to go. She knew her power was both a gift and a curse, yet she couldn’t help but hate herself for it—for this power had taken away her home and left her alone. But fate had other plans. While wandering, she met a group of people who accepted her for who she was. With them, Trisha found not just belonging—but a family bounded by destiny."
+    }
+];
+
+	//kat para sa icons meiggg
+
+// --- RESTORE SAVED CHARACTER ON PAGE LOAD ---
+const savedChar = localStorage.getItem("selectedCharacter");
+
+if (savedChar) {
+    const found = characters.find(c => c.img === savedChar);
+    preview.style.backgroundImage = `url(${savedChar})`;
+
+    if (found) {
+        nameBox.textContent = found.name;
+        descBox.innerHTML = found.desc;
+    }
+}
+
+// --- SET IMAGES + CLICK EVENTS ---
+MgaTawo.forEach((card, index) => {
+    const char = characters[index];
+
+    // Display icon image
+    card.style.backgroundImage = `url(${char.img})`;
+    card.style.backgroundSize = "cover";
+    card.style.backgroundPosition = "center";
+
+    // When clicked
+    card.addEventListener("click", () => {
+        console.log("Selected:", char.img);
+
+        // Update preview
+        preview.style.backgroundImage = `url(${char.img})`;
+        preview.style.backgroundSize = "cover";
+        preview.style.backgroundPosition = "center";
+
+        // Update name + description
+        nameBox.textContent = char.name;
+        descBox.innerHTML = char.desc;
+
+        // Save selected character
+        localStorage.setItem("selectedCharacter", char.img);
+    });
+});
+
+				// --- OPTIONAL: SAVE TO FIREBASE ---
+				/*
+				firebase.auth().onAuthStateChanged(user => {
+					if (user) {
+						firebase.database()
+							.ref("users/" + user.uid + "/character")
+							.set(chosenImage);
+					}
+				});
+				*/
+
+
+
+	</script>
+	<div id="dimOverlay"></div>
+
+	<script type="module" defer>
+		// =================== Main Page User Display Handler ===================
+
+		import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+		import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+		import { getStorage, ref as storageRef, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-storage.js";
+
+		const auth = getAuth();
+		const db = getFirestore();
+		const storage = getStorage();
+
+
+		window.addEventListener('DOMContentLoaded', () => {
+
+			// Elements on the main page
+			const MainPageIcon = document.querySelector('.User-Icon');
+
+			// Get current UID from localStorage (saved by profile page after login)
+			const uid = localStorage.getItem('currentUID');
+			if (!uid) return; // user not logged in
+
+			//Try localStorage first for instant display
+			const savedIcon = localStorage.getItem(`UIuserBG_${uid}`);
+
+			if (MainPageIcon && savedIcon) {
+				MainPageIcon.style.backgroundImage = `url(${savedIcon})`;
+				MainPageIcon.style.backgroundSize = 'cover';
+				MainPageIcon.style.backgroundPosition = 'center';
+			}
+
+			//Fetch from Firestore to make sure it's up to date
+			onAuthStateChanged(auth, async (user) => {
+				if (!user) return;
+
+				const userDocRef = doc(db, 'users', uid);
+				const docSnap = await getDoc(userDocRef);
+
+				if (docSnap.exists()) {
+					const data = docSnap.data();
+
+					// Update icon
+					if (data.UIuserBG) {
+						if (MainPageIcon) {
+							MainPageIcon.style.backgroundImage = `url(${data.UIuserBG})`;
+							MainPageIcon.style.backgroundSize = 'cover';
+							MainPageIcon.style.backgroundPosition = 'center';
+						}
+						localStorage.setItem(`UIuserBG_${uid}`, data.UIuserBG);
+					}
+				}
+				showGradeContent(uid);
+
+			});
+		});
+	</script>
+	<script type="module" src="UserCompleteExtended.js" defer></script>
+</body>
+
+</html>

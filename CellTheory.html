@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>STEMQuest</title> <!--change title later-->
+	<link rel="stylesheet" href="Collection.css" />
+	<script src="UserCompleteTab.js" defer></script>
+</head>
+
+<body>
+	<script type="module" src="login.js" defer></script>
+	<div id="MainBody">
+		<nav class="navbar">
+			<div class="nav-left">
+				<h1 class="stemquest" onclick="gobacktohome()" style="cursor: pointer;">STEMQUEST</h1>
+				<p onclick="event.stopPropagation(); LearnOpenDrop()" class="nav-link" style="cursor: pointer;">Learn
+				</p>
+			</div>
+
+			<div class="nav-right">
+				<img class="search-btn" src="search.png" alt="Search" class="search-icon"
+					onclick="event.stopPropagation(); openSearch()">
+
+				<button class="User-Icon" onclick="event.stopPropagation(); openDrop()"></button>
+				<!--to be changed-->
+			</div>
+		</nav>
+	</div>
+	<!--Class names are to be changed/current placeholders-->
+	<!--Main Content-->
+
+	<div id="ContentWrapper">
+		<div class="GreenSquareBG">
+			<div class="GreenSquare1">
+
+				<div class="collection-layout">
+
+					<!-- LEFT SIDE: Character Preview + Info -->
+					<div class="character-left">
+						<div class="character-preview"></div>
+
+						<p class="character-info-title" id="charName">Character Information:</p>
+						<div class="character-info-box">
+							<p id="charDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+								ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+								reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+								sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+								est laborum.</p>
+						</div>
+					</div>
+
+					<!-- RIGHT SIDE: Character Grid -->
+					<div class="character-grid">
+						<div class="char-card"></div>
+						<div class="char-card"></div>
+						<div class="char-card"></div>
+						<div class="char-card"></div>
+						<div class="char-card"></div>
+						<div class="char-card"></div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div> <!--End of ContentWrapper-->
+
+	<div id="ContentWrapper">
+		<div id="ContentWrapper2">
+
+
+		</div>
+	</div> <!--End of ContentWrapper-->
+	<div class="UserGeneratedSquares"></div>
+
+	<div class="grayitem">Aeon</div>
+	<div class="grayitem">Manuel</div>
+	<div class="grayitem">Kristina</div> <!--place holder divs-->
+
+	<!--End of Mainbody-->
+
+	<!-- Panel Popup -->
+	<div class="form-popup" id="myForm"></div>
+
+	<div class="search-popup" id="mysearch">
+		<div class="search-outline">
+			<form action="#" class="search-container">
+				<input type="text" placeholder="Search" name="search" id="searchtab" oninput="searchitems()">
+
+				<button type="button" id="btnsearchcancel" class="btn cancel" onclick="closeSearch()">Close</button>
+				<!--change into X in future-->
+			</form>
+		</div>
+		<div id="results"></div>
+	</div>
+	<div class="LearnDropDown" id="LearnDropDownMenu">
+						<p>The Cell Theory</p>
+						<p>Cell Modification and Specialization</p>
+						<p>Phasma Membrane and Transport Mechanisms</p>
+						<p>Cellular Energy and Metabolism</p>
+						<p>The Organizational Chart of Matter</p>
+						<p>The Four (4) Major Biological Molecules</p>
+						<p>The Cell Cycle</p>
+						<p>Basic Genetics</p>
+				</div>
+	<div class="DropDown" id="DropDownMenu">
+		<a href="Collection.html" class="droplink" target="_self" onclick="alertabi()">
+			Profile
+		</a>
+		<p onclick="event.stopPropagation(); SignouT()">
+			Sign Out
+		</p>
+	</div>
+</body>
+</html>

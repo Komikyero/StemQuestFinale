@@ -1,0 +1,684 @@
+/*Overlay*/
+#dimOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* translucent dark overlay */
+  z-index: 8;
+  /* below forms but above main content */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#dimOverlay.active {
+  display: block;
+  opacity: 1;
+}
+
+body {
+  background-color: #2C342C;
+  /*DO NOT CHANGE*/
+}
+
+html,
+body,
+#MainBody {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Magra;
+  src: url(Magra-Regular.ttf);
+}
+
+@font-face {
+  font-family: Magra-bold;
+  src: url(Magra-Bold.ttf);
+}
+
+@font-face {
+  font-family: Pixelify;
+  src: url(PixelifySans-VariableFont_wght.ttf);
+}
+
+.navbar {
+  background-color: #202722;
+  display: flex;
+  justify-content: space-between;
+  border: 0.18em solid #97B390;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 50%;
+  padding-inline: 10%;
+}
+
+.stemquest {
+  color: #FFF8EB;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Pixelify';
+}
+
+.nav-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-family: 'Pixelify';
+
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 50%;
+  padding-inline: 15%;
+}
+
+.search-btn {
+  transform: scale(0.7);
+  cursor: pointer;
+}
+
+.User-Icon {
+  background-color: white;
+  background-image: url("profile.png");
+  background-position: center;
+  /* center the image */
+  background-size: cover;
+  /* scale image to cover the circle */
+  background-repeat: no-repeat;
+  /* prevent tiling */
+
+  width: 12rem;
+  aspect-ratio: 1 / 1;
+  /* ensures square shape */
+  z-index: 3;
+  border-radius: 50%;
+  border-style: none;
+  cursor: pointer;
+}
+
+.GetStart-btn {
+  padding: 1.5rem 6rem;
+  /*widens the button (can't seem to make it wide)*/
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  cursor: pointer;
+
+  position: absolute;
+  bottom: 40px;
+  /* or 0 */
+  left: 50%;
+  transform: translateX(-50%);
+  /*center horizontally */
+  /*di aq marunong mag horizontal align...*/
+}
+
+/*for button designs...*/
+.GetStart-btn,
+.signup-btn {
+  background-color: #DFC543;
+  border: 0.25em solid #7E5E00;
+  border-radius: 1.9em;
+  color: #4C4128;
+  font-family: 'Pixelify';
+}
+
+/*sa pop up div eto*/
+#notmatchingg {
+  display: none;
+  font-family: 'Pixelify';
+  color: rgb(83, 83, 83);
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid lightgray;
+  z-index: 9;
+}
+
+.form-popup h1,
+.form-popup label {
+  text-align: center;
+  font-family: 'Pixelify';
+  color: rgb(83, 83, 83);
+}
+
+.form-container {
+  max-width: 18.75rem;
+  padding: 10px;
+  background-color: lightgray;
+}
+
+.form-container input[type=text],
+.form-container input[type=password] {
+  width: 93%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #FFFFFF;
+  border-radius: 5px;
+
+}
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+#showpass,
+#Loginszszszs {
+  margin: 5px 0 22px 0;
+}
+
+#message {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
+#mysearch * {
+  margin: 0;
+  /* reset margins inside search panel */
+}
+
+/* search pop up (right-side panel) */
+#mysearch {
+  display: block;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  overflow-y: none;
+  align-items: start;
+  background-color: #2C342C;
+  /*DO NOT CHANGE*/
+  border: 0.18em solid #97B390;
+
+  /* hidden (initial) transform + opacity for animation */
+  opacity: 0;
+  transform: translateX(100%);
+  /* position off-screen to the right */
+  pointer-events: none;
+  /* disable clicks when hidden */
+  transition: transform 0.38s ease, opacity 0.38s ease;
+}
+
+/* visible state show the panel */
+#mysearch.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* container inside */
+.search-container {
+  padding: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.search-container input[type=text] {
+  width: 80%;
+  padding: 12px;
+  border: none;
+  background: #f1f1f1;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.search-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 0;
+}
+
+.search-outline {
+  border: #FFFFFF;
+  border-style: solid;
+  border-bottom-width: 0.1rem;
+  border-left-style: none;
+  border-top-style: none;
+  border-right-style: none;
+
+}
+
+/*search items*/
+#results {
+  padding: 10px;
+  background-color: #2C342C;
+  /* Matches popup theme */
+  max-height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grayitem {
+  display: none;
+  opacity: 0;
+  transform: translateY(-1rem);
+  /* starts slightly above relative to font size */
+  background-color: #5E5E5E;
+  color: black;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.2s ease;
+  width: 15rem;
+  padding: 2%;
+  margin: 5%;
+  margin-left: 11%;
+}
+
+.grayitem.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  /* slides down */
+}
+
+
+.grayitem[data-grade="11"] {
+  background-color: blue;
+}
+
+.grayitem[data-grade="12"] {
+  background-color: yellow;
+}
+
+.grayitem:hover {
+  transform: scale(1.5);
+  /*ayuson gang naga*/
+}
+
+
+/*Drop down menu*/
+.LearnDropDown {
+  display: none;
+  position: absolute;
+  /* relative to navbar now */
+  width: 75%;
+  top: 100%;
+  /* directly below navbar */
+  background-color: #202722;
+  border: 0.0625rem solid #555;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+  z-index: 10000000;
+  /* above navbar */
+}
+
+.LearnDropDown label {
+  display: block;
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.LearnDropDown select {
+  background-color: #2C342C;
+  color: #fff;
+  border: 0.0625rem solid #555;
+  border-radius: 0.3125rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+
+.LearnDropDown select:hover {
+  border-color: #66ff99;
+}
+
+.LearnDropDown p {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.6rem;
+  font-family: 'Pixelify';
+  margin-top: 0.5rem;
+}
+
+.LearnDropDown p:hover {
+  color: #97B390;
+  cursor: pointer;
+}
+
+.DropDown {
+  display: none;
+  position: absolute;
+  top: 11.5%;
+  right: 10%;
+  background-color: #202722;
+  border: 0.0625rem solid #555;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+  padding: 0.625rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.DropDown label {
+  display: block;
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.DropDown select {
+  background-color: #2C342C;
+  color: #fff;
+  border: 0.0625rem solid #555;
+  border-radius: 0.3125rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+
+.DropDown select:hover {
+  border-color: #66ff99;
+}
+
+.DropDown p,
+.DropDown a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.6rem;
+  font-family: 'Pixelify';
+  margin-top: 0.3rem;
+}
+
+.DropDown p:hover,
+.DropDown a:hover {
+  color: #97B390;
+  cursor: pointer;
+}
+
+.droplink {
+
+  display: block;
+  /* make it behave like a paragraph */
+  color: inherit;
+  /* use the same text color */
+  text-decoration: none;
+  /* remove underline */
+  cursor: pointer;
+  /* shows pointer on hover */
+  /* add any other styles your p had */
+
+}
+
+/*Main content*/
+.GreenSquare1 {
+  background-color: #202722;
+  width: 70rem;
+  height: 43rem;
+  border-radius: 1rem;
+  margin-top: 3%;
+}
+
+.GreenSquare2 {
+  background-color: #202722;
+  width: 20rem;
+  height: 30rem;
+  border-radius: 1rem;
+  margin-top: 3%;
+  color: #FFFFFF;
+  font-family: 'Pixelify';
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.GreenSquare2 p {
+  margin-left: 10%;
+  margin-bottom: 8%;
+}
+
+#ContentWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.ContentWrap {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  /* centers items horizontally */
+  align-items: center;
+  /* centers items vertically */
+  gap: 0.5rem;
+  margin-right: 0;
+  /* remove extra margin */
+}
+
+
+.WhiteSquare {
+  background-color: #FFFFFF;
+  background-image: url("profile.png");
+  width: 8.5rem;
+  height: 8.5rem;
+  background-size: cover;
+  /* make image cover the box */
+  background-position: center;
+  /* center the image */
+  background-repeat: no-repeat;
+  /* prevent tiling */
+  border-radius: 10%;
+  /* optional for circular icon */
+  margin-left: 0%;
+  margin-bottom: 0%;
+}
+
+.greenUserName {
+  margin: 0;
+  margin-left: 0%;
+  margin-bottom: 0%;
+}
+
+.UserGeneratedSquares {
+  background-color: #202722;
+}
+
+/* ================== COLLECTION PAGE DESKTOP LAYOUT ================== */
+
+.collection-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  font-family: 'Pixelify';
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* LEFT SIDE COLUMN */
+.character-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 30%;
+}
+
+.character-preview {
+  background-size: cover;
+  /* make image cover the box */
+  background-position: center;
+  /* center the image */
+  background-repeat: no-repeat;
+  /* prevent tiling */
+  width: 18rem;
+  height: 22rem;
+  background-color: #FFFF;
+  border-radius: 0.8rem;
+}
+
+.character-info-title {
+  color: white;
+  font-family: 'Pixelify';
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+
+/* RIGHT SIDE GRID */
+.character-grid {
+  background-color: #0f140f;
+  padding: 2.3rem;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 8rem);
+  grid-template-rows: repeat(2, 8rem);
+  gap: 1.5rem;
+}
+
+.char-card {
+  width: 8rem;
+  height: 8rem;
+  background-image: url("https://th.bing.com/th/id/OIP.Uq-ZOeoT-qLpBKEPJyHWSwHaHZ?w=164&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1");
+  /* replace with your char image */
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.char-card:hover {
+  transform: scale(1.2);
+}
+
+.character-info-box {
+  width: 100%;
+  background-color: #1a201a;
+  border-radius: 0.7rem;
+  padding: 1.2rem 1.5rem;
+  box-sizing: border-box;
+  line-height: 1.5;
+  color: #dcdcdc;
+
+  max-height: 14rem;
+  /* set the visible height that will scroll */
+  overflow: auto;
+  /* enable scrolling */
+  -webkit-overflow-scrolling: touch;
+  /* smooth scrolling on iOS */
+}
+
+/* Hide scrollbar in WebKit (Chrome, Safari, Edge Chromium) */
+.character-info-box::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Hide scrollbar in Firefox */
+.character-info-box {
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Hide scrollbar in old IE / Edge */
+.character-info-box {
+  -ms-overflow-style: none;
+  /* IE 10+ */
+}
+/* =================== Min-width (Mobile-first) =================== */
+
+/* Small phones */
+@media (min-width: 320px) {
+
+}
+
+/* Large phones */
+@media (min-width: 480px) {
+
+}
+
+/* Tablets portrait */
+@media (min-width: 768px) {
+  .GreenSquare1 {
+    width: 55rem;
+  }
+
+  .collection-layout {
+    transform: scale(0.8);
+  }
+}
+
+/* Tablets landscape */
+@media (min-width: 992px) {
+
+}
+
+/* Laptops / small desktops */
+@media (min-width: 1024px) {
+
+}
+
+/* Large desktops */
+@media (min-width: 1200px) {
+
+}

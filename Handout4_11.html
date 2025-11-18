@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>STEMQuest</title> <!--change title later-->
+	<link rel="stylesheet" href="Learn.css" />
+	<link rel="stylesheet" href="Handouts.css" />
+	<link rel="stylesheet" href="UserCompleteTab.css" />
+	<script src="UserCompleteTab.js" defer></script>
+</head>
+
+<body id="ChangeBG2">
+	<script type="module" src="login.js" defer></script>
+	<div id="MainBody">
+		<nav class="navbar">
+			<div class="nav-left">
+				<h1 class="stemquest" onclick="gobacktohome()" style="cursor: pointer;">STEMQUEST</h1>
+				<p onclick="event.stopPropagation(); LearnOpenDrop()" class="nav-link" style="cursor: pointer;">Learn
+				</p>
+				<div class="LearnDropDown" id="LearnDropDownMenu">
+					<div class="LearnDropContent" data-grade="11">
+						<a href="../GR11/01_Handout_2.pdf" download>
+							<p>The Cell Theory and Cell Classification</p>
+						</a>
+						<a href="../GR11/02_Handout_3.pdf" download>
+							<p>Cell Modification and Specialization</p>
+						</a>
+						<a href="../GR11/03_Handout_2.pdf" download>
+							<p>Plasma Membrane and Transport Mechanisms</p>
+						</a>
+						<a href="../GR11/04_Handout_2.pdf" download>
+							<p>Cellular Energy and Metabolism</p>
+						</a>
+						<a href="../GR11/05_Handout_3.pdf" download>
+							<p>The Organizational Chart of Matter</p>
+						</a>
+						<a href="../GR11/05_Handout_4.pdf" download>
+							<p>The Organizational Chart of Matter P2</p>
+						</a>
+						<a href="../GR11/06_Handout_2.pdf" download>
+							<p>The Four (4) Major Biological Molecules</p>
+						</a>
+						<a href="../GR11/07_Handout_23.pdf" download>
+							<p>The Cell Cycle, Mitosis, Meiosis</p>
+						</a>
+						<a href="../GR11/08_Handout_23.pdf" download>
+							<p>Basic Genetics and Mendelian Genetics</p>
+						</a>
+					</div>
+					<div class="LearnDropContent" data-grade="12">
+						<a href="../GR12/01_Handout_110.pdf" download>
+							<p>Introduction To Chemistry</p>
+						</a>
+						<a href="../GR12/02_Handout_1100.pdf" download>
+							<p>Measurements</p>
+						</a>
+						<a href="../GR12/03_Handout_182.pdf" download>
+							<p>Atoms, Molecules, and Ions</p>
+						</a>
+						<a href="../GR12/04_Handout_1113.pdf" download>
+							<p>Stoichiometry</p>
+						</a>
+						<a href="../GR12/05_Handout_15.pdf" download>
+							<p>The Organizational Chart of Matter</p>
+						</a>
+						<a href="../GR12/06_Handout_13-2.pdf" download>
+							<p>Gas Laws</p>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="nav-right">
+				<img class="search-btn" src="search.png" alt="Search" class="search-icon"
+					onclick="event.stopPropagation(); openSearch()">
+
+				<button class="User-Icon" onclick="event.stopPropagation(); openDrop()"></button>
+				<!--to be changed-->
+				<div class="DropDown" id="DropDownMenu">
+					<a href="Collection.html" class="droplink" target="_self" onclick="alertabi()">
+						Profile
+					</a>
+					<p onclick="event.stopPropagation(); SignouT()">
+						Sign Out
+					</p>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!--Class names are to be changed/current placeholders-->
+	<!--Main Content-->
+	<div id="BILATNAMO">
+		<div id="ContentWrapper">
+			<div class="Columnseparator">
+
+				<button id="BackButton" onclick="window.location.href='UserCompleteTab.html'">BACK TO HOME</button>
+				<div class="HandoutContent" data-grade="11" data-button="1">
+					<div class="RowseparatorTop" data-grade="11" data-button="1">
+						<div class="CollectionIMGS"></div>
+						<div class="TextTohMen">
+							<p>HANDOUT 4</p>
+						</div>
+					</div>
+				</div>
+				<div class="Container" data-grade="11">
+					<link rel="stylesheet" href="style.css">
+
+					<div class="wrapper">
+
+						<div class="notice">
+							<span>Before you start your journey, Do you want to download your handout?</span>
+							<a href="../GR11/04_Handout_2.pdf">Download Here.</a>
+						</div>
+
+						<div class="card">
+							<div class="band">What is ATP?</div>
+							<p>ATP (Adenosine Triphosphate) is the cell’s energy currency. It has three phosphate
+								groups, ribose sugar, and an adenine base. Its phosphate bonds store high energy due to
+								repelling charges.</p>
+						</div>
+
+						<div class="card">
+							<div class="band">ATP–ADP Cycle</div>
+							<p><strong>Phosphorylation</strong> releases energy (exergonic).
+								<br><strong>Dephosphorylation</strong> requires energy (endergonic).
+							</p>
+							<p>The ATP–ADP cycle continually regenerates ATP using energy from cellular processes.</p>
+						</div>
+
+						<div class="card">
+							<div class="band">Metabolic Pathways</div>
+							<p>Metabolic pathways are sequences of chemical reactions in cells. They maintain cell
+								structure and function and require enzymes to accelerate reactions.</p>
+						</div>
+
+						<div class="card">
+							<div class="band">Cellular Respiration</div>
+							<ul>
+								<li><strong>Glycolysis</strong> – Cytoplasm</li>
+								<li><strong>Krebs Cycle</strong> – Mitochondrial matrix</li>
+								<li><strong>Electron Transport Chain</strong> – Inner mitochondrial membrane</li>
+							</ul>
+						</div>
+
+						<div class="card">
+							<div class="band">Stage 1: Glycolysis</div>
+							<p>Net products:</p>
+							<ul>
+								<li>2 ATP</li>
+								<li>2 NADH</li>
+								<li>2 Pyruvate</li>
+							</ul>
+						</div>
+
+						<div class="card">
+							<div class="band">Stage 2: Krebs Cycle</div>
+							<p>The cycle produces CO₂, ATP, NADH, and FADH₂. Molecules are recycled, which is why it’s
+								called a cycle.</p>
+						</div>
+
+						<div class="card">
+							<div class="band">Stage 3: ETC & Chemiosmosis</div>
+							<p>NADH and FADH₂ donate electrons into the chain for gradual energy release. The final
+								electron acceptor is oxygen.</p>
+						</div>
+
+						<div class="card">
+							<div class="band">Anaerobic Respiration</div>
+							<p>Occurs without oxygen. Produces lactic acid (muscle cramps) or alcohol (used in
+								fermentation).</p>
+						</div>
+
+						<div class="card">
+							<div class="band">Photosynthesis</div>
+							<ul>
+								<li>Light-dependent reactions Granum</li>
+								<li>Light-independent reactions (Calvin Cycle) Stroma</li>
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="quote-row">
+							<div class="avatar-box"></div>
+							<div class="quote-bubble">
+								“Study on, for each page thou read’st brings thee nigher to thy destiny.”
+							</div>
+						</div>
+
+						<div class="quote-row">
+							<div class="avatar-box"></div>
+							<div class="quote-bubble">
+								“Before thou takest the quiz, be sure to read well thy handouts.”
+							</div>
+						</div>
+
+					<!--Dapat sa end to-->
+					<button class="QuizButton" data-grade="11" data-index="4" data-file="QuizTime.html">Proceed to
+						Quiz</button>
+				</div>
+				<div class="HandoutContent" data-grade="12" data-button="1">
+					<div class="RowseparatorTop" data-grade="12" data-button="1">
+						<div class="CollectionIMGS"></div>
+						<div class="TextTohMen">
+							<p>HANDOUT 4</p>
+						</div>
+					</div>
+				</div>
+				<div class="Container" data-grade="12">
+					<div class="download-box">
+						<p>
+							Before you start your journey, Do you want to download your handout?
+							<a href="../GR12/04_Handout_1113.pdf">Download Here.</a>
+						</p>
+					</div>
+
+					<!-- Section Box -->
+					<div class="section">
+						<div class="section-header">
+							What is Stoichiometry?
+						</div>
+
+						<div class="section-content">
+							<p>Stoichiometry is the study of the quantitative relationships between reactants and
+								products in chemical reactions.</p>
+							<p>It allows us to predict how much of a substance will be used or produced in a chemical
+								reaction.</p>
+
+							<ul>
+								<li>Used to calculate product yields.</li>
+								<li>Used to determine required reactant amounts.</li>
+								<li>Based on balanced chemical equations.</li>
+							</ul>
+						</div>
+
+						<div class="speech-container">
+							<div class="speech-bubble">
+								<p>Stoichiometry connects mass, moles, and particles using the mole concept and balanced
+									equations.</p>
+
+								<p>
+									Key Concepts → <a href="https://www.chemistrylearner.com/stoichiometry.html">more info</a><br>
+									Mole Ratios → <a href="https://sciencenotes.org/mole-ratio-definition-and-examples/">more info</a><br>
+									Stoichiometric Steps → <a href="https://www.chemistrylearner.com/stoichiometry.html">more info</a>
+								</p>
+							</div>
+
+							<div class="speech-avatar"></div>
+						</div>
+
+						<!-- NEXT CONTENT SECTION -->
+						<div class="section">
+							<div class="section-header">
+								Chemical Composition Concepts
+							</div>
+
+							<div class="section-content">
+								<ol>
+									<li><strong>Atomic Mass:</strong> Weighted average mass of all isotopes.</li>
+									<li><strong>Mole:</strong> \(6.022 \times 10^{23}\) particles.</li>
+									<li><strong>Percent Composition:</strong> % by mass of each element in a compound.
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div class="container">
+
+						<!--Card-->
+						<div class="info-card">
+							<div class="left-block">
+								<div class="placeholder"></div>
+								<h3>What is the Mole?</h3>
+
+								<ul>
+									<li>1 mole = \(6.022 \times 10^{23}\) particles.</li>
+									<li>The mass of 1 mole (grams) equals the atomic/molecular mass.</li>
+								</ul>
+
+								<a href="https://www.britannica.com/science/mole-chemistry">Click this link for more info</a>
+							</div>
+
+						</div>
+
+						<!--Card-->
+						<div class="info-card">
+							<div class="left-block">
+								<div class="placeholder"></div>
+								<h3>What is Percent Composition?</h3>
+
+								<ul>
+									<li>It tells how much of each element is present in a compound.</li>
+									<li>Formula: %E = (mass of element / total mass) × 100%</li>
+								</ul>
+
+								<a href="https://www.chemistrylearner.com/percent-composition.html">Click this link for more info</a>
+							</div>
+
+						</div>
+
+						<!--Card-->
+						<div class="info-card">
+							<div class="left-block">
+								<div class="placeholder"></div>
+
+								<h3>What is Atomic Mass?</h3>
+
+								<ul>
+									<li>The weighted average mass of all naturally occurring isotopes.</li>
+								</ul>
+
+								<p>The atomic mass allows us to convert between grams and moles.</p>
+
+								<a href="https://www.physicsclassroom.com/Chemistry-Tutorial/Mole-and-Applications/Atomic-Mass">Click this link for more info</a>
+							</div>
+
+						</div>
+
+						<!-- Card -->
+						<div class="info-card">
+							<div class="left">
+								<div class="placeholder"></div>
+
+								<div class="text">
+									<h3>Avogadro's Number</h3>
+
+									<ul>
+										<li>Relates particles to moles: \(6.022 \times 10^{23}\).</li>
+									</ul>
+
+									<p>It connects microscopic atoms to measurable mass.</p>
+
+									<a href="https://www.britannica.com/science/Avogadros-number">Click this link for more info</a>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Reaction Types -->
+						<div class="big-card">
+							<div class="title-bar">
+								Types of Chemical Reactions
+							</div>
+
+							<div class="inner-text">
+								<ul>
+									<li><strong>Synthesis:</strong> A + B → AB</li>
+									<li><strong>Decomposition:</strong> AB → A + B</li>
+									<li><strong>Single Displacement:</strong> A + BC → B + AC</li>
+									<li><strong>Double Displacement:</strong> AB + CD → AD + CB</li>
+									<li><strong>Combustion:</strong> Hydrocarbon + O₂ → CO₂ + H₂O</li>
+								</ul>
+
+								<a href="https://sciencenotes.org/types-of-chemical-reactions/">Click this link for more info</a>
+							</div>
+						</div>
+
+						<!-- Video Bubble -->
+						<div class="video-bubble">
+							<div class="triangle"></div>
+							<p>Watch the video to learn Stoichiometry Step-by-Step</p>
+							<a href="https://youtu.be/7Cfq0ilw7ps?si=KcH42mNaok7pK61S">Click this link to watch</a>
+						</div>
+
+						<div class="ending-placeholder">
+							<div class="placeholder"></div>
+						</div>
+
+						<div class="membrane-container">
+							<div class="membrane-title">Stoichiometric Road Map</div>
+
+							<ul class="membrane-list">
+								<li><span>1. Convert Mass to Moles</span> – using molar mass.</li>
+								<li><span>2. Use Mole Ratio</span> – based on balanced chemical equation.</li>
+								<li><span>3. Convert Moles to Mass</span> – final step for product/reactant.</li>
+								<li><span>4. For Solutions</span> – may require density and % composition.</li>
+							</ul>
+						</div>
+
+						<!-- Section -->
+						<div class="section-container">
+							<div class="section-title">Balancing Chemical Equations</div>
+
+							<div class="section-content">
+
+								<p><strong>Conservation of Mass</strong></p>
+
+								<ul>
+									<li>Atoms cannot be created or destroyed.</li>
+									<li>Coefficients are adjusted to balance equations.</li>
+								</ul>
+
+								<a href="https://scienceforeverybody.com/chemistry/quantitative-chemistry-contents/conservation-of-mass-and-balancing-equations/" class="info-link">Click this link for more info</a>
+
+								<p><strong>Why Balance Equations?</strong></p>
+
+								<p>Balanced equations ensure mole ratios are correct for stoichiometry.</p>
+
+								<a href="https://www.reference.com/science-technology/important-balance-chemical-equations-776a037f89866ac9" class="info-link">Click this link for more info</a>
+							</div>
+						</div>
+
+						<!-- Section -->
+						<div class="section-container">
+							<div class="section-title">Mass-Mole Relationships</div>
+
+							<div class="section-content">
+
+
+								<p>Mole ratios allow conversion between reactants and products.</p>
+
+								<p><span class="highlight">Grams → Moles</span> – using molar mass.</p>
+
+								<p><span class="highlight">Moles → Moles</span> – using coefficients.</p>
+
+								<p><span class="highlight">Moles → Grams</span> – find mass of product.</p>
+
+								<a href="https://www.physicsclassroom.com/Chemistry-Tutorial/Mole-and-Applications/Grams-Moles-Molecules-Relationship"class="info-link">Click this link for more info</a>
+
+							</div>
+						</div>
+
+						<!-- Final Section -->
+						<div class="section-container">
+							<div class="section-title">Stoichiometry in Real Life</div>
+
+							<div class="section-content">
+
+								<ul>
+									<li><strong>Chemical Industry:</strong> Predicts product yields.</li>
+									<li><strong>Pharmaceuticals:</strong> Ensures correct reactant quantities.</li>
+									<li><strong>Environmental Science:</strong> Measures pollutant reactions.</li>
+								</ul>
+
+								<a href="https://studiousguy.com/stoichiometry-examples/" class="info-link">Click this link for more info</a>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="quote-row">
+						<div class="avatar-box"></div>
+						<div class="quote-bubble">
+							“Study on, for each page thou read’st brings thee nigher to thy destiny.”
+						</div>
+					</div>
+
+					<div class="quote-row">
+						<div class="avatar-box"></div>
+						<div class="quote-bubble">
+							“Before thou takest the quiz, be sure to read well thy handouts.”
+						</div>
+					</div>
+
+
+					<!--Dapat sa end to-->
+					<button class="QuizButton" data-grade="12" data-index="4" data-file="QuizTime.html">Proceed to
+						Quiz</button>
+				</div>
+
+			</div>
+		</div> <!--End of ContentWrapper-->
+
+		<div class="YAWASideBar">
+			<div id="TopSection">
+				<div class="GreenSquare2">
+					<div class="ContentWrap">
+						<div class="WhiteSquare"></div>
+						<p class="greenUserName">username</p>
+						<textarea id="GreenNameInput" style="display:none;"></textarea>
+					</div>
+					<div class="StarContainer" data-grade="11">
+						<div class="RowseparatorTop">
+							<div class="Star" data-quiz-index="4"></div>
+							<div class="Star" data-quiz-index="8"></div>
+							<div class="Star" data-quiz-index="11"></div>
+						</div>
+					</div>
+					<div class="StarContainer" data-grade="12">
+						<div class="RowseparatorTop">
+							<div class="Star" data-quiz-index="4"></div>
+							<div class="Star" data-quiz-index="8"></div>
+						</div>
+					</div>
+					<div class="RowseparatorTop">
+						<p class="GSTEXT">Areas Explored:</p>
+						<p id="NumAreas"></p>
+					</div>
+					<div class="RowseparatorTop">
+						<p class="GSTEXT">Total Exp:</p>
+						<p id="NumEXP"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--End of Mainbody-->
+
+	<!-- Panel Popup -->
+	<div class="form-popup" id="myForm"></div>
+
+	<div class="search-popup" id="mysearch">
+		<div class="search-outline">
+			<form action="#" class="search-container">
+				<input type="text" placeholder="Search" name="search" id="searchtab" oninput="searchitems()">
+
+				<button type="button" id="btnsearchcancel" class="btn cancel" onclick="closeSearch()">Close</button>
+				<!--change into X in future-->
+			</form>
+		</div>
+		<div id="results"></div>
+	</div>
+
+	<script>
+		function searchitems() {
+			const searchValue = document.getElementById("searchtab").value.toLowerCase().trim();
+			const results = document.getElementById("results");
+			const items = document.querySelectorAll(".Container");
+
+			results.innerHTML = ""; // clear previous results
+
+			if (searchValue === "") return;
+			const regex = new RegExp(`\\b${searchValue}\\b`, "i");
+
+			items.forEach(item => {
+				const text = item.textContent.toLowerCase();
+				if (regex.test(text)) {
+					const clone = item.cloneNode(true);
+					results.appendChild(clone);
+				}
+			});
+		}
+	</script>
+	<script type="module" defer>
+		// =================== Main Page User Display Handler ===================
+
+		import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+		import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+		import { getStorage, ref as storageRef, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-storage.js";
+
+		const auth = getAuth();
+		const db = getFirestore();
+		const storage = getStorage();
+
+
+		window.addEventListener('DOMContentLoaded', () => {
+
+			// Elements on the main page
+			const MainPageName = document.querySelector('.greenUserName');
+			const MainPageIcon = document.querySelector('.WhiteSquare');
+			const MaisotIcon = document.querySelector('.User-Icon');
+
+			// Get current UID from localStorage (saved by profile page after login)
+			const uid = localStorage.getItem('currentUID');
+			if (!uid) return; // user not logged in
+
+			//Try localStorage first for instant display
+			const savedName = localStorage.getItem(`userName_${uid}`);
+			const savedIcon = localStorage.getItem(`UIuserBG_${uid}`);
+
+			if (MainPageName && savedName) MainPageName.textContent = savedName;
+			if (MainPageIcon && savedIcon) {
+				MainPageIcon.style.backgroundImage = `url(${savedIcon})`;
+				MainPageIcon.style.backgroundSize = 'cover';
+				MainPageIcon.style.backgroundPosition = 'center';
+			}
+
+			if (MaisotIcon && savedIcon) {
+				MaisotIcon.style.backgroundImage = `url(${savedIcon})`;
+				MaisotIcon.style.backgroundSize = 'cover';
+				MaisotIcon.style.backgroundPosition = 'center';
+			}
+
+			//Fetch from Firestore to make sure it's up to date
+			onAuthStateChanged(auth, async (user) => {
+				if (!user) return;
+
+				const userDocRef = doc(db, 'users', uid);
+				const docSnap = await getDoc(userDocRef);
+
+				if (docSnap.exists()) {
+					const data = docSnap.data();
+
+					// Update username
+					if (data.userName) {
+						if (MainPageName) MainPageName.textContent = data.userName;
+						localStorage.setItem(`userName_${uid}`, data.userName);
+					}
+
+					// Update icon
+					if (data.UIuserBG) {
+						if (MainPageIcon) {
+							MainPageIcon.style.backgroundImage = `url(${data.UIuserBG})`;
+							MainPageIcon.style.backgroundSize = 'cover';
+							MainPageIcon.style.backgroundPosition = 'center';
+						}
+						localStorage.setItem(`UIuserBG_${uid}`, data.UIuserBG);
+					}
+
+					if (data.UIuserBG) {
+						if (MaisotIcon) {
+							MaisotIcon.style.backgroundImage = `url(${data.UIuserBG})`;
+							MaisotIcon.style.backgroundSize = 'cover';
+							MaisotIcon.style.backgroundPosition = 'center';
+						}
+						localStorage.setItem(`UIuserBG_${uid}`, data.UIuserBG);
+					}
+				}
+				showGradeContent(uid);
+
+			});
+		});
+
+		async function showGradeContent(userId) {
+			const userRef = doc(db, "users", userId);
+
+			try {
+				const userSnap = await getDoc(userRef);
+
+				if (userSnap.exists()) {
+					const userData = userSnap.data();
+					const grade = userData.grade;
+
+					console.log("User grade from Firestore:", grade);
+
+					const items = document.querySelectorAll(".grayitem");
+					items.forEach((item, index) => {
+						const itemGrade = item.getAttribute("data-grade");
+						if ((grade === "STEM 11" && itemGrade === "11") || (grade === "STEM 12" && itemGrade === "12")) {
+							item.style.display = "block"; // show first
+							setTimeout(() => {
+								item.classList.add("active"); // then animate
+							}, index * 25); // 100ms stagger per item
+						} else {
+							item.classList.remove("active");
+							item.style.display = "none";
+						}
+					});
+
+				} else {
+					console.log("No such user!");
+				}
+			} catch (error) {
+				console.error("Error fetching user grade:", error);
+			} finally {
+				overlay.classList.remove("active"); // hide loader
+			}
+		}
+
+		//handle quiz iya ah hahahha
+		// Select all grayitem elements
+		const graydivs = document.querySelectorAll('.grayitem');
+
+		// Get current UID
+		const uid = localStorage.getItem('currentUID');
+		if (!uid) {
+			console.log("No user logged in");
+		}
+
+		graydivs.forEach((div, index) => {
+			div.addEventListener('click', async () => {
+				const clickedData = {
+					text: div.textContent,
+					index: index,
+					grade: div.dataset.grade,
+					timestamp: new Date().toISOString()
+				};
+
+				try {
+					// Save under the current user's document
+					await setDoc(doc(db, "quizSelections", uid), clickedData);
+					console.log("Saved to Firebase:", clickedData);
+					window.location.href = "QuizTime.html";
+				} catch (error) {
+					console.error("Error saving selection:", error);
+				}
+			});
+		});
+
+	</script>
+	<script type="module" src="UserCompleteExtended.js" defer></script>
+	<script type="module" src="GHANDOUTS.js" defer></script>
+
+	<div id="dimOverlay">
+		<div class="loader"></div>
+	</div>
+</body>
+
+</html>
