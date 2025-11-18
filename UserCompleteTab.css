@@ -1,0 +1,1215 @@
+/*Overlay*/
+#dimOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* translucent dark overlay */
+  z-index: 8;
+  /* below forms but above main content */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#dimOverlay.active {
+  display: block;
+  opacity: 1;
+}
+
+body {
+  /*
+  background-color: #2C342C;
+  */
+  /*DO NOT CHANGE*/
+
+  background-image: url(fields.png);
+  background-repeat: repeat-y;
+  /* OR for only Y stretch: width auto, height 100% */
+  background-position: center top;
+  /* aligns image to top */
+  background-attachment: fixed;
+  /* Optional: image stays when scrolling */
+
+  background-size: cover;
+  /* Stretch to cover entire screen */
+  background-repeat: no-repeat;
+  /* Prevent repeating */
+  background-position: center;
+  /* Center the image */
+  height: 100vh;
+  /* Ensure body takes full viewport height */
+
+}
+
+html,
+body,
+#MainBody {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Magra;
+  src: url(Magra-Regular.ttf);
+}
+
+@font-face {
+  font-family: Magra-bold;
+  src: url(Magra-Bold.ttf);
+}
+
+@font-face {
+  font-family: Pixelify;
+  src: url(PixelifySans-VariableFont_wght.ttf);
+}
+
+
+/*Drop down menu*/
+
+/* Dropdown relative to navbar */
+.LearnDropDown {
+  display: none;
+  position: absolute;
+  /* relative to navbar now */
+  width: 75%;
+  top: 100%;
+  /* directly below navbar */
+  background-color: #202722;
+  border: 0.0625rem solid #555;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+  z-index: 100000000000000;
+  /* above navbar */
+}
+
+.LearnDropDown label {
+  display: block;
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.LearnDropDown select {
+  background-color: #2C342C;
+  color: #fff;
+  border: 0.0625rem solid #555;
+  border-radius: 0.3125rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+
+.LearnDropDown select:hover {
+  border-color: #66ff99;
+}
+
+.LearnDropDown p {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.6rem;
+  font-family: 'Pixelify';
+  margin-top: 0.5rem;
+}
+
+.LearnDropDown p:hover {
+  color: #97B390;
+  cursor: pointer;
+}
+
+
+.droplink {
+
+  display: block;
+  /* make it behave like a paragraph */
+  color: inherit;
+  /* use the same text color */
+  text-decoration: none;
+  /* remove underline */
+  cursor: pointer;
+  /* shows pointer on hover */
+  /* add any other styles your p had */
+
+}
+
+.navbar {
+  background-color: #202722;
+  display: flex;
+  justify-content: space-between;
+  border: 0.18em solid #97B390;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 999;
+  /* ensures it stays above all content */
+}
+
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 50%;
+  padding-inline: 10%;
+}
+
+.stemquest {
+  display: block;
+  color: #FFF8EB;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Pixelify';
+}
+
+.nav-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-family: 'Pixelify';
+  position: relative;
+  /* important for absolute positioning of tooltip */
+}
+
+/* Tooltip bubble */
+.nav-link::after {
+  content: "Download your Handouts here!";
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #293b2e;
+  color: #FFFFFF;
+  font-family: 'Pixelify';
+  font-size: 1rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* Tooltip arrow */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0.4rem;
+  border-style: solid;
+  border-color: transparent transparent #293b2e transparent;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Show tooltip on hover */
+.nav-link:hover::after,
+.nav-link:hover::before {
+  opacity: 1;
+}
+
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 50%;
+  padding-inline: 15%;
+}
+
+.search-btn {
+  transform: scale(0.7);
+  cursor: pointer;
+}
+
+.User-Icon {
+  position: relative;
+  background-color: white;
+  background-image: url("profile.png");
+  background-position: center;
+  /* center the image */
+  background-size: cover;
+  /* scale image to cover the circle */
+  background-repeat: no-repeat;
+  /* prevent tiling */
+
+  width: 12rem;
+  aspect-ratio: 1 / 1;
+  /* ensures square shape */
+  z-index: 3;
+  border-radius: 50%;
+  border-style: none;
+  cursor: pointer;
+}
+
+
+.DropDown {
+  display: none;
+  position: absolute;
+  /* relative to .User-Icon now */
+  top: 100%;
+  /* right below icon */
+  left: 82%;
+  /* center horizontally */
+  transform: translateX(-50%);
+  /* center alignment */
+  background-color: #202722;
+  border: 0.0625rem solid #555;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 0.625rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+
+.DropDown label {
+  display: block;
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.DropDown select {
+  background-color: #2C342C;
+  color: #fff;
+  border: 0.0625rem solid #555;
+  border-radius: 0.3125rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+
+.DropDown select:hover {
+  border-color: #66ff99;
+}
+
+.DropDown p,
+.DropDown a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.6rem;
+  font-family: 'Pixelify';
+  margin-top: 0.5rem;
+}
+
+.DropDown p:hover,
+.DropDown a:hover {
+  color: #97B390;
+  cursor: pointer;
+}
+
+.GetStart-btn {
+  padding: 1.5rem 6rem;
+  /*widens the button (can't seem to make it wide)*/
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  cursor: pointer;
+
+  position: absolute;
+  bottom: 40px;
+  /* or 0 */
+  left: 50%;
+  transform: translateX(-50%);
+  /*center horizontally */
+  /*di aq marunong mag horizontal align...*/
+}
+
+/*for button designs...*/
+.GetStart-btn,
+.signup-btn {
+  background-color: #DFC543;
+  border: 0.25em solid #7E5E00;
+  border-radius: 1.9em;
+  color: #4C4128;
+  font-family: 'Pixelify';
+}
+
+/*sa pop up div eto*/
+#notmatchingg {
+  display: none;
+  font-family: 'Pixelify';
+  color: rgb(83, 83, 83);
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid lightgray;
+  z-index: 9;
+}
+
+.form-popup h1,
+.form-popup label {
+  text-align: center;
+  font-family: 'Pixelify';
+  color: rgb(83, 83, 83);
+}
+
+.form-container {
+  max-width: 18.75rem;
+  padding: 10px;
+  background-color: lightgray;
+}
+
+.form-container input[type=text],
+.form-container input[type=password] {
+  width: 93%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #FFFFFF;
+  border-radius: 5px;
+
+}
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+#showpass,
+#Loginszszszs {
+  margin: 5px 0 22px 0;
+}
+
+#message {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
+#mysearch * {
+  margin: 0;
+  /* reset margins inside search panel */
+}
+
+/* search pop up (right-side panel) */
+#mysearch {
+  display: block;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  overflow-y: none;
+  align-items: start;
+  background-color: #2C342C;
+  /*DO NOT CHANGE*/
+  border: 0.18em solid #97B390;
+
+  /* hidden (initial) transform + opacity for animation */
+  opacity: 0;
+  transform: translateX(100%);
+  /* position off-screen to the right */
+  pointer-events: none;
+  /* disable clicks when hidden */
+  transition: transform 0.38s ease, opacity 0.38s ease;
+}
+
+/* visible state show the panel */
+#mysearch.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* container inside */
+.search-container {
+  padding: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.search-container input[type=text] {
+  width: 80%;
+  padding: 12px;
+  border: none;
+  background: #f1f1f1;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.search-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 0;
+}
+
+.search-outline {
+  border: #FFFFFF;
+  border-style: solid;
+  border-bottom-width: 0.1rem;
+  border-left-style: none;
+  border-top-style: none;
+  border-right-style: none;
+
+}
+
+/*search items*/
+#results {
+  padding: 10px;
+  /* Matches popup theme */
+  max-height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grayitem {
+  display: none;
+  opacity: 0;
+  transform: translateY(-1rem);
+  /* starts slightly above relative to font size */
+  background-color: #5E5E5E;
+  color: black;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.2s ease;
+  width: 15rem;
+  padding: 2%;
+  width: auto;
+  /* let it take only as much space as text */
+
+}
+
+h1 {
+  display: none;
+  font-family: 'Pixelify';
+  color: white;
+}
+
+.grayitem.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  /* slides down */
+}
+
+
+.grayitem[data-grade="11"] {
+  background-color: blue;
+}
+
+.grayitem[data-grade="12"] {
+  background-color: yellow;
+}
+
+.grayitem:hover {
+  transform: scale(1.5);
+  /*ayuson gang naga*/
+}
+
+a {
+  text-decoration: none;
+}
+
+/*Main content*/
+.HandoutContent {
+  background-color: #202722;
+  width: 100%;
+  border-radius: 1rem;
+  margin-top: 3%;
+  display: none;
+
+  overflow: hidden;
+  /* required for drop animation */
+  max-height: 0;
+  /* collapsed */
+  opacity: 0;
+  /* fade */
+  transform: translateY(-10px);
+  /* slight upward start */
+
+  transition:
+    max-height .4s ease, opacity .3s ease, transform .3s ease;
+}
+
+
+/* expanded state */
+.HandoutContent.active {
+  max-height: 2000px;
+  /* big enough to fit content */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.HandoutContent[data-grade="11"] {
+  background-color: #202722;
+}
+
+.HandoutContent[data-grade="12"] {
+  background-color: #202722;
+}
+
+
+
+.GreenSquare1 {
+  background-color: #202722;
+  color: #FFFF;
+  font-family: 'Pixelify';
+  padding: 0.75rem 1.1rem;
+  width: 40rem;
+  height: 10rem;
+  border-radius: 0.75rem;
+  margin-top: 3%;
+  position: relative;
+  display: inline-block;
+}
+
+.GreenSquare1::before {
+  content: "";
+  position: absolute;
+  left: -4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 2rem 4rem 2rem 0;
+  border-style: solid;
+  border-color: transparent #1E251F transparent transparent;
+}
+
+.GreenSquare1 p {
+  white-space: nowrap;
+  /* Keep text on one line */
+  overflow: hidden;
+  /* Hide overflowing text */
+  width: 0;
+  /* Start with width 0 */
+  animation: typing 2.5s steps(47) forwards, blink 0.7s step-end infinite;
+}
+
+.GreenSquare1 a {
+  color: white;
+  white-space: nowrap;
+  /* Keep text on one line */
+  overflow: hidden;
+  /* Hide overflowing text */
+  width: 0;
+  /* Start with width 0 */
+  animation: typing 2.5s steps(47) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 47ch;
+  }
+
+  /* Number of characters */
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.GreenSquare2 {
+  background-color: #202722;
+  width: 20rem;
+  height: 30rem;
+  border-radius: 1rem;
+  margin-top: 3%;
+  color: #FFFFFF;
+  font-family: 'Pixelify';
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.GreenSquare2 p {
+  margin-left: 10%;
+  margin-bottom: 8%;
+}
+
+#ContentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 5%;
+}
+
+.Headers {
+  display: inline-flex;
+  flex-direction: row;
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 8px;
+  gap: 1rem;
+  color: #FFFF;
+  font-family: 'Pixelify';
+
+}
+
+.Columnseparator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* center the whole column block */
+  width: 100%;
+  max-width: 60rem;
+  /* controls how wide the list can grow */
+  padding: 1rem;
+  gap: 1.5rem;
+  box-sizing: border-box;
+}
+
+.Rowseparator {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.Rowseparator p {
+  font-size: 1rem;
+  font-family: 'Pixelify';
+  color: white;
+}
+
+.RowseparatorTop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* vertical centering */
+  justify-content: center;
+  /* horizontal centering */
+  gap: 10%;
+}
+
+.RowseparatorStar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* horizontal centering */
+  gap: 10%;
+}
+
+.CollectionIMG {
+  background-image: url("LittleGayBoy.png");
+  width: 9.5rem;
+  height: 9rem;
+  background-size: cover;
+  /* make image cover the box */
+  background-position: center;
+  /* center the image */
+  background-repeat: no-repeat;
+  /* prevent tiling */
+  /* optional for circular icon */
+}
+
+#BILATNAMO {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.highlight-flash {
+  animation: flashGlow 0.8s ease;
+}
+
+@keyframes flashGlow {
+  0% {
+    background-color: rgba(255, 255, 0, 0.7);
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+
+/*Button states*/
+
+.HandoutTo {
+  min-width: 5rem;
+  /* adjust until button lines up with Handout rows */
+}
+
+.ClosedButton:hover,
+.StartButton:hover,
+.Completed:hover {
+  transform: scale(1.2);
+
+}
+
+.ClosedButton {
+  border: none;
+  border-radius: 0.9em;
+  font-family: 'Pixelify';
+  cursor: pointer;
+  padding: 1.5rem 4rem;
+  font-size: 0.95rem;
+  background-color: #161B17;
+  color: #4C4128;
+  box-shadow: 0 0.5rem 0 0 #0E1410;
+  transition: transform 0.3s ease-in-out;
+  /* only vertical offset */
+}
+
+.StartButton {
+  border: none;
+  border-radius: 0.9em;
+  font-family: 'Pixelify';
+  cursor: pointer;
+  padding: 1rem 3rem;
+  font-size: 0.95rem;
+  background-color: #DFC543;
+  color: #FFFF;
+  box-shadow: 0 0.5rem 0 0 #7E5E00;
+  transition: transform 0.3s ease-in-out;
+  /* only vertical offset */
+}
+
+.StartButton::before {
+  content: "START";
+}
+
+.Completed {
+  border: none;
+  border-radius: 0.9em;
+  font-family: 'Pixelify';
+  cursor: pointer;
+  padding: 1.2rem 2.1rem;
+  font-size: 0.95rem;
+  background-color: #65C92F;
+  color: white;
+  cursor: default;
+  box-shadow: 0 0.5rem 0 0 #376C30;
+  transition: transform 0.3s ease-in-out;
+  /* only vertical offset */
+}
+
+.Completed::before {
+  content: "COMPLETED";
+}
+
+.circle {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  /* makes it a perfect circle */
+
+  display: flex;
+  /* enables flexbox */
+  justify-content: center;
+  /* centers horizontally */
+  align-items: center;
+  /* centers vertically */
+
+  font-size: 2rem;
+  /* text size */
+  color: white;
+  /* text color */
+  font-family: 'Pixelify';
+  /* optional font */
+  border: 0.3rem solid #97B390;
+}
+
+.titleheads {
+  font-size: 2rem;
+  font-family: 'Pixelify';
+  color: white;
+}
+
+.title {
+  margin-left: 4rem;
+}
+
+
+#TopSection {
+  display: inline-flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+}
+
+.ContentWrap {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  /* centers items horizontally */
+  align-items: center;
+  /* centers items vertically */
+  gap: 1rem;
+  margin-right: 0;
+  /* remove extra margin */
+}
+
+
+.WhiteSquare {
+  background-color: #FFFFFF;
+  background-image: url("profile.png");
+  width: 8.5rem;
+  height: 8.5rem;
+  background-size: cover;
+  /* make image cover the box */
+  background-position: center;
+  /* center the image */
+  background-repeat: no-repeat;
+  /* prevent tiling */
+  border-radius: 10%;
+  /* optional for circular icon */
+  margin-left: 0%;
+  margin-bottom: 0%;
+}
+
+.greenUserName {
+  margin: 0;
+  position: relative;
+  /* needed for tooltip positioning */
+  width: 100%;
+  cursor: pointer;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* Tooltip bubble */
+.greenUserName::after {
+  content: "Click to Edit!";
+  position: absolute;
+  top: -2.5rem;
+  /* above the username */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #293b2e;
+  color: #FFFFFF;
+  font-family: 'Pixelify';
+  font-size: 1rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* Tooltip arrow */
+.greenUserName::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0.4rem;
+  border-style: solid;
+  border-color: transparent transparent #293b2e transparent;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Show tooltip on hover */
+.greenUserName:hover::after,
+.greenUserName:hover::before {
+  opacity: 1;
+}
+
+.GreenSquare2 {
+  background-color: #202722;
+  width: 20rem;
+  height: 30rem;
+  border-radius: 1rem;
+  margin-top: 3%;
+  color: #FFFFFF;
+  font-family: 'Pixelify';
+  display: grid;
+  grid-auto-flow: row;
+  padding: 1rem;
+
+  box-shadow: inset -4px 0 0 #999, inset 4px 0 0 #999, inset 0 -4px 0 #666, inset 0 4px 0 #666;
+}
+
+.GSTEXT {
+  margin-left: 10%;
+  margin-bottom: 8%;
+}
+
+/* The input should match the <p> spacing + wrapping */
+#GreenNameInput {
+  width: 100%;
+  height: 50%;
+  border: none;
+  background: none;
+  color: #FFFFFF;
+  font-family: 'Pixelify';
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  outline: none;
+  display: none;
+  resize: none;
+  /* keeps it clean */
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+
+
+.UserGeneratedSquares {
+  background-color: #202722;
+}
+
+.StarContainer {
+  display: none;
+  /* default hidden */
+}
+
+.StarContainer.active {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* vertical centering */
+}
+
+.Star {
+  background-image: url(emptyStar.png);
+  background-size: 100% 100%;
+  /* stretches both width and height */
+  /* OR for only Y stretch: width auto, height 100% */
+  background-size: auto 100%;
+  /* width auto, height fills container */
+  background-position: center top;
+  /* aligns image to top */
+  width: 4rem;
+  height: 4rem;
+}
+
+.Star.filled {
+  background-image: url(star.png);
+  background-size: 100% 100%;
+  /* stretches both width and height */
+  /* OR for only Y stretch: width auto, height 100% */
+  background-size: auto 100%;
+  /* width auto, height fills container */
+  background-position: center top;
+  /* aligns image to top */
+  width: 4rem;
+  height: 4rem;
+}
+
+.starover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.star-box {
+  background-color: #202722;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  width: 18rem;
+}
+
+#StarMessage {
+  font-size: 1.5rem;
+  font-family: 'Pixelify';
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+#StarButton {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+/* =================== Min-width (Mobile-first) =================== */
+
+/* Small phones */
+@media (min-width: 320px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+/* Large phones */
+@media (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+
+  #ContentWrapper {
+    margin: 0;
+    margin-left: 14rem;
+  }
+
+  .GreenSquare2 {
+    transform: scale(0.9);
+  }
+
+  .Columnseparator {
+    transform: scale(0.9);
+  }
+}
+
+/* Tablets portrait */
+@media (min-width: 768px) {
+  body {
+    background-color: lightyellow;
+  }
+
+  #ContentWrapper {
+    margin: 0;
+    margin-left: 14rem;
+  }
+
+  .GreenSquare2 {
+    transform: scale(0.9);
+  }
+
+  .Columnseparator {
+    transform: scale(0.9);
+  }
+}
+
+/* Tablets landscape */
+@media (min-width: 992px) {
+  body {
+    background-color: lightpink;
+  }
+
+  #ContentWrapper {
+    margin: 0;
+    margin-left: 14rem;
+  }
+
+  .GreenSquare2 {
+    transform: scale(0.9);
+  }
+
+  .Columnseparator {
+    transform: scale(0.9);
+  }
+}
+
+/* Laptops / small desktops */
+@media (min-width: 1024px) {
+  body {
+    background-color: lightgray;
+  }
+  #ContentWrapper {
+    margin: 0;
+    margin-left: 14rem;
+  }
+
+  .GreenSquare2 {
+    transform: scale(0.9);
+  }
+
+  .Columnseparator {
+    transform: scale(0.9);
+  }
+}
+
+/* Large desktops */
+@media (min-width: 1200px) {
+  body {
+    background-color: white;
+  }
+  #ContentWrapper {
+    margin-right: 5%;
+    margin-left: 0;
+  }
+
+  .GreenSquare2 {
+    transform: scale(1);
+  }
+
+  .Columnseparator {
+    transform: scale(1);
+  }
+}

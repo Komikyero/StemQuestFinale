@@ -1,0 +1,741 @@
+/*Overlay*/
+#dimOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* translucent dark overlay */
+  z-index: 8;
+  /* below forms but above main content */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#dimOverlay.active {
+  display: block;
+  opacity: 1;
+}
+
+body {
+  background-color: #2C342C;
+  /*DO NOT CHANGE*/
+}
+
+html,
+body,
+#MainBody {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Magra;
+  src: url(Magra-Regular.ttf);
+}
+
+@font-face {
+  font-family: Magra-bold;
+  src: url(Magra-Bold.ttf);
+}
+
+@font-face {
+  font-family: Pixelify;
+  src: url(PixelifySans-VariableFont_wght.ttf);
+}
+
+
+.navbar {
+  background-color: #202722;
+  display: flex;
+  justify-content: space-between;
+  border: 0.18em solid #97B390;
+  position: relative;
+  /* must be positioned for z-index to work */
+  z-index: 2;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 50%;
+  padding-inline: 10%;
+}
+
+.stemquest {
+  color: #FFF8EB;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Pixelify';
+}
+
+.nav-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-family: 'Pixelify';
+
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 50%;
+  padding-inline: 15%;
+}
+
+.search-btn {
+  transform: scale(0.7);
+  cursor: pointer;
+}
+
+.User-Icon {
+  background-color: white;
+  background-image: url("profile.png");
+  background-position: center;
+  /* center the image */
+  background-size: cover;
+  /* scale image to cover the circle */
+  background-repeat: no-repeat;
+  /* prevent tiling */
+
+  width: 12rem;
+   aspect-ratio: 1 / 1; /* ensures square shape */
+  z-index: 3;
+  border-radius: 50%;
+  border-style: none;
+  cursor: pointer;
+}
+
+.GetStart-btn {
+  padding: 1.5rem 6rem;
+  /*widens the button (can't seem to make it wide)*/
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  cursor: pointer;
+
+  position: absolute;
+  bottom: 40px;
+  /* or 0 */
+  left: 50%;
+  transform: translateX(-50%);
+  /*center horizontally */
+  /*di aq marunong mag horizontal align...*/
+}
+
+/*for button designs...*/
+.GetStart-btn,
+.signup-btn {
+  background-color: #DFC543;
+  border: 0.25em solid #7E5E00;
+  border-radius: 1.9em;
+  color: #4C4128;
+  font-family: 'Pixelify';
+}
+
+.grayitem,
+.aeon {
+  background-color: #2C342C;
+  width: 15%;
+  height: 0;
+  margin: 5%;
+}
+
+/*sa pop up div eto*/
+#notmatchingg {
+  display: none;
+  font-family: 'Pixelify';
+  color: rgb(83, 83, 83);
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid lightgray;
+  z-index: 9;
+}
+
+.form-popup h1,
+.form-popup label {
+  text-align: center;
+  font-family: 'Pixelify';
+  color: rgb(83, 83, 83);
+}
+
+.form-container {
+  max-width: 18.75rem;
+  padding: 10px;
+  background-color: lightgray;
+}
+
+.form-container input[type=text],
+.form-container input[type=password] {
+  width: 93%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #FFFFFF;
+  border-radius: 5px;
+
+}
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+#showpass,
+#Loginszszszs {
+  margin: 5px 0 22px 0;
+}
+
+#message {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
+#mysearch * {
+  margin: 0;
+  /* reset margins inside search panel */
+}
+
+/* search pop up (right-side panel) */
+#mysearch {
+  display: block;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  overflow-y: none;
+  align-items: start;
+  background-color: #2C342C;
+  /*DO NOT CHANGE*/
+  border: 0.18em solid #97B390;
+
+  /* hidden (initial) transform + opacity for animation */
+  opacity: 0;
+  transform: translateX(100%);
+  /* position off-screen to the right */
+  pointer-events: none;
+  /* disable clicks when hidden */
+  transition: transform 0.38s ease, opacity 0.38s ease;
+}
+
+/* visible state show the panel */
+#mysearch.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* container inside */
+.search-container {
+  padding: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.search-container input[type=text] {
+  width: 80%;
+  padding: 12px;
+  border: none;
+  background: #f1f1f1;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.search-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 0;
+}
+
+.search-outline {
+  border: #FFFFFF;
+  border-style: solid;
+  border-bottom-width: 0.1rem;
+  border-left-style: none;
+  border-top-style: none;
+  border-right-style: none;
+
+}
+
+/*search items*/
+#results {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #2C342C;
+  /* Matches popup theme */
+  border: 1px solid #97B390;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grayitem {
+  background-color: #3A433A;
+  color: #E0E6DC;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, opacity 0.3s ease;
+  opacity: 0.9;
+}
+
+/*Drop down menu*/
+.DropDown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  /* adjust based on navbar height */
+  right: 20px;
+  background-color: #202722;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 99999999999999999;
+}
+
+.DropDown label {
+  display: block;
+  color: white;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.DropDown select {
+  background-color: #2C342C;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 16px;
+  outline: none;
+}
+
+.DropDown select:hover {
+  border-color: #66ff99;
+}
+
+.DropDown p,
+.DropDown a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.6rem;
+  font-family: 'Pixelify';
+  margin-top: 0.3rem;
+}
+
+.DropDown p:hover,
+.DropDown a:hover {
+  color: #97B390;
+  cursor: pointer;
+}
+
+.droplink {
+
+  display: block;
+  /* make it behave like a paragraph */
+  color: inherit;
+  /* use the same text color */
+  text-decoration: none;
+  /* remove underline */
+  cursor: pointer;
+  /* shows pointer on hover */
+  /* add any other styles your p had */
+
+}
+
+/*Main content*/
+.GreenSquare1 {
+  background-color: #202722;
+  width: 70rem;
+  height: 30rem;
+  border-radius: 1rem;
+  margin-top: -3%;
+  z-index: 1;
+  border: 0.2em solid #364233;
+}
+
+.userbackground {
+  background-image: url("grey.jpg");
+  background-size: cover;
+  background-position: 50% 30%;
+  background-repeat: no-repeat;
+  margin-top: 5%;
+  width: 100%;
+  height: 50%;
+  z-index: 10000;
+  text-align: end;
+
+  display: flex;
+  justify-content: flex-end;
+  /* horizontal: right */
+  align-items: flex-end;
+  /* vertical: bottom */
+}
+
+.edit-button {
+  padding: 0.4rem 1rem;
+  /*widens the button (can't seem to make it wide)*/
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  border-radius: 0.5 rem;
+  white-space: nowrap;
+  display: inline-block;
+  /*kopal ka wahhaha di naka dikit yung rem sa 0.6rem*/
+  cursor: pointer;
+  z-index: 10001;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: #DFC543;
+  border: 0.25em solid #7E5E00;
+  border-radius: 1.9em;
+  color: #4C4128;
+  font-family: 'Pixelify';
+}
+
+.UIcircle {
+  background-color: white;
+  background-image: url("profile.png");
+  background-position: center;
+  /* center the image */
+  background-size: cover;
+  /* scale image to cover the circle */
+  background-repeat: no-repeat;
+  /* prevent tiling */
+
+  margin-top: -8%;
+  margin-left: 5%;
+  width: 18%;
+  height: 40%;
+  z-index: 3;
+  border-radius: 50%;
+}
+
+.bio-section {
+  display: flex;
+  margin-top: 3%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.StatsSection {
+  display: flex;
+  margin-top: 4.8%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.biolabel {
+  display: block;
+  font-family: 'Pixelify', Times, serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.username {
+  display: block;
+  font-family: 'Pixelify', Times, serif;
+  font-size: 1.5rem;
+  margin-top: 2%;
+  margin-left: 8.3%;
+  font-weight: bold;
+  color: white;
+}
+
+.GreenSquare2,
+.GreenSquare3 {
+  background-color: #202722;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 1rem;
+  margin-top: 3%;
+  color: #FFFFFF;
+  font-family: 'Pixelify';
+}
+
+
+#ContentWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.GreenSquare2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.GreenSquare3 {
+  width: 48rem;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 0;
+}
+
+.GreenSquare3 p {
+  margin-left: 33%;
+  margin-top: 8%;
+  font-size: 1.2rem;
+}
+
+.akosichaknu {
+  width: 94%;
+  height: 100%;
+}
+
+.akosidogie {
+  font-size: 1.2rem;
+  width: 100%;
+  color: white;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+/*Edit popup*/
+.Edit-popup {
+  display: none;
+  position: fixed;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999999;
+}
+
+.edit-container {
+  width: 40rem;
+  padding: 25px 30px;
+  border-radius: 18px;
+  background: #141B16;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  font-family: 'Pixelify';
+  text-align: center;
+}
+
+.edit-container button {
+  width: 15%;
+  padding: 0.5rem;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.15s ease, opacity 0.2s;
+  background-color: #DFC543;
+  border: 0.19em solid #7E5E00;
+  border-radius: 1em;
+  color: #4C4128;
+  font-family: 'Pixelify';
+  display: block;
+  /* ensures margin works */
+  margin-left: auto;
+  margin-bottom: 2%;
+}
+
+/* Add some hover effects to buttons */
+.edit-container {
+  opacity: 1;
+}
+
+/*Edit popup content*/
+.MiniContentWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+}
+
+
+.MiniContentWrapper2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -7%;
+}
+
+
+
+.MiniGS1 {
+  width: 100%;
+  height: 18rem;
+  z-index: 1;
+}
+
+.MiniUserBG {
+  background-image: url("grey.jpg");
+  background-size: cover;
+  background-position: 50% 30%;
+  /* or top, bottom, left, right */
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+  transform: scaleY(1.09);
+  width: 100%;
+  height: 50%;
+  z-index: 100;
+  text-align: end;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  /* horizontal: right */
+  align-items: flex-end;
+  /* vertical: bottom */
+  cursor: pointer;
+
+}
+
+.MiniUIcircle {
+  transform: scale(1.3);
+  background-color: white;
+  background-image: url("profile.png");
+  background-position: center;
+  /* center the image */
+  background-size: cover;
+  /* scale image to cover the circle */
+  background-repeat: no-repeat;
+  /* prevent tiling */
+  z-index: 101;
+  margin-top: -8%;
+  margin-left: 5%;
+  width: 18%;
+  height: 40%;
+  z-index: 3;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+.MiniBio {
+  display: flex;
+  margin-top: 2%;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  font-family: 'Pixelify';
+}
+
+.MiniName,
+.MiniBioo {
+  display: block;
+  font-family: 'Pixelify', Times, serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-top: -2%;
+  margin-bottom: 2%;
+  margin-left: 0.5%;
+}
+
+
+.MiniGS2,
+.MiniGS3,
+#NameInput,
+#BioInput {
+  background-color: #0F1611;
+  width: 100%;
+  height: 10rem;
+  margin-bottom: 6%;
+  border-radius: 1rem;
+  color: #FFFFFF;
+  font-family: 'Pixelify';
+  border: 0.2em solid #364233;
+  cursor: pointer;
+  justify-content: center;
+
+  overflow-wrap: break-word;
+  /* break long words if needed */
+  word-wrap: break-word;
+  /* older browsers */
+  white-space: normal;
+  /* allow wrapping */
+  overflow: visible;
+  /* make overflow visible instead of scroll */
+}
+
+.MiniGS2,
+#NameInput {
+  height: 5rem;
+  position: relative;
+}
+
+.hoverBox {
+  display: none;
+  /* hidden by default */
+  position: absolute;
+  top: -1.5rem;
+  /* above MiniGS2 */
+  right: 0;
+  /* align to the right */
+  padding: 0.3rem 0.5rem;
+  background-color: #DFC543;
+  color: #4C4128;
+  font-family: 'Magra-bold';
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  z-index: 1000;
+  pointer-events: none;
+  /* allows mouse to still hover MiniGS2 */
+}

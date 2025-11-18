@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>STEMQuest</title> <!--change title later-->
+    <link rel="stylesheet" href="QuizTime.css" />
+    <script src="UserCompleteTab.js" defer></script>
+</head>
+
+<body>
+    <script type="module" src="login.js" defer></script>
+    <div id="MainBody">
+        <nav class="navbar">
+            <div class="nav-left">
+                <h1 class="stemquest" onclick="gobacktohome()" style="cursor: pointer;">STEMQUEST</h1>
+                <p onclick="event.stopPropagation(); LearnOpenDrop()" class="nav-link" style="cursor: pointer;">Learn
+                </p>
+                <div class="LearnDropDown" id="LearnDropDownMenu">
+                    <div class="LearnDropContent" data-grade="11">
+                        <a href="../GR11/01_Handout_2.pdf" download>
+                            <p>The Cell Theory and Cell Classification</p>
+                        </a>
+                        <a href="../GR11/02_Handout_3.pdf" download>
+                            <p>Cell Modification and Specialization</p>
+                        </a>
+                        <a href="../GR11/03_Handout_2.pdf" download>
+                            <p>Plasma Membrane and Transport Mechanisms</p>
+                        </a>
+                        <a href="../GR11/04_Handout_2.pdf" download>
+                            <p>Cellular Energy and Metabolism</p>
+                        </a>
+                        <a href="../GR11/05_Handout_3.pdf" download>
+                            <p>The Organizational Chart of Matter</p>
+                        </a>
+                        <a href="../GR11/05_Handout_4.pdf" download>
+                            <p>The Organizational Chart of Matter P2</p>
+                        </a>
+                        <a href="../GR11/06_Handout_2.pdf" download>
+                            <p>The Four (4) Major Biological Molecules</p>
+                        </a>
+                        <a href="../GR11/07_Handout_23.pdf" download>
+                            <p>The Cell Cycle, Mitosis, Meiosis</p>
+                        </a>
+                        <a href="../GR11/08_Handout_23.pdf" download>
+                            <p>Basic Genetics and Mendelian Genetics</p>
+                        </a>
+                    </div>
+                    <div class="LearnDropContent" data-grade="12">
+                        <a href="../GR12/01_Handout_110.pdf" download>
+                            <p>Introduction To Chemistry</p>
+                        </a>
+                        <a href="../GR12/02_Handout_1100.pdf" download>
+                            <p>Measurements</p>
+                        </a>
+                        <a href="../GR12/03_Handout_182.pdf" download>
+                            <p>Atoms, Molecules, and Ions</p>
+                        </a>
+                        <a href="../GR12/04_Handout_1113.pdf" download>
+                            <p>Stoichiometry</p>
+                        </a>
+                        <a href="../GR12/05_Handout_15.pdf" download>
+                            <p>The Organizational Chart of Matter</p>
+                        </a>
+                        <a href="../GR12/06_Handout_13-2.pdf" download>
+                            <p>Gas Laws</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <img class="search-btn" src="search.png" alt="Search" class="search-icon"
+                    onclick="event.stopPropagation(); openSearch()">
+
+                <button class="User-Icon" onclick="event.stopPropagation(); openDrop()"></button>
+                <!--to be changed-->
+                <div class="DropDown" id="DropDownMenu">
+                    <a href="Collection.html" class="droplink" target="_self" onclick="alertabi()">
+                        Profile
+                    </a>
+                    <p onclick="event.stopPropagation(); SignouT()">
+                        Sign Out
+                    </p>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="Rowseparator">
+        <div class="HeartTo"></div>
+        <div class="HeartTo"></div>
+        <div class="HeartTo"></div>
+    </div>
+
+    <div class="Rowseparator ProgressRow">
+        <button id="BackButton" onclick="window.location.href='UserCompleteTab.html'">BACK TO HOME</button>
+        <div class="ProgressContainer">
+            <div class="ProgBar" id="QuizProgressBar"></div>
+        </div>
+    </div>
+
+    <div class="MoveMe">
+        <div class="HandoutContent1">
+
+            <div class="grayitem ContainDisShit" data-grade="11">
+                <p id="question">Question eto</p>
+
+                <form id="quizForm" class="quizForm">
+                    <div class="radio-item">
+                        <input type="radio" id="option1" name="js_string" value="1">
+                        <label for="option1"></label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="option2" name="js_string" value="2">
+                        <label for="option2"></label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="option3" name="js_string" value="3">
+                        <label for="option3"></label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="option4" name="js_string" value="4">
+                        <label for="option4"></label>
+                    </div>
+                    <button class="SubmitBtn">SUBMIT ANSWER</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="QuizOverlay" class="overlay hidden">
+        <div class="overlay-box">
+            <p id="OverlayMessage"></p>
+            <button id="OverlayButton" class="Overlaybutto">OK</button>
+        </div>
+    </div>
+    <!--End of Mainbody-->
+
+    <!-- Panel Popup -->
+    <div class="form-popup" id="myForm"></div>
+
+    <div class="search-popup" id="mysearch">
+        <div class="search-outline">
+            <form action="#" class="search-container">
+                <input type="text" placeholder="Search" name="search" id="searchtab" oninput="searchitems()">
+
+                <button type="button" id="btnsearchcancel" class="btn cancel" onclick="closeSearch()">Close</button>
+                <!--change into X in future-->
+            </form>
+        </div>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function searchitems() {
+            const searchValue = document.getElementById("searchtab").value.toLowerCase().trim();
+            const results = document.getElementById("results");
+            const items = document.querySelectorAll(".HandoutContent .grayitem");
+
+            results.innerHTML = ""; // clear previous results
+
+            if (searchValue === "") return;
+            const regex = new RegExp(`\\b${searchValue}\\b`, "i");
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (regex.test(text)) {
+                    const clone = item.cloneNode(true);
+                    results.appendChild(clone);
+                }
+            });
+        }
+
+    </script>
+    <script type="module" src="Handouts11.js"></script>
+    <script type="module" src="QuizTimeDefer.js" defer></script>
+    <script type="module" src="REWARDS.js"></script>
+    <script type="module" src="UserCompleteExtended.js" defer></script>
+
+    <div id="dimOverlay">
+        <div class="loader"></div>
+    </div>
+</body>
+
+</html>

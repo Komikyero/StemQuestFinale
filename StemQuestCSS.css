@@ -1,0 +1,579 @@
+/*Overlay*/
+#dimOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* translucent dark overlay */
+  z-index: 10;
+  /* below forms but above main content */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#dimOverlay.active {
+  display: block;
+  opacity: 1;
+}
+
+html,
+body,
+#MainBody {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2C342C;
+  /*DO NOT CHANGE*/
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: Magra;
+  src: url(Magra-Regular.ttf);
+}
+
+@font-face {
+  font-family: Magra-bold;
+  src: url(Magra-Bold.ttf);
+}
+
+@font-face {
+  font-family: Pixelify;
+  src: url(PixelifySans-VariableFont_wght.ttf);
+}
+
+.navbar {
+  background-color: #202722;
+  display: flex;
+  justify-content: space-between;
+  border: 0.18em solid #97B390;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 50%;
+  padding-inline: 10%;
+}
+
+.stemquest {
+  color: #FFF8EB;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Pixelify';
+}
+
+.nav-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-family: 'Pixelify';
+
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 50%;
+  padding-inline: 15%;
+}
+
+.search-btn {
+  transform: scale(0.7);
+  cursor: pointer;
+}
+
+.signup-btn {
+  padding: 0.6rem 3rem;
+  /*widens the button (can't seem to make it wide)*/
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  display: inline-block;
+  /*kopal ka wahhaha di naka dikit yung rem sa 0.6rem*/
+  cursor: pointer;
+}
+
+/* ✅ FIXED: Centered button + improved background */
+.GetStarted-bg-img {
+  position: relative;
+  /* added */
+  background-image: url("actualbanner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* changed from contain */
+  background-position: center;
+  background-color: #5E5E5E;
+  /*temporary bg image*/
+  width: 100%;
+  height: 50.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* vertical centering */
+  transform: scaleY(100%);
+}
+
+.GetStart-btn {
+  padding: 1.5rem 6rem;
+  /*widens the button (can't seem to make it wide)*/
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  /* no longer absolute */
+  /*centered naturally via flexbox in parent*/
+}
+
+/*for button designs...*/
+.GetStart-btn,
+.signup-btn {
+  background-color: #DFC543;
+  border: 0.25em solid #7E5E00;
+  border-radius: 1.9em;
+  color: #4C4128;
+  font-family: 'Pixelify';
+}
+
+
+/* ✅ FIXED: Bottom section layout */
+#Content-Body {
+  background-color: #2C342C;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  min-height: 30vh;
+  /* ensures visible content section */
+}
+
+.grayitem {
+  background-color: #5E5E5E;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: #FFF8EB;
+  font-family: 'Pixelify';
+  font-size: 1.2rem;
+}
+
+.grayitem {
+  background-color: #3A433A;
+  color: #E0E6DC;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, opacity 0.3s ease;
+  opacity: 0.9;
+}
+
+.grayitem1 {
+  background-color: #2C342C;
+  width: 100%;
+  color: #E0E6DC;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, opacity 0.3s ease;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: #FFF8EB;
+  font-family: 'Pixelify';
+  font-size: 1.2rem;
+}
+
+.grayitem2 {
+  background-color: #1E251A;
+  width: 100%;
+  color: #E0E6DC;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, opacity 0.3s ease;
+  opacity: 1;
+  display: flex;
+  text-align: center;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: #FFF8EB;
+  font-family: 'Pixelify';
+  font-size: 1.2rem;
+}
+
+
+/*sa pop up div eto*/
+#notmatchingg {
+  display: none;
+  font-family: 'Pixelify';
+  color: rgb(83, 83, 83);
+}
+
+/* Signup Popup Styling */
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.form-container {
+  width: 330px;
+  padding: 25px 30px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  font-family: 'Pixelify';
+  text-align: center;
+}
+
+.form-title {
+  font-size: 1.8rem;
+  color: #2C342C;
+  font-family: 'Pixelify';
+  margin-bottom: 1rem;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 80%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  background: #f8f8f8;
+  font-size: 0.95rem;
+  transition: border 0.2s ease;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  border-color: #DFC543;
+  outline: none;
+}
+
+.show-pass {
+  display: flexbox;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.show-pass input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #DFC543;
+  /* modern checkbox color */
+}
+
+#notmatchingg {
+  display: none;
+  font-family: 'Pixelify';
+  color: red;
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+.form-container .btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: transform 0.15s ease, opacity 0.2s;
+  font-family: 'Pixelify'
+}
+
+.form-container .btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.form-container .btn {
+  background-color: #04AA6D;
+  /* green */
+}
+
+.form-container .cancel {
+  background-color: #e74c3c;
+  /* red */
+}
+
+.login-text {
+  margin-top: 18px;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+.login-text a {
+  color: #DFC543;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 3px;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+#showpass,
+#Loginszszszs {
+  margin: 5px 0 22px 0;
+}
+
+#message {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
+#search * {
+  margin: 0;
+  /* reset margins inside search panel */
+}
+
+/* search pop up (right-side panel) */
+#mysearch {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  overflow-y: none;
+  align-items: start;
+  background-color: #2C342C;
+  /*DO NOT CHANGE*/
+  border: 0.18em solid #97B390;
+
+  /* hidden (initial) transform + opacity for animation */
+  opacity: 0;
+  transform: translateX(100%);
+  /* position off-screen to the right */
+  pointer-events: none;
+  /* disable clicks when hidden */
+  transition: transform 0.38s ease, opacity 0.38s ease;
+}
+
+/* visible state show the panel */
+#mysearch.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* container inside */
+.search-container {
+  padding: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.search-container input[type=text] {
+  width: 80%;
+  padding: 12px;
+  border: none;
+  background: #f1f1f1;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.search-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 0;
+}
+
+.search-outline {
+  border: #FFFFFF;
+  border-style: solid;
+  border-bottom-width: 0.1rem;
+  border-left-style: none;
+  border-top-style: none;
+  border-right-style: none;
+}
+
+/*search items*/
+#results {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #2C342C;
+  /* Matches popup theme */
+  border: 1px solid #97B390;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+/*weeehhh*/
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* (rest unchanged, included for completeness) */
+.signupForm {
+  width: 330px;
+  padding: 25px 30px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  font-family: 'Pixelify';
+  text-align: center;
+}
+
+.signupForm input[type="text"],
+.signupForm input[type="password"] {
+  width: 80%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  background: #f8f8f8;
+  font-size: 0.95rem;
+  transition: border 0.2s ease;
+}
+
+.signupForm input[type="text"]:focus,
+.signupForm input[type="password"]:focus {
+  border-color: #DFC543;
+  outline: none;
+}
+
+.signupForm .btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: transform 0.15s ease, opacity 0.2s;
+  font-family: 'Pixelify';
+}
+
+input::placeholder {
+  font-family: 'Pixelify';
+}
+
+.signupForm .btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.signupForm .btn {
+  background-color: #04AA6D;
+  /* green */
+}
+
+.signupForm .cancel {
+  background-color: #e74c3c;
+  /* red */
+}
+
+/* ✅ GRADE SELECTION POPUP */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  /* dark overlay */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  /* ABOVE everything else */
+}
+
+.popup-content {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  font-family: 'Pixelify';
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.grade-btn {
+  margin: 0.5rem;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #DFC543;
+  color: #2C342C;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Pixelify';
+  transition: background-color 0.3s ease;
+}
+
+.grade-btn:hover {
+  background-color: #c8ad35;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>STEMQuest</title> <!--change title later-->
+	<link rel="stylesheet" href="StemQuestCSS.css" />
+	<script src="StemQuestJS.js"></script>
+</head>
+
+<body>
+	<div id="MainBody">
+		<nav class="navbar">
+			<div class="nav-left">
+				<h1 class="stemquest">STEMQUEST</h1>
+			</div>
+
+			<div class="nav-right">
+				<button class="signup-btn" onclick="event.stopPropagation(); openLogin()">LOG IN</button>
+			</div>
+		</nav>
+	</div>
+	<div class="GetStarted-bg-img">
+		<!--place holder langs ^^^-->
+
+		<button class="GetStart-btn" onclick="event.stopPropagation(); openForm()">GET STARTED</button>
+	</div>
+	<div id="Content-Body">
+		<div class="grayitem1">
+			Here, thou dost not merely study the sciences — thou dost experiment, question, test, stumble, rise again, and at last earn that most glorious ‘aha!’ moment.
+		</div>
+		<div class="grayitem2">
+			Made by Group 3 of MAWD 12 <br/><br/>
+			Programmed by : Joshua Kim Ballon &  Kirvie Gayoso</div>
+		
+	</div>
+
+	<!-- Signup Popup -->
+	<div class="form-popup" id="myForm">
+		<form id="signupForm" class="signupForm">
+			<h1 class="form-title">Sign Up</h1>
+
+			<input type="text" placeholder="Enter Email" name="email" id="email" required>
+			<input type="password" id="inputpass" placeholder="Enter Password" name="psw" required>
+			<input type="password" id="confirmpass" placeholder="Confirm Password" name="confirmpsw" required>
+
+			<div class="show-pass">
+				<input type="checkbox" id="shwpass" onclick="ShowPass()">
+				<label for="showpass">Show Password</label>
+			</div>
+
+			<div id="notmatchingg">Passwords do not match</div>
+
+			<button type="submit" id="signupBtn" class="btn">Sign Up</button>
+			<button type="button" id="btncancel" class="btn cancel" onclick="closeForm()">Close</button>
+
+			<p class="login-text">
+				Already have an account? <a href="#" id="loginLink" onclick="openLogin()">Login</a>
+			</p>
+		</form>
+	</div>
+
+	<!-- GRADE SELECTION POPUP (initially hidden) -->
+	<div id="grade-selection" class="popup" style="display: none;">
+		<div class="popup-content">
+			<h3>Select Your Grade Level</h3>
+			<button id="grade11" type="button" class="grade-btn">STEM 11</button>
+			<button id="grade12" type="button" class="grade-btn">STEM 12</button>
+		</div>
+	</div>
+
+
+	<div class="form-popup" id="LoginmyForm">
+		<form action="#" class="form-container">
+			<h1 class="form-title">Login</h1>
+
+			<input type="text" placeholder="Enter Email" name="email" id="Email" required>
+			<input type="password" id="passinput" placeholder="Enter Password" name="psw" required>
+
+			<div class="show-pass">
+				<input type="checkbox" id="showpass" onclick="ShowPass()">
+				<label for="showpass">Show Password</label>
+			</div>
+
+			<button type="submit" id="loginbtn" class="btn" onclick="checkpass()">Login</button>
+			<button type="button" id="cancelbtn" class="btn cancel" onclick="closeLogin()">Close</button>
+
+			<p class="login-text">
+				Don't have an account? <a href="#" id="SigninLink" onclick="event.stopPropagation(); openForm()">Sign
+					Up</a>
+			</p>
+		</form>
+	</div>
+
+	<div class="search-popup" id="mysearch">
+		<div class="search-outline">
+			<form action="#" class="search-container">
+				<input type="text" placeholder="Search" name="search" id="searchtab" oninput="searchitems()">
+
+				<button type="button" id="btnsearchcancel" class="btn cancel" onclick="closeSearch()">Close</button>
+				<!--change into X in future-->
+			</form>
+		</div>
+		<div id="results"></div>
+	</div>
+
+
+	<script>
+		function searchitems() {
+			const searchValue = document.getElementById("searchtab").value.toLowerCase().trim();
+			const results = document.getElementById("results");
+			const items = document.querySelectorAll("#Content-Body .grayitem");
+
+			results.innerHTML = ""; // clear previous results
+
+			items.forEach(item => {
+				const text = item.textContent.toLowerCase();
+				if (text.includes(searchValue) && searchValue !== "") {
+					const clone = item.cloneNode(true);
+					results.appendChild(clone);
+				}
+			});
+		}
+	</script>
+	<div id="dimOverlay"></div>
+
+	<script type="module" src="firebase-init.js" defer></script>
+</body>
+
+</html>

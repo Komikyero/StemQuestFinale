@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>STEMQuest</title> <!--change title later-->
+	<link rel="stylesheet" href="profile.css" />
+	<script src="UserCompleteTab.js" defer></script>
+</head>
+
+<body>
+	<script type="module" src="login.js" defer></script>
+	<div id="MainBody">
+		<nav class="navbar">
+			<div class="nav-left">
+				<h1 class="stemquest" onclick="gobacktohome()" style="cursor: pointer;">STEMQUEST</h1>
+				<a href="Learn.html" class="nav-link">Learn</a>
+			</div>
+
+			<div class="nav-right">
+				<img class="search-btn" src="search.png" alt="Search" class="search-icon"
+					onclick="event.stopPropagation(); openSearch()">
+
+				<button class="User-Icon" onclick="event.stopPropagation(); openDrop()"></button>
+				<!--to be changed-->
+			</div>
+		</nav>
+	</div>
+	<!--Class names are to be changed/current placeholders-->
+	<!--Main Content-->
+
+	<div id="ContentWrapper">
+		<div class="GreenSquare1">
+			<div class="userbackground">
+				<button class="edit-button" onclick="Editpopup()">EDIT</button>
+			</div>
+			<div class="UIcircle"></div>
+			<label class="username">Username</label>
+
+		</div>
+	</div> <!--End of ContentWrapper-->
+
+	<div id="ContentWrapper">
+
+		<div class="bio-section">
+			<label class="biolabel">BIO</label>
+			<div class="GreenSquare2" id="gs2">
+				<div class="akosichaknu">
+					<p class="akosidogie"></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="StatsSection">
+			<div class="GreenSquare3">
+				<p>Areas Explored</p>
+				<p>Total Exp</p>
+			</div>
+		</div>
+	</div> <!--End of ContentWrapper-->
+	<div class="UserGeneratedSquares"></div>
+
+	<div class="aeon"></div>
+
+
+	<!--End of Mainbody-->
+
+	<!-- Panel Popup -->
+	<div class="form-popup" id="myForm"></div>
+
+	<div class="search-popup" id="mysearch">
+		<div class="search-outline">
+			<form action="#" class="search-container">
+				<input type="text" placeholder="Search" name="search" id="searchtab" oninput="searchitems()">
+
+				<button type="button" id="btnsearchcancel" class="btn cancel" onclick="closeSearch()">Close</button>
+				<!--change into X in future-->
+			</form>
+		</div>
+		<div id="results"></div>
+	</div>
+
+	<div class="DropDown" id="DropDownMenu">
+		<a href="profile.html" class="droplink" target="_self" onclick="alertabi()">
+			Profile
+		</a>
+		<a href="Collection.html" class="droplink" target="_self" onclick="alertabi()">
+			Collection
+		</a>
+		<p onclick="event.stopPropagation(); SignouT()">
+			Sign Out
+		</p>
+	</div>
+
+	<div class="Edit-popup" id="Editform">
+		<form action="#" class="edit-container">
+			<button class="savebtn" onclick="SaveThisShit()">Save</button>
+
+			<div class="MiniContentWrapper">
+				<div class="MiniGS1">
+					<div class="MiniUserBG"></div>
+					<div class="MiniUIcircle"></div>
+
+					<input type="file" id="bgInput" accept="image/*" style="display:none">
+					<input type="file" id="UIbgInput" accept="image/*" style="display:none">
+				</div>
+			</div> <!--End of ContentWrapper-->
+
+			<div class="MiniContentWrapper2">
+				<div class="MiniBio">
+					<label class="MiniName">Name</label>
+					<div class="MiniGS2" id="gs2" onmouseover="EditMoAbi()"></div>
+					<input type="text" id="NameInput" style="display:none">
+
+					<label class="MiniBioo">Bio</label>
+					<div class="MiniGS3" id="gs3"></div>
+					<input type="text" id="BioInput" style="display:none">
+				</div>
+			</div> <!--End of ContentWrapper-->
+		</form>
+	</div>
+
+	<div class="testingggg" style="width: 100px; height: 100px; background-color: red; display: none;"></div>
+
+	<script type="module" src="profile.js" defer></script>
+	<script>
+		function searchitems() {
+			const searchValue = document.getElementById("searchtab").value.toLowerCase().trim();
+			const results = document.getElementById("results");
+			const items = document.querySelectorAll("#Content-Body .grayitem");
+
+			results.innerHTML = ""; // clear previous results
+
+			items.forEach(item => {
+				const text = item.textContent.toLowerCase();
+				if (text.includes(searchValue) && searchValue !== "") {
+					const clone = item.cloneNode(true);
+					results.appendChild(clone);
+				}
+			});
+		}
+
+		function Editpopup() {
+			document.getElementById("Editform").style.display = "block";
+			document.getElementById("Editform").style.opacity = "1";
+			showOverlay();
+		}
+
+		function SaveThisShit() {
+			const uid = localStorage.getItem('currentUID');
+			document.getElementById("Editform").style.display = "none";
+			document.getElementById("Editform").style.opacity = "0";
+			hideOverlay();
+
+			// Use UID key
+			const savedBG = localStorage.getItem(`userBG_${uid}`);
+			if (savedBG) {
+				document.querySelector('.GreenSquare1 .userbackground').style.backgroundImage = `url(${savedBG})`;
+			}
+
+			const UIsavedBG = localStorage.getItem(`UIuserBG_${uid}`);
+			if (UIsavedBG) {
+				document.querySelector('.GreenSquare1 .UIcircle').style.backgroundImage = `url(${UIsavedBG})`;
+			}
+		}
+
+	</script>
+	<script>
+		function EditMoAbi() {
+			const miniGS2 = document.getElementById('gs2');
+			const hoverBox = document.getElementById('hoverBox');
+
+			miniGS2.addEventListener('mouseenter', () => {
+				hoverBox.style.display = 'block';
+			});
+
+			miniGS2.addEventListener('mouseleave', () => {
+				hoverBox.style.display = 'none';
+			});
+		}
+	</script>
+	<div id="dimOverlay"></div>
+
+	<script type="module" defer>
+		// =================== Main Page User Display Handler ===================
+
+		import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+		import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+		import { getStorage, ref as storageRef, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-storage.js";
+
+		const auth = getAuth();
+		const db = getFirestore();
+		const storage = getStorage();
+
+
+		window.addEventListener('DOMContentLoaded', () => {
+
+			// Elements on the main page
+			const mainBG = document.querySelector('.userbackground');
+			const MainPageIcon = document.querySelector('.User-Icon');
+
+			// Get current UID from localStorage (saved by profile page after login)
+			const uid = localStorage.getItem('currentUID');
+			if (!uid) return; // user not logged in
+
+			//Try localStorage first for instant display
+			const savedIcon = localStorage.getItem(`UIuserBG_${uid}`);
+
+			if (MainPageIcon && savedIcon) {
+				MainPageIcon.style.backgroundImage = `url(${savedIcon})`;
+				MainPageIcon.style.backgroundSize = 'cover';
+				MainPageIcon.style.backgroundPosition = 'center';
+			}
+
+			//Fetch from Firestore to make sure it's up to date
+			onAuthStateChanged(auth, async (user) => {
+				if (!user) return;
+
+				const userDocRef = doc(db, 'users', uid);
+				const docSnap = await getDoc(userDocRef);
+
+				if (docSnap.exists()) {
+					const data = docSnap.data();
+
+					// Update icon
+					if (data.UIuserBG) {
+						if (MainPageIcon) {
+							MainPageIcon.style.backgroundImage = `url(${data.UIuserBG})`;
+							MainPageIcon.style.backgroundSize = 'cover';
+							MainPageIcon.style.backgroundPosition = 'center';
+						}
+						localStorage.setItem(`UIuserBG_${uid}`, data.UIuserBG);
+					}
+
+					// Update background
+					if (data.userBG) {
+						if (mainBG) {
+							mainBG.style.backgroundImage = `url(${data.userBG})`;
+							mainBG.style.backgroundSize = 'cover';
+							mainBG.style.backgroundPosition = 'center';
+						}
+						localStorage.setItem(`userBG_${uid}`, data.userBG);
+					}
+				}
+
+				showGradeContent(uid);
+			});
+
+		});
+
+		async function loadRewards() {
+			const uid = localStorage.getItem("currentUID");
+			if (!uid) return;
+
+			const userRef = doc(db, "users", uid);
+			const docSnap = await getDoc(userRef);
+
+			if (docSnap.exists()) {
+				const data = docSnap.data();
+				document.getElementById("NumAreas").textContent = data.NumAreas || 0;
+				document.getElementById("NumEXP").textContent = data.NumEXP || 0;
+			}
+		}
+
+		window.addEventListener("DOMContentLoaded", loadRewards);
+
+	</script>
+</body>
+
+</html>
