@@ -21,7 +21,7 @@ const db = getFirestore(app);
 let isSigningUp = false; // Prevent redirect before grade selection
 
 document.addEventListener("DOMContentLoaded", () => {
-  
+
   // ================= SIGNUP =================
   const signupForm = document.getElementById("signupForm");
   signupForm?.addEventListener("submit", async (e) => {
@@ -71,13 +71,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ================= AUTH STATE =================
   onAuthStateChanged(auth, (user) => {
-    if (!user) {
+    if (user) {
+      // User is signed in
+      if (!window.location.href.includes("UserCompleteTab.html") && !isSigningUp) {
+        window.location.href = "UserCompleteTab.html";
+      }
+    } else {
+      // User is NOT signed in
       if (!window.location.href.includes("STEMQuest.html")) {
         window.location.href = "STEMQuest.html";
-      }
-    } else if (!isSigningUp) {
-      if (!window.location.href.includes("UserCompleteTab.html")) {
-        window.location.href = "UserCompleteTab.html";
       }
     }
   });

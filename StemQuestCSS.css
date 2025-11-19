@@ -582,28 +582,16 @@ input::placeholder {
 
 /* Small phones */
 @media (min-width: 320px) {
-  body {
-    background-color: lightblue;
-  }
-
 
 }
 
 /* Large phones */
 @media (min-width: 480px) {
-  body {
-    background-color: lightgreen;
-  }
-
 
 }
 
 /* Tablets portrait */
 @media (min-width: 768px) {
-  body {
-    background-color: lightyellow;
-  }
-
   .form-popup {
     transform: scale(1.4);
     top: 30%;
@@ -625,9 +613,6 @@ input::placeholder {
 
 /* Tablets landscape */
 @media (min-width: 992px) {
-  body {
-    background-color: lightpink;
-  }
 
   .form-popup {
     transform: scale(1);
@@ -650,9 +635,6 @@ input::placeholder {
 
 /* Laptops / small desktops */
 @media (min-width: 1024px) {
-  body {
-    background-color: lightgray;
-  }
 
   .form-popup {
     transform: scale(1);
@@ -675,10 +657,6 @@ input::placeholder {
 
 /* Large desktops */
 @media (min-width: 1200px) {
-  body {
-    background-color: white;
-  }
-
   .form-popup {
     transform: scale(1);
     top: 30%;
