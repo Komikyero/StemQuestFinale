@@ -898,62 +898,130 @@ ul {
 
 /* Small phones */
 @media (min-width: 320px) {
-  body {
-    background-color: lightblue;
-  }
+    body {
+        background-color: lightblue;
+    }
 
-  .Columnseparator {
-    margin-top: -15rem;
-  }
+
 }
 
 /* Large phones */
 @media (min-width: 480px) {
-  body {
-    background-color: lightgreen;
-  }
+    body {
+        background-color: lightgreen;
+    }
 
-  .Columnseparator {
-    margin-top: -15rem;
-  }
+
 }
 
 /* Tablets portrait */
 @media (min-width: 768px) {
-  body {
-    background-color: lightyellow;
-  }
+    body {
+        background-color: lightyellow;
+    }
 
-  .Columnseparator {
-    margin-top: -15rem;
-  }
+    #ContentWrapper1 p {
+        transform: scale(1.2);
+        text-align: center;
+    }
+
+    #ContentWrapper1 {
+        margin-top: -10%;
+        margin-left: 20%;
+        transform: scale(0.96);
+    }
+
+    #ContentWrapper2 {
+         margin-top: -5%;
+        margin-left: 20%;
+        transform: scale(0.96);
+    }
+
+    #ContentWrapper2 p {
+        transform: scale(1.05);
+    }
 }
 
 /* Tablets landscape */
 @media (min-width: 992px) {
-  body {
-    background-color: lightpink;
-  }
+    body {
+        background-color: lightpink;
+    }
+
+    #ContentWrapper1 {
+        margin-top: -23%;
+        margin-left: 10%;
+        transform: scale(1);
+    }
+
+    #ContentWrapper1 p {
+        transform: scale(1.2);
+        text-align: center;
+    }
+
+    #ContentWrapper2 {
+        margin-top: -23%;
+        margin-left: 10%;
+        transform: scale(1);
+    }
+
+    #ContentWrapper2 p {
+        transform: scale(1);
+    }
 }
 
 /* Laptops / small desktops */
 @media (min-width: 1024px) {
-  body {
-    background-color: lightgray;
-  }
+    body {
+        background-color: lightgray;
+    }
 
-  .Columnseparator {
-    margin-top: -15rem;
-  }
+    #ContentWrapper1 p {
+        transform: scale(1.2);
+        text-align: center;
+    }
+
+    #ContentWrapper1 {
+        margin-top: -23%;
+        margin-left: 10%;
+        transform: scale(1);
+    }
+
+    #ContentWrapper2 {
+        margin-top: -23%;
+        margin-left: 10%;
+        transform: scale(1);
+    }
+
+    #ContentWrapper2 p {
+        transform: scale(1);
+    }
 }
 
 /* Large desktops */
 @media (min-width: 1200px) {
-  body {
-    background-color: white;
-  }
+    body {
+        background-color: white;
+    }
 
-  .Columnseparator {
-    margin-top: 0;
-  }
+    #ContentWrapper1 p {
+        transform: scale(1);
+        text-align: center;
+    }
+
+    #ContentWrapper1 {
+        margin-top: 0;
+        margin-left: 0;
+        transform: scale(1);
+    }
+
+    #ContentWrapper2 {
+        margin-top: 0;
+        margin-left: 0;
+        transform: scale(1);
+    }
+
+    #ContentWrapper2 p {
+        transform: scale(1);
+    }
 }

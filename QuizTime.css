@@ -738,12 +738,20 @@ body,
   body {
     background-color: lightblue;
   }
+
+  #QuizOverlay {
+    transform: scale(1);
+  }
 }
 
 /* Large phones */
 @media (min-width: 480px) {
   body {
     background-color: lightgreen;
+  }
+
+  #QuizOverlay {
+    transform: scale(1);
   }
 }
 
@@ -756,6 +764,10 @@ body,
   .MoveMe, .ProgressRow {
     transform: scale(0.9);
   }
+
+  #QuizOverlay {
+    transform: scale(1.6);
+  }
 }
 
 /* Tablets landscape */
@@ -764,6 +776,9 @@ body,
     background-color: lightpink;
   }
   
+  #QuizOverlay {
+    transform: scale(1);
+  }
 }
 
 /* Laptops / small desktops */
@@ -775,6 +790,10 @@ body,
   .MoveMe, .ProgressRow {
     transform: scale(0.9);
   }
+
+  #QuizOverlay {
+    transform: scale(1);
+  }
 }
 
 /* Large desktops */
@@ -783,4 +802,7 @@ body,
     background-color: white;
   }
 
+  #QuizOverlay {
+    transform: scale(1);
+  }
 }

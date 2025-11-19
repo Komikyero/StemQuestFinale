@@ -1124,15 +1124,15 @@ a {
 
   #ContentWrapper {
     margin: 0;
-    margin-left: 14rem;
+    margin-left: 24%;
   }
 
   .GreenSquare2 {
-    transform: scale(0.9);
+    transform: scale(1);
   }
 
   .Columnseparator {
-    transform: scale(0.9);
+    transform: scale(1);
   }
 }
 
@@ -1144,15 +1144,15 @@ a {
 
   #ContentWrapper {
     margin: 0;
-    margin-left: 14rem;
+    margin-left: 24%;
   }
 
   .GreenSquare2 {
-    transform: scale(0.9);
+    transform: scale(1);
   }
 
   .Columnseparator {
-    transform: scale(0.9);
+    transform: scale(1);
   }
 }
 
@@ -1164,15 +1164,15 @@ a {
 
   #ContentWrapper {
     margin: 0;
-    margin-left: 14rem;
+    margin-left: 24%;
   }
 
   .GreenSquare2 {
-    transform: scale(0.9);
+    transform: scale(1);
   }
 
   .Columnseparator {
-    transform: scale(0.9);
+    transform: scale(1);
   }
 }
 

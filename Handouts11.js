@@ -244,236 +244,220 @@ export const allQuizzes = [
 
     ],
     [ // Quiz 1
-        {
-            question: "1. Which scientist first observed and named “cells” after viewing cork under a microscope?",
-            options: [
-                "Schwann",
-                "Schleiden",
-                "Hooke",
-                "Virchow"
-            ],
-            answer: 2
-        },
+         {
+        question: "Which of the following is not part of the Cell Theory?",
+        options: [
+            "All living organisms are made of cells.",
+            "Cells are the basic unit of structure and function.",
+            "Cells arise from pre-existing cells.",
+            "Cells can spontaneously generate in special conditions."
+        ],
+        answer: 3
+    },
+    {
+        question: "Which structure is present in all types of cells, both prokaryotic and eukaryotic?",
+        options: [
+            "Nucleus",
+            "Cell membrane",
+            "Mitochondria",
+            "Endoplasmic reticulum"
+        ],
+        answer: 1
+    },
+    {
+        question: "What is the main feature that distinguishes prokaryotic cells from eukaryotic cells?",
+        options: [
+            "Size of the cell",
+            "Presence of a nucleus enclosed by a membrane",
+            "Ability to photosynthesize",
+            "Ability to reproduce"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which organelle is responsible for packaging, modifying, and sorting proteins from the ER?",
+        options: [
+            "Mitochondria",
+            "Golgi apparatus",
+            "Lysosome",
+            "Ribosome"
+        ],
+        answer: 1
+    },
+    {
+        question: "Ribosomes found in prokaryotes are composed of which subunits?",
+        options: [
+            "60S + 40S",
+            "70S only",
+            "50S + 30S",
+            "80S only"
+        ],
+        answer: 2
+    },
+    {
+        question: "Which part of the cell membrane gives it selective permeability and forms the center of the bilayer?",
+        options: [
+            "Hydrophilic phosphate heads",
+            "Hydrophobic fatty acid tails",
+            "Carbohydrate chains",
+            "Cholesterol molecules"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which plant organelle contains chlorophyll and is the site of photosynthesis?",
+        options: [
+            "Mitochondrion",
+            "Chromoplast",
+            "Chloroplast",
+            "Amyloplast"
+        ],
+        answer: 2
+    },
 
-        {
-            question: "2. Which of the following structures is found in prokaryotic cells but not in eukaryotic cells?",
-            options: [
-                "Mitochondria",
-                "Nucleus",
-                "Nucleoid",
-                "Golgi apparatus"
-            ],
-            answer: 2
-        },
+    // Handout 2 – Plant & Animal Tissues
+    {
+        question: "Which type of plant tissue is responsible for primary growth, or the increase in length of roots and shoots?",
+        options: [
+            "Lateral meristem",
+            "Intercalary meristem",
+            "Apical meristem",
+            "Vascular cambium"
+        ],
+        answer: 2
+    },
+    {
+        question: "Which plant tissue type is responsible for transporting water and dissolved minerals?",
+        options: [
+            "Phloem",
+            "Parenchyma",
+            "Collenchyma",
+            "Xylem"
+        ],
+        answer: 3
+    },
+    {
+        question: "Which of the following is not a characteristic of meristematic cells?",
+        options: [
+            "Actively dividing",
+            "Large central vacuole",
+            "Thin cell walls",
+            "Dense cytoplasm"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which animal tissue type functions primarily as a protective covering and lining of organs?",
+        options: [
+            "Nervous tissue",
+            "Connective tissue",
+            "Epithelial tissue",
+            "Muscle tissue"
+        ],
+        answer: 2
+    },
+    {
+        question: "Which type of muscle tissue is involuntary, striated, and found only in the heart?",
+        options: [
+            "Smooth muscle",
+            "Skeletal muscle",
+            "Cardiac muscle",
+            "Voluntary muscle"
+        ],
+        answer: 2
+    },
+    {
+        question: "Which of the following is not a function of connective tissue?",
+        options: [
+            "Filling spaces",
+            "Transmitting nerve impulses",
+            "Protecting organs",
+            "Providing flexible support"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which cell type in nervous tissue receives, processes, and transmits information?",
+        options: [
+            "Schwann cells",
+            "Oligodendrocytes",
+            "Neuroglia",
+            "Neurons"
+        ],
+        answer: 3
+    },
 
-        {
-            question: "3. Ribosomes in prokaryotic cells function mainly for—",
-            options: [
-                "Cell division",
-                "Protein synthesis",
-                "ATP production",
-                "Photosynthesis"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "4. Which plant meristem is responsible for secondary growth (increase in girth)?",
-            options: [
-                "Apical meristem",
-                "Lateral meristem",
-                "Intercalary meristem",
-                "Protoxylem"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "5. Which type of plant ground tissue provides flexible support due to uneven cell wall thickening?",
-            options: [
-                "Parenchyma",
-                "Collenchyma",
-                "Sclerenchyma",
-                "Epidermis"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "6. Which plant vascular tissue transports sugars throughout the plant?",
-            options: [
-                "Xylem",
-                "Phloem",
-                "Vessel elements",
-                "Cambium"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "7. Simple squamous epithelial tissue is best suited for—",
-            options: [
-                "Absorption of nutrients",
-                "Rapid diffusion",
-                "Protection against abrasion",
-                "Voluntary movement"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "8. Which connective tissue stores energy and provides insulation?",
-            options: [
-                "Bone",
-                "Blood",
-                "Cartilage",
-                "Adipose"
-            ],
-            answer: 3
-        },
-
-        {
-            question: "9. Cardiac muscle cells are unique because they—",
-            options: [
-                "Are voluntary and non-striated",
-                "Are smooth and uninucleated",
-                "Have intercalated discs",
-                "Can regenerate rapidly"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "10. Which part of a neuron receives incoming signals?",
-            options: [
-                "Axon",
-                "Dendrite",
-                "Synaptic bulb",
-                "Myelin sheath"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "11. The plasma membrane is described as a “fluid mosaic” mainly because—",
-            options: [
-                "Only lipids can move freely",
-                "Proteins are rigidly fixed",
-                "Components move within the membrane",
-                "It is made only of phospholipids"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "12. Phospholipids are considered amphipathic because—",
-            options: [
-                "They contain only polar regions",
-                "They contain only nonpolar regions",
-                "They have both hydrophilic and hydrophobic parts",
-                "They can dissolve completely in water"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "13. Which membrane protein binds chemical signals such as hormones?",
-            options: [
-                "Carrier protein",
-                "Receptor protein",
-                "Identity marker",
-                "Adhesion protein"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "14. Which type of passive transport requires no membrane protein?",
-            options: [
-                "Facilitated diffusion",
-                "Osmosis",
-                "Simple diffusion",
-                "Ion channel transport"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "15. Gated channels open or close in response to a—",
-            options: [
-                "Temperature change",
-                "Random movement of water",
-                "Specific stimulus",
-                "Lack of ATP"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "16. In osmosis, water moves toward the area with—",
-            options: [
-                "Lower solute concentration",
-                "Higher solute concentration",
-                "Equal solute concentration",
-                "No solutes at all"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "17. A plant cell becomes flaccid when placed in which type of solution?",
-            options: [
-                "Hypotonic",
-                "Hypertonic",
-                "Isotonic",
-                "Acidic"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "18. The sodium–potassium pump moves ions—",
-            options: [
-                "Down their concentration gradient",
-                "Without using ATP",
-                "Using ATP to move ions against a gradient",
-                "Only when channels are open"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "19. A symporter transports—",
-            options: [
-                "One molecule at a time",
-                "Two molecules in opposite directions",
-                "Two molecules in the same direction",
-                "Only water molecules"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "20. Which bulk transport process allows the cell to take in fluid droplets?",
-            options: [
-                "Exocytosis",
-                "Pinocytosis",
-                "Phagocytosis",
-                "Antiport transport"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "21. Receptor-mediated endocytosis is different from other forms of endocytosis because it—",
-            options: [
-                "Requires no vesicles",
-                "Is non-specific",
-                "Uses specific membrane receptors",
-                "Involves only water"
-            ],
-            answer: 2
-        },
+    // Handout 3 – Membrane & Transport
+    {
+        question: "Which characteristic of phospholipids allows the plasma membrane to form a bilayer?",
+        options: [
+            "They are fully hydrophilic",
+            "They have both hydrophobic and hydrophilic regions",
+            "They are completely nonpolar",
+            "They contain no fatty acids"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which component of the plasma membrane is responsible for recognizing self vs. foreign cells?",
+        options: [
+            "Spectrin",
+            "Glycolipids and glycoproteins",
+            "Aquaporins",
+            "Carrier proteins"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which transport process moves molecules from high to low concentration without energy and without proteins?",
+        options: [
+            "Active transport",
+            "Facilitated diffusion",
+            "Simple diffusion",
+            "Osmosis"
+        ],
+        answer: 2
+    },
+    {
+        question: "Which structure allows charged ions such as K⁺ or Na⁺ to cross the plasma membrane?",
+        options: [
+            "Aquaporins",
+            "Ion channels",
+            "Cell-surface receptors",
+            "Identity markers"
+        ],
+        answer: 1
+    },
+    {
+        question: "In animal cells placed in a hypertonic solution, what happens?",
+        options: [
+            "Water moves into the cell and it bursts",
+            "No net movement of water",
+            "Water leaves the cell causing it to shrivel",
+            "The cell becomes turgid"
+        ],
+        answer: 2
+    },
+    {
+        question: "Which mechanism involves the cell engulfing large particles like bacteria?",
+        options: [
+            "Pinocytosis",
+            "Phagocytosis",
+            "Osmosis",
+            "Exocytosis"
+        ],
+        answer: 1
+    },
+    {
+        question: "The sodium–potassium pump is an example of which type of transport?",
+        options: [
+            "Passive transport",
+            "Primary active transport",
+            "Secondary active transport",
+            "Bulk transport"
+        ],
+        answer: 1
+    },
 
     ],
 
@@ -716,235 +700,114 @@ export const allQuizzes = [
     ],
     [ // Quiz for Quiz 2
         {
-            question: "1. Which molecule serves as the main energy currency of the cell?",
-            options: [
-                "NADH",
-                "ATP",
-                "FADH2",
-                "Glucose"
-            ],
-            answer: 1
-        },
+        question: "What is the first stage of cellular respiration?",
+        options: ["Krebs Cycle", "Glycolysis", "Electron Transport Chain", "Photosynthesis"],
+        answer: 1
+    },
+    {
+        question: "Where does glycolysis occur?",
+        options: ["Mitochondria", "Cytoplasm", "Nucleus", "Chloroplast"],
+        answer: 1
+    },
+    {
+        question: "What is the final electron acceptor of chemiosmosis?",
+        options: ["Oxygen", "NADH", "FADH2", "Carbon Dioxide"],
+        answer: 0
+    },
+    {
+        question: "What are the two major processes of photosynthesis?",
+        options: [
+            "Light-Dependent Reactions and Light-Independent Reactions",
+            "Glycolysis and Krebs Cycle",
+            "Electron Transport Chain and Chemiosmosis",
+            "Fermentation and Respiration"
+        ],
+        answer: 0
+    },
+    {
+        question: "What is produced during the phosphorylation reaction?",
+        options: ["Energy", "Carbon Dioxide", "Glucose", "Oxygen"],
+        answer: 0
+    },
+    {
+        question: "What is produced during the Krebs Cycle?",
+        options: ["Oxygen", "Glucose", "ATP", "NADH"],
+        answer: 3
+    },
+    {
+        question: "Why is the Krebs Cycle referred to as a cycle?",
+        options: ["It produces ATP", "It recycles molecules", "It occurs in the mitochondria", "It requires oxygen"],
+        answer: 1
+    },
 
-        {
-            question: "2. Which reaction requires energy?",
-            options: [
-                "Phosphorylation",
-                "Dephosphorylation",
-                "Oxidation",
-                "Reduction"
-            ],
-            answer: 1
-        },
+    // Chemical Reactions & Periodic Table (Handout 5)
+    {
+        question: "What is released during decomposition reactions?",
+        options: ["Energy", "Reactants", "Products", "State symbols"],
+        answer: 0
+    },
+    {
+        question: "What do the reactants in a chemical equation represent?",
+        options: ["The products of the reaction", "The elements transformed and affected", "The conditions of the reaction", "The energy released"],
+        answer: 1
+    },
+    {
+        question: "Which type of reaction involves multiple reactants forming a single product?",
+        options: ["Decomposition", "Displacement", "Composition/Synthesis", "Reduction-Oxidation"],
+        answer: 2
+    },
+    {
+        question: "What is indicated by two arrows (⇋) in a chemical equation?",
+        options: ["The reaction is irreversible", "The reaction is forward", "The reaction is reversible", "The reaction is complete"],
+        answer: 2
+    },
+    {
+        question: "What are the elements in Group 1 of the periodic table called?",
+        options: ["Noble gases", "Alkali metals", "Halogens", "Alkali earth metals"],
+        answer: 1
+    },
+    {
+        question: "What is the main purpose of writing a chemical equation?",
+        options: ["To show the physical state of compounds", "To indicate the direction of the reaction", "To see which elements were transformed and affected", "To list all the compounds involved"],
+        answer: 2
+    },
+    {
+        question: "Which type of reaction is characterized by one compound being broken down into its constituents?",
+        options: ["Composition", "Decomposition", "Displacement", "Red-Ox"],
+        answer: 1
+    },
 
-        {
-            question: "3. Where does glycolysis occur?",
-            options: [
-                "Mitochondrial matrix",
-                "Cytoplasm",
-                "Inner mitochondrial membrane",
-                "Nucleus"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "4. What is the final electron acceptor in the electron transport chain?",
-            options: [
-                "Carbon dioxide",
-                "Water",
-                "Oxygen",
-                "NAD+"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "5. Which stage of cellular respiration produces the most ATP?",
-            options: [
-                "Glycolysis",
-                "Krebs Cycle",
-                "Electron Transport Chain",
-                "Fermentation"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "6. What happens if oxygen is unavailable for cellular respiration?",
-            options: [
-                "The ETC speeds up",
-                "The Krebs cycle continues normally",
-                "Cells undergo anaerobic respiration",
-                "ATP production stops immediately"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "7. Where do the light-dependent reactions of photosynthesis occur?",
-            options: [
-                "Stroma",
-                "Cytoplasm",
-                "Thylakoid/Granum",
-                "Mitochondria"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "8. Which molecule is produced during lactic acid fermentation?",
-            options: [
-                "Ethanol",
-                "Carbon dioxide",
-                "Lactic acid",
-                "Acetyl-CoA"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "9. Which group in the periodic table contains the noble gases?",
-            options: [
-                "Group 1",
-                "Group 16",
-                "Group 17",
-                "Group 18"
-            ],
-            answer: 3
-        },
-
-        {
-            question: "10. In a chemical equation, the substances on the right side of the arrow are called:",
-            options: [
-                "Reactants",
-                "Catalysts",
-                "Products",
-                "Ions"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "11. Which type of reaction involves one reactant breaking down into simpler products?",
-            options: [
-                "Composition",
-                "Decomposition",
-                "Displacement",
-                "Red-Ox"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "12. Which is the general form of a composition reaction?",
-            options: [
-                "AB → A + B",
-                "A + B → AB",
-                "A + BC → AC + B",
-                "A + B ↔ AB"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "13. Which type of reaction involves the exchange of elements between compounds?",
-            options: [
-                "Composition",
-                "Red-Ox",
-                "Displacement",
-                "Decomposition"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "14. In the reaction CO₂(g) + H₂O(l) → C₆H₁₂O₆(s) + O₂(g), CO₂ and H₂O are the:",
-            options: [
-                "Products",
-                "Reactants",
-                "Catalysts",
-                "Conditions"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "15. Which hydrocarbon contains only single C–C bonds?",
-            options: [
-                "Alkene",
-                "Alkyne",
-                "Alkane",
-                "Aromatic"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "16. What is the functional group present in alcohols?",
-            options: [
-                "–COOH",
-                "–OH",
-                "–NH₂",
-                "–C=O"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "17. What type of biological molecule is glucose?",
-            options: [
-                "Disaccharide",
-                "Polysaccharide",
-                "Monosaccharide",
-                "Lipid"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "18. Which of the following is a polysaccharide found in plants?",
-            options: [
-                "Glycogen",
-                "Amylose",
-                "Maltose",
-                "Lactose"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "19. Which test is used to identify proteins?",
-            options: [
-                "Benedict’s Test",
-                "Biuret Test",
-                "Spot Test",
-                "Dische Test"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "20. A positive Benedict’s Test indicates the presence of:",
-            options: [
-                "Lipids",
-                "DNA",
-                "Reducing sugars",
-                "Peptide bonds"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "21. Which molecule stores genetic information?",
-            options: [
-                "Triglyceride",
-                "Protein",
-                "RNA/DNA",
-                "Phospholipid"
-            ],
-            answer: 2
-        },
+    // Macromolecules & Biochemical Tests (Handout 6)
+    {
+        question: "What is the main structure of lipids?",
+        options: ["Glycerol head and fatty acid tail", "Amino acids linked by peptide bonds", "Nucleotide chains", "Carbon and hydrogen bonds"],
+        answer: 0
+    },
+    {
+        question: "What color indicates a high amount of peptide bonds in the Biuret Test?",
+        options: ["Light purple", "Deep purple", "Pink", "Blue"],
+        answer: 1
+    },
+    {
+        question: "What are the two variants of nucleic acids?",
+        options: ["DNA and RNA", "Proteins and Lipids", "Carbohydrates and Proteins", "Triglycerides and Phospholipids"],
+        answer: 0
+    },
+    {
+        question: "What is the function of triglycerides?",
+        options: ["Energy storage", "Structural support", "Chemical messengers", "Transport"],
+        answer: 0
+    },
+    {
+        question: "What is the result of a positive Spot Test for lipids?",
+        options: ["Translucent spot", "Blue solution", "No spot", "Red color"],
+        answer: 0
+    },
+    {
+        question: "What does the Dische Test identify?",
+        options: ["Presence of RNA", "Presence of DNA", "Presence of lipids", "Presence of proteins"],
+        answer: 1
+    },
 
     ],
 
@@ -1095,235 +958,209 @@ export const allQuizzes = [
 
     ], [ // Quiz for Quiz 3
         {
-            question: "1. What is the primary function of the nuclear envelope in a eukaryotic cell?",
-            options: [
-                "To synthesize proteins",
-                "To enclose the nucleus and regulate material exchange",
-                "To produce energy through respiration",
-                "To store genetic material in a compact form"
-            ],
-            answer: 1
-        },
+        question: "What is the term for the structure formed when DNA is wrapped around a histone protein?",
+        options: [
+            "Chromatid",
+            "Chromatin fiber",
+            "Nucleosome",
+            "Centromere"
+        ],
+        answer: 2
+    },
+    {
+        question: "Which phase of interphase involves the replication of DNA and duplication of the centrosome?",
+        options: [
+            "G0",
+            "G1",
+            "S",
+            "G2"
+        ],
+        answer: 2
+    },
+    {
+        question: "During which phase of mitosis do the sister chromatids separate and move toward opposite poles of the cell?",
+        options: [
+            "Prophase",
+            "Metaphase",
+            "Anaphase",
+            "Telophase"
+        ],
+        answer: 2
+    },
+    {
+        question: "What is the primary function of the G2 checkpoint?",
+        options: [
+            "To check if proteins and energy are accumulated for DNA replication",
+            "To evaluate if DNA has been properly replicated and is undamaged",
+            "To ensure all sister chromatids are attached to microtubules",
+            "To assess cell size and protein reserves before mitosis"
+        ],
+        answer: 1
+    },
+    {
+        question: "Mitosis produces daughter cells that are genetically identical to the parent cell, while meiosis produces haploid cells for reproduction. What is the chromosome designation for human somatic cells?",
+        options: [
+            "n (haploid)",
+            "2n (diploid)",
+            "4n (tetraploid)",
+            "1n (monoploid)"
+        ],
+        answer: 1
+    },
+    {
+        question: "In Meiosis I, during prophase I, what process involves the exchange of genetic material between homologous chromosomes?",
+        options: [
+            "Synapsis",
+            "Crossing-over/Recombination",
+            "Independent assortment",
+            "Formation of tetrad"
+        ],
+        answer: 1
+    },
+    {
+        question: "What is the outcome of Meiosis II in terms of the number and type of daughter cells produced?",
+        options: [
+            "Two diploid cells",
+            "Four haploid cells",
+            "Two haploid cells",
+            "One diploid cell"
+        ],
+        answer: 1
+    },
 
-        {
-            question: "2. During which phase of the cell cycle does chromatin condense into visible chromosomes?",
-            options: [
-                "Interphase",
-                "Prophase of mitosis",
-                "Anaphase of mitosis",
-                "Telophase of mitosis"
-            ],
-            answer: 1
-        },
+    // Handout 8 – Mendelian Genetics
+    {
+        question: "What does 'true breeding' mean in the context of Mendel's experiments?",
+        options: [
+            "Offspring that are hybrids from different species",
+            "Offspring identical to the parent after self-fertilization",
+            "Offspring that show recessive traits only",
+            "Offspring produced by cross-fertilization"
+        ],
+        answer: 1
+    },
+    {
+        question: "In Mendelian genetics, a recessive allele's effect is masked when:",
+        options: [
+            "It is present in a homozygous state",
+            "A dominant allele is also present",
+            "Both alleles are identical",
+            "The individual is heterozygous"
+        ],
+        answer: 1
+    },
+    {
+        question: "What is the genotype of an individual that is heterozygous for a trait, such as Gg?",
+        options: [
+            "Homozygous dominant",
+            "Homozygous recessive",
+            "Contains different alleles and shows dominant traits",
+            "Contains identical alleles and shows recessive traits"
+        ],
+        answer: 2
+    },
+    {
+        question: "According to the Law of Segregation, alleles for the same trait:",
+        options: [
+            "Influence each other during segregation",
+            "Separate and are packaged into different gametes",
+            "Always assort independently",
+            "Remain together in the same gamete"
+        ],
+        answer: 1
+    },
+    {
+        question: "In a monohybrid cross between two heterozygous individuals (e.g., Yy x Yy), what is the phenotypic ratio in the F2 generation?",
+        options: [
+            "1:1",
+            "1:2:1",
+            "3:1",
+            "9:3:3:1"
+        ],
+        answer: 2
+    },
+    {
+        question: "For a dihybrid cross (e.g., Rg rg x rG Rg), what is the phenotypic ratio in the F2 generation?",
+        options: [
+            "3:1",
+            "1:2:1",
+            "9:3:3:1",
+            "1:1:1:1"
+        ],
+        answer: 2
+    },
+    {
+        question: "A test-cross is used to determine the genotype of an individual by crossing it with:",
+        options: [
+            "Another heterozygous individual",
+            "A homozygous dominant individual",
+            "A homozygous recessive individual",
+            "Its own parent"
+        ],
+        answer: 2
+    },
 
-        {
-            question: "3. In metaphase of mitosis, what key event occurs at the cell's equator?",
-            options: [
-                "Chromosomes align along the metaphase plate",
-                "Sister chromatids separate",
-                "Nuclear envelope reforms",
-                "Cytokinesis begins"
-            ],
-            answer: 0
-        },
-
-        {
-            question: "4. During prophase I of meiosis, homologous chromosomes pair up and may exchange genetic material through:",
-            options: [
-                "Synapsis",
-                "Crossing-over",
-                "Independent assortment",
-                "Segregation"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "5. Gregor Mendel established basic inheritance patterns by experimenting on:",
-            options: [
-                "Fruit flies",
-                "Pea plants",
-                "Mice",
-                "Humans"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "6. The Law of Segregation states that alleles for a trait:",
-            options: [
-                "Always stay together",
-                "Separate into different gametes",
-                "Influence each other during assortment",
-                "Are only expressed in dominant form"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "7. A dihybrid cross (e.g., RG rg x rG Rg) results in an F2 phenotypic ratio of:",
-            options: [
-                "3:1",
-                "1:2:1",
-                "9:3:3:1",
-                "1:1:1:1"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "8. What is the fundamental definition of matter?",
-            options: [
-                "Anything that has color and shape",
-                "Anything that has mass and occupies space",
-                "Anything that conducts electricity",
-                "Anything that is visible to the naked eye"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "9. Which state of matter is characterized by particles that are loosely bonded and move freely, with negligible intermolecular forces?",
-            options: [
-                "Solid",
-                "Liquid",
-                "Gas",
-                "Plasma"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "10. An intensive property that does not depend on the amount of matter is:",
-            options: [
-                "Mass",
-                "Volume",
-                "Density",
-                "Length"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "11. Which of the following is an example of a chemical property?",
-            options: [
-                "Color",
-                "Flammability",
-                "Density",
-                "Melting point"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "12. A pure substance that consists of only one type of atom is called:",
-            options: [
-                "Compound",
-                "Mixture",
-                "Element",
-                "Solution"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "13. A heterogeneous mixture can be separated by:",
-            options: [
-                "Chemical reactions only",
-                "Physical means, such as filtration",
-                "Heating to high temperatures",
-                "Adding acids"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "14. In writing the formula for magnesium chloride (MgCl₂), the valency of magnesium (2+) and chlorine (-1) results in:",
-            options: [
-                "MgCl",
-                "Mg₂Cl",
-                "MgCl₂",
-                "MgCl₃"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "15. Which of the following best describes precision?",
-            options: [
-                "How close a measurement is to the true value",
-                "The consistency of multiple measurements",
-                "The degree of exactness in a measurement",
-                "The ability to measure without error"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "16. What does the prefix 'kilo' represent in the metric system?",
-            options: [
-                "10^9",
-                "10^6",
-                "10^3",
-                "10^-3"
-            ],
-            answer: 2
-        },
-
-        {
-            question: "17. What is the SI unit for mass?",
-            options: [
-                "Meter (m)",
-                "Kilogram (kg)",
-                "Second (s)",
-                "Ampere (A)"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "18. How many significant figures are in the number 0.002806?",
-            options: [
-                "2",
-                "4",
-                "5",
-                "6"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "19. What is the charge of a cation?",
-            options: [
-                "Negative",
-                "Positive",
-                "Neutral",
-                "Variable depending on the element"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "20. What is the formula for the sulfate ion?",
-            options: [
-                "SO₃²⁻",
-                "SO₄²⁻",
-                "SO₃⁻",
-                "SO₄⁻"
-            ],
-            answer: 1
-        },
-
-        {
-            question: "21. What is the name of the compound with the formula NaCl?",
-            options: [
-                "Sodium chlorate",
-                "Sodium chloride",
-                "Sodium chlorite",
-                "Sodium hypochlorite"
-            ],
-            answer: 1
-        },
+    // Additional Genetics & Cell Cycle Questions to reach 21
+    {
+        question: "What is the primary function of the nuclear envelope in a eukaryotic cell?",
+        options: [
+            "To synthesize proteins",
+            "To enclose the nucleus and regulate material exchange",
+            "To produce energy through respiration",
+            "To store genetic material in a compact form"
+        ],
+        answer: 1
+    },
+    {
+        question: "During which phase of the cell cycle does chromatin condense into visible chromosomes?",
+        options: [
+            "Interphase",
+            "Prophase of mitosis",
+            "Anaphase of mitosis",
+            "Telophase of mitosis"
+        ],
+        answer: 1
+    },
+    {
+        question: "In metaphase of mitosis, what key event occurs at the cell's equator?",
+        options: [
+            "Chromosomes align along the metaphase plate",
+            "Sister chromatids separate",
+            "Nuclear envelope reforms",
+            "Cytokinesis begins"
+        ],
+        answer: 0
+    },
+    {
+        question: "During prophase I of meiosis, homologous chromosomes pair up and may exchange genetic material through:",
+        options: [
+            "Synapsis",
+            "Crossing-over",
+            "Independent assortment",
+            "Segregation"
+        ],
+        answer: 1
+    },
+    {
+        question: "Gregor Mendel established basic inheritance patterns by experimenting on:",
+        options: [
+            "Fruit flies",
+            "Pea plants",
+            "Mice",
+            "Humans"
+        ],
+        answer: 1
+    },
+    {
+        question: "The Law of Segregation states that alleles for a trait:",
+        options: [
+            "Always stay together",
+            "Separate into different gametes",
+            "Influence each other during assortment",
+            "Are only expressed in dominant form"
+        ],
+        answer: 1
+    },
 
     ]
 ];
@@ -2220,8 +2057,8 @@ function showOverlay(message, callback = null) {
     const overlay = document.getElementById("QuizOverlay");
     const msg = document.getElementById("OverlayMessage");
 
-
     msg.textContent = message;
+    
     overlay.classList.remove("hidden");
     const btn = document.getElementById("OverlayButton");
     btn.onclick = () => {
@@ -2256,6 +2093,7 @@ document.getElementById("quizForm").addEventListener("submit", async function (e
 
     } else {
         showOverlay("Wrong!", () => {
+            
             currentHealth--;
             updateHearts(currentHealth);
 
